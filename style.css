@@ -5,7 +5,7 @@
   --text-light: #FFFFFF;
 }
 
-/* Reset */
+/* Global reset */
 * {
   margin: 0;
   padding: 0;
@@ -17,14 +17,13 @@
 body {
   background-color: var(--bg-main);
   color: var(--text-light);
-  line-height: 1.6;
-  min-height: 100vh;
   border: 2px solid var(--accent-primary);
-  box-shadow: 0 0 10px rgba(0, 169, 255, 0.3);
+  box-shadow: 0 0 8px rgba(0, 169, 255, 0.25);
   margin: 10px;
+  min-height: 100vh;
 }
 
-/* Layout */
+/* Header */
 header {
   background-color: var(--bg-section);
   display: flex;
@@ -33,7 +32,7 @@ header {
   padding: 1.2rem 3rem;
   position: sticky;
   top: 0;
-  border-bottom: 1px solid rgba(0, 169, 255, 0.2);
+  border-bottom: 1px solid rgba(0, 169, 255, 0.25);
   z-index: 100;
 }
 
@@ -47,7 +46,6 @@ nav a {
   color: var(--accent-primary);
   text-decoration: none;
   margin: 0 1rem;
-  font-weight: 500;
   transition: 0.3s;
 }
 
@@ -57,33 +55,67 @@ nav a:hover {
 
 /* Hero Section */
 #hero {
-  text-align: center;
-  padding: 6rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem 3rem;
+  flex-wrap: wrap;
 }
 
-#hero h1 {
+.hero-left {
+  flex: 1;
+  min-width: 280px;
+  text-align: left;
+  animation: slideInLeft 1s ease;
+}
+
+.hero-left h1 {
   font-size: 2.8rem;
-  margin-bottom: 1rem;
   color: var(--accent-primary);
-  animation: fadeDown 1.5s ease;
 }
 
-#hero span {
+.hero-left span {
   color: #00d9ff;
 }
 
-#hero p {
+.hero-left p {
   color: #d0d0d0;
-  max-width: 600px;
-  margin: 0 auto 1.5rem;
-  opacity: 0;
-  animation: fadeUp 2s ease forwards;
-  animation-delay: 0.5s;
+  margin: 1rem 0;
+  max-width: 400px;
 }
 
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image {
+  width: 340px;
+  height: 340px;
+  border-radius: 80% 80% 0 0;
+  overflow: hidden;
+  object-fit: cover;
+  border: 2px solid var(--accent-primary);
+  box-shadow: 0 0 20px rgba(0, 169, 255, 0.35);
+  animation: slideInRight 1.5s ease;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(80px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Buttons */
 .btn {
   display: inline-block;
-  margin-top: 1rem;
   padding: 0.8rem 2rem;
   background-color: var(--accent-primary);
   color: #fff;
@@ -97,15 +129,10 @@ nav a:hover {
   transform: scale(1.05);
 }
 
-/* Sections */
+/* Section Styling */
 section {
-  padding: 4rem 2rem;
   text-align: center;
-}
-
-#about p, #contact p {
-  max-width: 600px;
-  margin: 0.5rem auto;
+  padding: 4rem 2rem;
 }
 
 .project {
@@ -115,7 +142,7 @@ section {
   border-radius: 8px;
   width: 80%;
   max-width: 600px;
-  border: 1px solid rgba(0, 169, 255, 0.2);
+  border: 1px solid rgba(0, 169, 255, 0.25);
   transition: 0.3s;
 }
 
@@ -135,7 +162,6 @@ section {
   padding: 0.7rem 1.2rem;
   border-radius: 6px;
   text-decoration: none;
-  font-weight: 500;
   color: white;
   transition: 0.3s;
 }
@@ -155,4 +181,21 @@ footer {
   background-color: var(--bg-section);
   text-align: center;
   padding: 1rem 0;
-  margin-top: 3r
+  border-top: 1px solid rgba(0, 169, 255, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 4rem 1rem;
+  }
+  .hero-left, .hero-right {
+    text-align: center;
+  }
+  .hero-image {
+    width: 260px;
+    height: 260px;
+  }
+}
