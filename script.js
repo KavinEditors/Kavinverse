@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("Kavinverse portfolio loaded successfully!");
+  console.log("Kavinverse loaded.");
 
-  // Smooth scroll for navigation
+  // Smooth scroll for internal nav links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
