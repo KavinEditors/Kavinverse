@@ -5,7 +5,7 @@
   --text-light: #FFFFFF;
 }
 
-/* Global reset */
+/* --- Global Reset --- */
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +13,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* Body with thin neon border */
+/* --- Body --- */
 body {
   background-color: var(--bg-main);
   color: var(--text-light);
@@ -23,7 +23,7 @@ body {
   min-height: 100vh;
 }
 
-/* Header */
+/* --- Header --- */
 header {
   background-color: var(--bg-section);
   display: flex;
@@ -53,19 +53,20 @@ nav a:hover {
   color: #00d9ff;
 }
 
-/* Hero Section */
+/* --- Hero Section --- */
 #hero {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 6rem 3rem;
   flex-wrap: wrap;
+  overflow: hidden;
 }
 
 .hero-left {
   flex: 1;
   min-width: 280px;
-  text-align: left;
   animation: slideInLeft 1s ease;
 }
 
@@ -89,31 +90,102 @@ nav a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-image {
   width: 340px;
   height: 340px;
   border-radius: 80% 80% 0 0;
-  overflow: hidden;
   object-fit: cover;
   border: 2px solid var(--accent-primary);
   box-shadow: 0 0 20px rgba(0, 169, 255, 0.35);
   animation: slideInRight 1.5s ease;
+  z-index: 3;
 }
 
-/* Animations */
-@keyframes slideInLeft {
-  from { opacity: 0; transform: translateX(-60px); }
-  to { opacity: 1; transform: translateX(0); }
+/* --- Neon Circle --- */
+.neon-circle {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  border: 3px solid #00BFFF;
+  box-shadow:
+    0 0 20px #00BFFF,
+    0 0 40px #00BFFF,
+    0 0 60px #0099FF;
+  animation: neonPulse 3s ease-in-out infinite;
+  z-index: 1;
 }
 
-@keyframes slideInRight {
-  from { opacity: 0; transform: translateX(80px); }
-  to { opacity: 1; transform: translateX(0); }
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 15px #00BFFF,
+      0 0 35px #00BFFF,
+      0 0 60px #0099FF;
+    opacity: 0.9;
+  }
+  50% {
+    box-shadow:
+      0 0 25px #00CFFF,
+      0 0 55px #00CFFF,
+      0 0 85px #00A9FF;
+    opacity: 1;
+  }
 }
 
-/* Buttons */
+/* --- Neon Arc --- */
+.hero-arc {
+  position: absolute;
+  top: 50%;
+  right: -120px;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 4px solid #00A9FF;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  filter: drop-shadow(0 0 20px #00A9FF);
+  animation: breathe 3s ease-in-out infinite;
+  overflow: visible;
+  z-index: 0;
+}
+
+/* Arc breathing */
+@keyframes breathe {
+  0%, 100% { filter: drop-shadow(0 0 12px #00A9FF); opacity: 0.9; }
+  50% { filter: drop-shadow(0 0 25px #00A9FF); opacity: 1; }
+}
+
+/* Arc shards */
+.tri {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 20px solid #00A9FF;
+  filter: drop-shadow(0 0 8px #00A9FF);
+  animation: flicker 2s ease-in-out infinite alternate;
+}
+.t1 { top: 20%; left: -8px; transform: rotate(-20deg); }
+.t2 { top: 48%; left: -14px; transform: rotate(10deg); }
+.t3 { top: 75%; left: -10px; transform: rotate(25deg); }
+
+@keyframes flicker {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+/* --- Buttons --- */
 .btn {
   display: inline-block;
   padding: 0.8rem 2rem;
@@ -123,13 +195,12 @@ nav a:hover {
   text-decoration: none;
   transition: 0.3s;
 }
-
 .btn:hover {
   background-color: #00d9ff;
   transform: scale(1.05);
 }
 
-/* Section Styling */
+/* --- Section --- */
 section {
   text-align: center;
   padding: 4rem 2rem;
@@ -145,17 +216,15 @@ section {
   border: 1px solid rgba(0, 169, 255, 0.25);
   transition: 0.3s;
 }
-
 .project:hover {
   border-color: var(--accent-primary);
   transform: translateY(-4px);
 }
 
-/* Social Buttons */
+/* --- Social Buttons --- */
 .social-links {
   margin-top: 1.5rem;
 }
-
 .social-btn {
   display: inline-block;
   margin: 0.5rem;
@@ -165,7 +234,6 @@ section {
   color: white;
   transition: 0.3s;
 }
-
 .discord { background: #5865F2; }
 .insta { background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF); }
 .x { background: #1D9BF0; }
@@ -176,7 +244,7 @@ section {
   transform: scale(1.05);
 }
 
-/* Footer */
+/* --- Footer --- */
 footer {
   background-color: var(--bg-section);
   text-align: center;
@@ -184,7 +252,7 @@ footer {
   border-top: 1px solid rgba(0, 169, 255, 0.25);
 }
 
-/* Responsive */
+/* --- Responsive --- */
 @media (max-width: 768px) {
   #hero {
     flex-direction: column-reverse;
@@ -198,67 +266,10 @@ footer {
     width: 260px;
     height: 260px;
   }
-  /* --- Neon arc design --- */
-.hero-arc {
-  position: absolute;
-  top: 50%;
-  right: -120px;              /* pushes arc off screen a bit */
-  transform: translateY(-50%);
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  border: 4px solid #00A9FF;
-  border-left-color: transparent;
-  border-bottom-color: transparent;
-  filter: drop-shadow(0 0 20px #00A9FF);
-  animation: breathe 3s ease-in-out infinite;
-  overflow: visible;
-  z-index: 0;
-}
-
-/* Breathing neon effect */
-@keyframes breathe {
-  0%, 100% {
-    filter: drop-shadow(0 0 12px #00A9FF) brightness(1);
-    opacity: 0.9;
+  .neon-circle {
+    width: 260px;
+    height: 260px;
+    right: 50%;
+    transform: translate(50%, -50%);
   }
-  50% {
-    filter: drop-shadow(0 0 25px #00A9FF) brightness(1.3);
-    opacity: 1;
-  }
-}
-
-/* Triangular shards at the arc’s open edge */
-.tri {
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-left: 12px solid transparent;
-  border-right: 12px solid transparent;
-  border-bottom: 20px solid #00A9FF;
-  filter: drop-shadow(0 0 8px #00A9FF);
-  animation: flicker 2s ease-in-out infinite alternate;
-}
-
-.t1 { top: 20%; left: -8px; transform: rotate(-20deg); }
-.t2 { top: 48%; left: -14px; transform: rotate(10deg); }
-.t3 { top: 75%; left: -10px; transform: rotate(25deg); }
-
-/* Subtle random flicker for shards */
-@keyframes flicker {
-  0% { opacity: 0.6; }
-  50% { opacity: 1; }
-  100% { opacity: 0.7; }
-}
-
-/* Ensure the hero container can position the arc */
-#hero {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem 3rem;
-  overflow: hidden; /* prevents scrollbars from arc overflow */
-}
-
 }
