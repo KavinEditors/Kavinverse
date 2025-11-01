@@ -140,51 +140,6 @@ nav a:hover {
   }
 }
 
-/* --- Neon Arc --- */
-.hero-arc {
-  position: absolute;
-  top: 50%;
-  right: -120px;
-  transform: translateY(-50%);
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  border: 4px solid #00A9FF;
-  border-left-color: transparent;
-  border-bottom-color: transparent;
-  filter: drop-shadow(0 0 20px #00A9FF);
-  animation: breathe 3s ease-in-out infinite;
-  overflow: visible;
-  z-index: 0;
-}
-
-/* Arc breathing */
-@keyframes breathe {
-  0%, 100% { filter: drop-shadow(0 0 12px #00A9FF); opacity: 0.9; }
-  50% { filter: drop-shadow(0 0 25px #00A9FF); opacity: 1; }
-}
-
-/* Arc shards */
-.tri {
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-left: 12px solid transparent;
-  border-right: 12px solid transparent;
-  border-bottom: 20px solid #00A9FF;
-  filter: drop-shadow(0 0 8px #00A9FF);
-  animation: flicker 2s ease-in-out infinite alternate;
-}
-.t1 { top: 20%; left: -8px; transform: rotate(-20deg); }
-.t2 { top: 48%; left: -14px; transform: rotate(10deg); }
-.t3 { top: 75%; left: -10px; transform: rotate(25deg); }
-
-@keyframes flicker {
-  0% { opacity: 0.6; }
-  50% { opacity: 1; }
-  100% { opacity: 0.7; }
-}
-
 /* --- Buttons --- */
 .btn {
   display: inline-block;
