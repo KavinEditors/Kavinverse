@@ -225,7 +225,27 @@ nav a:hover {
   }
 }
 
-/* CONTACT + FOOTER */
+/* CONTACT SECTION */
+#contact {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+#contact h2 {
+  color: var(--accent-primary);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#contact p a {
+  color: #00d9ff;
+  text-decoration: none;
+}
+
+#contact p a:hover {
+  text-decoration: underline;
+}
+
 .social-links {
   margin-top: 1.5rem;
 }
@@ -250,11 +270,17 @@ nav a:hover {
   transform: scale(1.05);
 }
 
+/* FOOTER */
 footer {
   background-color: var(--bg-section);
   text-align: center;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   border-top: 1px solid rgba(0, 169, 255, 0.25);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
 /* RESPONSIVE */
