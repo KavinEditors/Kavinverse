@@ -230,14 +230,58 @@ nav a:hover {
   margin-top: 1.5rem;
 }
 
+/* ===== CONNECT SECTION ===== */
+#contact {
+  background-color: var(--bg-section);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 2rem;
+  border-top: 1px solid rgba(0, 169, 255, 0.25);
+  min-height: 60vh;
+}
+
+#contact h2 {
+  font-size: 2.8rem;
+  color: var(--accent-primary);
+  text-shadow: 0 0 15px rgba(0, 169, 255, 0.7);
+  margin-bottom: 1rem;
+  animation: glowPulse 3s infinite ease-in-out;
+}
+
+#contact p {
+  font-size: 1.2rem;
+  color: #d0d0d0;
+  margin-bottom: 2.5rem;
+}
+
+#contact a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+#contact a:hover {
+  color: #00d9ff;
+}
+
+.social-links {
+  margin-top: 1.5rem;
+}
+
 .social-btn {
   display: inline-block;
-  margin: 0.5rem;
-  padding: 0.7rem 1.2rem;
-  border-radius: 6px;
+  margin: 0.6rem;
+  padding: 0.9rem 1.8rem;
+  border-radius: 10px;
   text-decoration: none;
   color: white;
+  font-weight: 500;
+  letter-spacing: 0.5px;
   transition: 0.3s;
+  font-size: 1.05rem;
 }
 
 .discord { background: #5865F2; }
@@ -246,9 +290,20 @@ nav a:hover {
 .github { background: #333; }
 
 .social-btn:hover {
-  filter: brightness(1.3);
-  transform: scale(1.05);
+  transform: scale(1.07);
+  box-shadow: 0 0 25px rgba(0, 169, 255, 0.6);
 }
+
+/* Neon breathing effect for title */
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: 0 0 15px rgba(0, 169, 255, 0.6), 0 0 35px rgba(0, 169, 255, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(0, 169, 255, 0.9), 0 0 60px rgba(0, 169, 255, 0.6);
+  }
+}
+
 
 footer {
   background-color: var(--bg-section);
