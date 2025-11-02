@@ -50,7 +50,6 @@ nav a:hover {
   color: #00d9ff;
 }
 
-/* Hero Section */
 #hero {
   display: flex;
   justify-content: space-between;
@@ -96,183 +95,158 @@ nav a:hover {
   transform: scale(1.05);
 }
 
-/* Hero Circle */
 .hero-right {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   min-width: 300px;
+  position: relative;
 }
 
 .circle-glow {
-  width: 380px;
-  height: 380px;
+  width: 350px;
+  height: 350px;
   border-radius: 50%;
   border: 4px solid var(--accent-primary);
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 40px rgba(0, 169, 255, 0.6), 0 0 100px rgba(0, 169, 255, 0.3);
+  box-shadow: 0 0 25px rgba(0, 169, 255, 0.6), 0 0 60px rgba(0, 169, 255, 0.3);
   animation: breathe 3s ease-in-out infinite;
-}
-
-.circle-glow img {
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid rgba(0, 169, 255, 0.4);
-  box-shadow: 0 0 30px rgba(0, 169, 255, 0.4);
+  position: relative;
 }
 
 @keyframes breathe {
-  0%, 100% { box-shadow: 0 0 40px rgba(0, 169, 255, 0.6), 0 0 100px rgba(0, 169, 255, 0.3); }
-  50% { box-shadow: 0 0 70px rgba(0, 169, 255, 0.9), 0 0 140px rgba(0, 169, 255, 0.5); }
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(0, 169, 255, 0.6), 0 0 60px rgba(0, 169, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(0, 169, 255, 0.9), 0 0 80px rgba(0, 169, 255, 0.5);
+  }
 }
 
-/* About Section */
+.circle-glow img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(0, 169, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0, 169, 255, 0.4);
+  z-index: 2;
+}
+
+/* About */
 #about {
-  padding: 6rem 4rem;
-  text-align: left;
+  padding: 4rem 6%;
+  background-color: var(--bg-section);
 }
 
 #about h2 {
-  font-size: 2.6rem;
+  font-size: 2.8rem;
   color: var(--accent-primary);
   margin-bottom: 1rem;
 }
 
 #about p {
-  font-size: 1.15rem;
-  color: #d0d0d0;
+  color: #ccc;
+  font-size: 1.1rem;
   max-width: 700px;
 }
 
 /* Projects */
 #projects {
+  padding: 4rem 5%;
   text-align: center;
-  padding: 4rem 2rem;
-}
-
-#projects h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: var(--accent-primary);
 }
 
 .project {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--bg-section);
-  margin: 2rem auto;
-  padding: 2rem;
+  margin: 4rem 0;
+  background: var(--bg-section);
   border-radius: 12px;
-  width: 85%;
-  max-width: 1100px;
-  border: 1px solid rgba(0, 169, 255, 0.25);
-  animation: slide 8s linear infinite alternate;
-  transition: transform 0.3s;
+  padding: 2rem;
+  border: 1px solid rgba(0, 169, 255, 0.2);
+  box-shadow: 0 0 20px rgba(0, 169, 255, 0.05);
 }
 
-.project:hover {
-  transform: translateY(-4px);
-}
-
-.project-left .project-image { order: 2; }
-.project-right .project-image { order: 1; }
-
-.project-image img {
-  width: 320px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 169, 255, 0.4);
-}
-
-.project-text {
-  flex: 1;
-  padding: 1rem 2rem;
+.project-left .project-text {
   text-align: left;
 }
 
-.project-text h3 {
-  font-size: 1.8rem;
-  color: var(--accent-primary);
-  margin-bottom: 0.6rem;
+.project-right {
+  flex-direction: row-reverse;
 }
 
-.project-text p {
-  color: #d0d0d0;
-  font-size: 1.05rem;
-  margin-bottom: 1rem;
+.project-right .project-text {
+  text-align: right;
 }
 
-.project-buttons .btn {
-  margin-right: 0.8rem;
+.project img {
+  width: 350px;
+  height: 220px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 169, 255, 0.4);
 }
 
-/* Slide Animation */
-@keyframes slide {
-  from { box-shadow: 0 0 15px rgba(0,169,255,0.2); }
-  to { box-shadow: 0 0 35px rgba(0,169,255,0.6); }
+.project-buttons {
+  margin-top: 1.2rem;
+  display: flex;
+  gap: 1rem;
 }
 
-/* Contact - White */
+/* Contact */
 #contact {
   background-color: var(--bg-section);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.contact-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 3.5rem 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 #contact h2 {
-  font-size: 2.3rem;
-  color: #ffffff;
-  margin-bottom: 0.8rem;
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1rem;
 }
 
 #contact p {
-  font-size: 1.05rem;
-  color: #ffffff;
-  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: white;
+  margin-bottom: 1.8rem;
 }
 
 #contact a {
-  color: #ffffff;
+  color: white;
   text-decoration: none;
+  margin: 0 1.2rem;
+  font-size: 1.1rem;
   transition: 0.3s ease;
 }
 
 #contact a:hover {
-  opacity: 0.85;
-}
-
-/* White Social Buttons */
-.social-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.8rem;
-}
-
-.social-btn {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 0.7rem 1.4rem;
-  border-radius: 8px;
-  color: #ffffff;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.social-btn:hover {
+  opacity: 0.7;
   transform: scale(1.05);
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
 }
 
 footer {
@@ -281,111 +255,3 @@ footer {
   padding: 1rem 0;
   border-top: 1px solid rgba(0, 169, 255, 0.25);
 }
-
-/* Responsive */
-@media (max-width: 850px) {
-  #hero { flex-direction: column; text-align: center; }
-  .project { flex-direction: column; }
-  .project-image img { width: 100%; margin-bottom: 1rem; }
-}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kavinverse | Developer Portfolio</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-  <header>
-    <div class="logo">Kavinverse</div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <section id="hero">
-    <div class="hero-left">
-      <h1>Welcome to <span>Kavinverse</span></h1>
-      <p>Innovating through code, design, and technology.</p>
-      <a href="#projects" class="btn">Explore Projects</a>
-    </div>
-
-    <div class="hero-right">
-      <div class="circle-glow">
-        <img src="https://raw.githubusercontent.com/KavinEditors/Kavinverse/main/image.png" alt="Kavinverse Logo">
-      </div>
-    </div>
-  </section>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I'm <strong>Kavin</strong>, a developer passionate about building modern, scalable, and creative software systems.  
-      I love blending design and logic to create clean and meaningful digital experiences.
-    </p>
-  </section>
-
-  <section id="projects">
-    <h2>Featured Projects</h2>
-
-    <!-- Project 1 -->
-    <div class="project project-left">
-      <div class="project-text">
-        <h3>R.O.A.S.T</h3>
-        <p>
-          A humorous AI-powered assistant designed to roast users with style and wit.
-          Built for fun and personality, not for the faint-hearted.
-        </p>
-        <div class="project-buttons">
-          <a href="https://github.com/KavinEditors/R.O.A.S.T/" target="_blank" class="btn">See Repo</a>
-          <a href="#" class="btn secondary-btn">See Website</a>
-        </div>
-      </div>
-      <div class="project-image">
-        <img src="sub1.png" alt="R.O.A.S.T Preview">
-      </div>
-    </div>
-
-    <!-- Project 2 -->
-    <div class="project project-right">
-      <div class="project-image">
-        <img src="sub2.png" alt="AI Chat Assistant">
-      </div>
-      <div class="project-text">
-        <h3>AI Chat Assistant</h3>
-        <p>
-          A powerful chatbot leveraging the OpenAI API to bring smart, human-like conversation capabilities.
-        </p>
-        <div class="project-buttons">
-          <a href="https://github.com/KavinEditors/ai-chat-assistant" target="_blank" class="btn">See Repo</a>
-          <a href="#" class="btn secondary-btn">See Website</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Connect</h2>
-    <p>Email: <a href="mailto:kavinjm311@gmail.com">kavinjm311@gmail.com</a></p>
-
-    <div class="social-links">
-      <a href="https://discord.com/users/1180531027832217661" target="_blank" class="social-btn">Discord</a>
-      <a href="https://www.instagram.com/speedkavin311" target="_blank" class="social-btn">Instagram</a>
-      <a href="https://x.com/SpeedKavin311" target="_blank" class="social-btn">X (Twitter)</a>
-      <a href="https://github.com/KavinEditors" target="_blank" class="social-btn">GitHub</a>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2025 Kavinverse. Crafted with precision and code.</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
