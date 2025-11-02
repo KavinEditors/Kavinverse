@@ -1,62 +1,59 @@
-// Scroll-triggered animations
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('fade-in');
-      entry.target.querySelectorAll('.slide-left, .slide-right, .slide-up').forEach(el => el.classList.add('active'));
-    }
+// Scroll animations
+window.addEventListener("scroll", () => {
+  document.querySelectorAll("section, .project-row").forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 150) el.classList.add("visible");
   });
-}, { threshold: 0.3 });
-
-document.querySelectorAll('.fade-section').forEach(section => observer.observe(section));
-
-// AI Widget toggle
-const aiCircle = document.getElementById('ai-circle');
-const chatBox = document.getElementById('chat-box');
-
-aiCircle.addEventListener('click', () => {
-  chatBox.classList.toggle('show');
 });
 
-// Chat interaction
-const sendBtn = document.getElementById('send-btn');
-const userInput = document.getElementById('user-input');
-const chatBody = document.getElementById('chat-body');
+// AI Widget
+const aiCircle = document.getElementById("ai-circle");
+const chatBox = document.getElementById("chat-box");
+aiCircle.addEventListener("click", () => chatBox.classList.toggle("hidden"));
+
+const sendBtn = document.getElementById("send-btn");
+const userInput = document.getElementById("user-input");
+const chatBody = document.getElementById("chat-body");
 
 async function sendMessage() {
-  const msg = userInput.value.trim();
-  if (!msg) return;
+  const userMsg = userInput.value.trim();
+  if (!userMsg) return;
 
-  const userMsgDiv = document.createElement('div');
-  userMsgDiv.className = 'user-message';
-  userMsgDiv.textContent = msg;
-  chatBody.appendChild(userMsgDiv);
+  const userBubble = document.createElement("div");
+  userBubble.className = "user-message";
+  userBubble.textContent = userMsg;
+  chatBody.appendChild(userBubble);
+  userInput.value = "";
   chatBody.scrollTop = chatBody.scrollHeight;
 
-  userInput.value = '';
-
-  const botMsgDiv = document.createElement('div');
-  botMsgDiv.className = 'bot-message';
-  botMsgDiv.textContent = 'Thinking...';
-  chatBody.appendChild(botMsgDiv);
-  chatBody.scrollTop = chatBody.scrollHeight;
+  const botBubble = document.createElement("div");
+  botBubble.className = "bot-message";
+  botBubble.textContent = "Thinking...";
+  chatBody.appendChild(botBubble);
 
   try {
-    const res = await fetch('/api/groq-chat', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: msg })
+    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${import.meta.env.VERCEL_GROQAPI}`
+      },
+      body: JSON.stringify({
+        model: "llama3-8b-8192",
+        messages: [
+          { role: "system", content: "You are a helpful personal assistant for a developer’s website. Repos: https://github.com/KavinEditors/Kavinverse, https://github.com/KavinEditors/NEXA-Next-gen-Executive-Assistant, https://github.com/KavinEditors/R.O.A.S.T, https://github.com/KavinEditors/SussyCommentor" },
+          { role: "user", content: userMsg }
+        ]
+      })
     });
-    const data = await res.json();
-    botMsgDiv.textContent = data.reply;
-  } catch (err) {
-    botMsgDiv.textContent = 'Error fetching response.';
-  }
 
+    const data = await response.json();
+    botBubble.textContent = data.choices?.[0]?.message?.content || "No response.";
+  } catch (err) {
+    botBubble.textContent = "Error connecting to AI.";
+  }
   chatBody.scrollTop = chatBody.scrollHeight;
 }
 
-sendBtn.addEventListener('click', sendMessage);
-userInput.addEventListener('keypress', e => {
-  if (e.key === 'Enter') sendMessage();
-});
+sendBtn.addEventListener("click", sendMessage);
+userInput.addEventListener("keypress", e => e.key === "Enter" && sendMessage());
