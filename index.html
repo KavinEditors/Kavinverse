@@ -3,97 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kavinverse | Developer Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <title>Kavinverse | Innovating through Code</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <header>
-    <div class="logo">Kavinverse</div>
-    <nav>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <!-- Background Animation -->
+  <div id="circuit-bg"></div>
 
-  <section id="hero">
-    <div class="hero-left">
-      <h1>Welcome to <span>Kavinverse</span></h1>
-      <p>Innovating through code, design, and technology.</p>
-
-      <!-- Added personal description -->
-      <p style="margin-top: 1rem; color: #b8b8b8; max-width: 520px;">
-        I'm Kavin — a passionate developer who blends creativity with logic. I love building intelligent, 
-        efficient, and visually engaging digital experiences that push the boundaries of innovation.
-      </p>
-
-      <a href="#projects" class="btn">Explore Projects</a>
-    </div>
-
-    <div class="hero-right">
-      <div class="circle-glow">
-        <img src="https://raw.githubusercontent.com/KavinEditors/Kavinverse/main/assets/image.png" alt="Kavinverse Logo">
-      </div>
-    </div>
+  <!-- Hero Section -->
+  <section id="hero" class="animate-on-scroll">
+    <h1>Welcome to <span class="highlight">Kavinverse</span></h1>
+    <p class="subtitle">Innovating through code, design, and technology.</p>
+    <p class="about">
+      I'm Kavin — a passionate developer who blends creativity with logic.
+      I love building intelligent, efficient, and visually engaging digital experiences
+      that push the boundaries of innovation.
+    </p>
+    <a href="#projects" class="cta">Explore Projects</a>
   </section>
 
+  <!-- Projects -->
   <section id="projects">
-    <h2>Featured Projects</h2>
-
-    <!-- R.O.A.S.T Project -->
-    <div class="project-row">
-      <div class="project-text">
-        <h3>R.O.A.S.T</h3>
+    <div class="project animate-on-scroll left">
+      <div class="text">
+        <h2>R.O.A.S.T</h2>
         <p>
-          Feeling bored? Try to beat my bot at roasting — a sarcastic, fun-filled AI that’s always one punchline ahead.
-          R.O.A.S.T turns friendly banter into an art form, blending humor and automation for a laugh every time.
+          Feeling bored? Try to beat my bot at roasting — a sarcastic, fun-filled AI that’s
+          always one punchline ahead. R.O.A.S.T turns friendly banter into an art form,
+          blending humor and automation for a laugh every time.
         </p>
-        <div class="btn-group">
-          <a href="https://really-offensive-automated-sus-terminator.streamlit.app/" target="_blank" class="btn">See Website</a>
-        </div>
+        <a href="https://github.com/KavinEditors/R.O.A.S.T" target="_blank" class="btn">See Website</a>
       </div>
-      <div class="project-media">
-        <div class="neon-box">
-          <img src="https://raw.githubusercontent.com/KavinEditors/Kavinverse/main/assets/sub1.png" alt="R.O.A.S.T Project Image">
-        </div>
-      </div>
+      <img src="https://raw.githubusercontent.com/KavinEditors/Kavinverse/main/assets/roast.png" alt="R.O.A.S.T Project Image" />
     </div>
 
-    <!-- NEXA Project -->
-    <div class="project-row reverse">
-      <div class="project-text">
-        <h3>NEXA</h3>
+    <div class="project animate-on-scroll right">
+      <div class="text">
+        <h2>NEXA</h2>
         <p>
-          NEXA (Next-gen Executive Assistant) is an intelligent automation system built to simplify your day.
-          From managing daily tasks to streamlining productivity, NEXA helps you focus on what truly matters — efficiency,
-          precision, and time mastery, all through one smart assistant.
+          NEXA (Next-gen Executive Assistant) is an intelligent automation system built to
+          simplify your day. From managing daily tasks to streamlining productivity,
+          NEXA helps you focus on what truly matters — efficiency, precision, and time mastery,
+          all through one smart assistant.
         </p>
-        <div class="btn-group">
-          <a href="https://github.com/KavinEditors/NEXA-Next-gen-Executive-Assistant" target="_blank" class="btn">See Repo</a>
-        </div>
+        <a href="https://github.com/KavinEditors/NEXA-Next-gen-Executive-Assistant" target="_blank" class="btn">See Repo</a>
       </div>
-      <div class="project-media">
-        <div class="neon-box">
-          <img src="https://raw.githubusercontent.com/KavinEditors/Kavinverse/main/assets/sub2.png" alt="NEXA Project Image">
-        </div>
-      </div>
+      <img src="https://raw.githubusercontent.com/KavinEditors/Kavinverse/main/assets/nexa.png" alt="NEXA Project Image" />
     </div>
   </section>
 
-  <section id="contact" style="text-align: center;">
-    <h2>Connect with Me</h2>
-    <p>Email: <a href="mailto:kavinjm311@gmail.com">kavinjm311@gmail.com</a></p>
-    <div class="social-links">
-      <a href="https://discord.com/users/1180531027832217661" target="_blank" class="social-btn discord">Discord</a>
-      <a href="https://www.instagram.com/speedkavin311" target="_blank" class="social-btn insta">Instagram</a>
-      <a href="https://x.com/SpeedKavin311" target="_blank" class="social-btn x">X (Twitter)</a>
-      <a href="https://github.com/KavinEditors/" target="_blank" class="social-btn github">GitHub</a>
-    </div>
-  </section>
+  <!-- AI Widget -->
+  <div class="ai-widget" id="ai-widget">
+    <div class="neon-ring"></div>
+    <img src="https://raw.githubusercontent.com/KavinEditors/Kavinverse/main/assets/help.png" alt="AI Assistant" class="ai-icon" />
+  </div>
 
-  <footer style="background-color: var(--bg-section); text-align: center; padding: 0.5rem 0; border-top: 1px solid rgba(0, 169, 255, 0.25); font-size: 0.75rem; color: rgba(255,255,255,0.6); position: relative; bottom: 0; width: 100%;">
-    <p>© 2025 Kavinverse. Crafted with precision and code.</p>
-  </footer>
+  <!-- Chat Box -->
+  <div id="chat-box" class="hidden">
+    <div class="chat-header">Kavinverse AI</div>
+    <div class="chat-messages" id="chat-messages"></div>
+    <div class="chat-input">
+      <input type="text" id="user-input" placeholder="Type your message..." />
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
