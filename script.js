@@ -1,57 +1,51 @@
-// --- Scroll-triggered animations ---
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
-});
-document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
-document.querySelectorAll('.project').forEach(el => observer.observe(el));
+// ===== Scroll-triggered animations =====
+const reveals = document.querySelectorAll(".reveal");
 
-// --- AI Widget & Chat Box ---
-const widget = document.getElementById("ai-widget");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+    }
+  });
+}, { threshold: 0.3 });
+
+reveals.forEach((r) => observer.observe(r));
+
+// ===== AI Widget =====
+const aiWidget = document.getElementById("ai-widget");
 const chatBox = document.getElementById("chat-box");
 const sendBtn = document.getElementById("send-btn");
 const userInput = document.getElementById("user-input");
-const chatMessages = document.getElementById("chat-messages");
+const chatBody = document.getElementById("chat-body");
 
-widget.addEventListener("click", () => {
-  chatBox.classList.toggle("visible");
-  if (chatBox.classList.contains("visible") && chatMessages.childElementCount === 0) {
-    addMessage("bot", "Hello, I'm Kavinverse AI. How can I help you today?");
-  }
-});
+aiWidget.onclick = () => {
+  chatBox.classList.toggle("hidden");
+};
 
-sendBtn.addEventListener("click", sendMessage);
-userInput.addEventListener("keydown", e => {
-  if (e.key === "Enter") sendMessage();
-});
+sendBtn.onclick = async () => {
+  const text = userInput.value.trim();
+  if (!text) return;
 
-function addMessage(sender, text) {
-  const msg = document.createElement("div");
-  msg.classList.add("message", sender);
-  msg.textContent = text;
-  chatMessages.appendChild(msg);
-  chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-
-async function sendMessage() {
-  const message = userInput.value.trim();
-  if (!message) return;
-
-  addMessage("user", message);
+  appendMessage("user", text);
   userInput.value = "";
 
-  addMessage("bot", "Typing...");
+  appendMessage("bot", "Thinking...");
 
-  try {
-    const res = await fetch("/api/groq-chat", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message })
-    });
-    const data = await res.json();
-    chatMessages.lastChild.textContent = data.reply;
-  } catch {
-    chatMessages.lastChild.textContent = "Error: Unable to connect to AI.";
-  }
+  const response = await fetch("/api/groq-chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message: text })
+  });
+
+  const data = await response.json();
+  chatBody.lastChild.remove();
+  appendMessage("bot", data.reply);
+};
+
+function appendMessage(role, text) {
+  const msg = document.createElement("div");
+  msg.className = `message ${role}`;
+  msg.textContent = text;
+  chatBody.appendChild(msg);
+  chatBody.scrollTop = chatBody.scrollHeight;
 }
