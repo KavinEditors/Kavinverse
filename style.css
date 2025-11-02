@@ -1,377 +1,101 @@
-:root {
-  --bg-main: #090909;
-  --bg-section: #111c2b;
-  --accent-primary: #00A9FF;
-  --text-light: #FFFFFF;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kavinverse | Developer Portfolio</title>
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
 
-body {
-  background-color: var(--bg-main);
-  color: var(--text-light);
-  border: 2px solid var(--accent-primary);
-  box-shadow: 0 0 8px rgba(0, 169, 255, 0.25);
-  margin: 10px;
-  min-height: 100vh;
-}
+<body>
+  <header>
+    <div class="logo">Kavinverse</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-/* HEADER */
-header {
-  background-color: var(--bg-section);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.2rem 3rem;
-  border-bottom: 1px solid rgba(0, 169, 255, 0.25);
-}
+  <section id="hero">
+    <div class="hero-left">
+      <h1>Welcome to <span>Kavinverse</span></h1>
+      <p>Innovating through code, design, and technology.</p>
+      <a href="#projects" class="btn">Explore Projects</a>
+    </div>
 
-.logo {
-  font-weight: 600;
-  color: var(--accent-primary);
-  font-size: 1.6rem;
-}
+    <div class="hero-right">
+      <div class="circle-glow">
+        <img src="https://raw.githubusercontent.com/KavinEditors/Kavinverse/main/image.png" alt="Kavinverse Logo">
+      </div>
+    </div>
+  </section>
 
-nav a {
-  color: var(--accent-primary);
-  text-decoration: none;
-  margin: 0 1rem;
-  transition: 0.3s;
-}
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm <strong>Kavin</strong>, a developer passionate about building modern, scalable, and creative software systems.  
+      I love blending design and logic to create clean and meaningful digital experiences.
+    </p>
+  </section>
 
-nav a:hover {
-  color: #00d9ff;
-}
+  <section id="projects">
+    <h2>Featured Projects</h2>
 
-/* HERO SECTION */
-#hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem 5%;
-  flex-wrap: wrap;
-  gap: 3rem;
-}
+    <!-- Project 1 -->
+    <div class="project project-left">
+      <div class="project-text">
+        <h3>R.O.A.S.T</h3>
+        <p>
+          A humorous AI-powered assistant designed to roast users with style and wit.
+          Built for fun and personality, not for the faint-hearted.
+        </p>
+        <div class="project-buttons">
+          <a href="https://github.com/KavinEditors/R.O.A.S.T/" target="_blank" class="btn">See Repo</a>
+          <a href="#" class="btn secondary-btn">See Website</a>
+        </div>
+      </div>
+      <div class="project-image">
+        <img src="sub1.png" alt="R.O.A.S.T Preview">
+      </div>
+    </div>
 
-.hero-left {
-  flex: 1;
-  min-width: 320px;
-}
+    <!-- Project 2 -->
+    <div class="project project-right">
+      <div class="project-image">
+        <img src="sub2.png" alt="AI Chat Assistant">
+      </div>
+      <div class="project-text">
+        <h3>AI Chat Assistant</h3>
+        <p>
+          A powerful chatbot leveraging the OpenAI API to bring smart, human-like conversation capabilities.
+        </p>
+        <div class="project-buttons">
+          <a href="https://github.com/KavinEditors/ai-chat-assistant" target="_blank" class="btn">See Repo</a>
+          <a href="#" class="btn secondary-btn">See Website</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-.hero-left h1 {
-  font-size: 2.8rem;
-  color: var(--accent-primary);
-}
+  <section id="contact">
+    <h2>Connect</h2>
+    <p>Email: <a href="mailto:kavinjm311@gmail.com">kavinjm311@gmail.com</a></p>
 
-.hero-left span {
-  color: #00d9ff;
-}
+    <div class="social-links">
+      <a href="https://discord.com/users/1180531027832217661" target="_blank" class="social-btn">Discord</a>
+      <a href="https://www.instagram.com/speedkavin311" target="_blank" class="social-btn">Instagram</a>
+      <a href="https://x.com/SpeedKavin311" target="_blank" class="social-btn">X (Twitter)</a>
+      <a href="https://github.com/KavinEditors" target="_blank" class="social-btn">GitHub</a>
+    </div>
+  </section>
 
-.hero-left p {
-  color: #d0d0d0;
-  margin: 1rem 0;
-  max-width: 500px;
-  font-size: 1.05rem;
-}
+  <footer>
+    <p>© 2025 Kavinverse. Crafted with precision and code.</p>
+  </footer>
 
-.btn {
-  display: inline-block;
-  padding: 0.8rem 2rem;
-  background-color: var(--accent-primary);
-  color: #fff;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background-color: #00d9ff;
-  transform: scale(1.05);
-}
-
-/* GLOWING CIRCLE */
-.hero-right {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 300px;
-}
-
-.circle-glow {
-  width: 450px;
-  height: 450px;
-  border-radius: 50%;
-  border: 4px solid var(--accent-primary);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 0 25px rgba(0, 169, 255, 0.6), 0 0 60px rgba(0, 169, 255, 0.3);
-  animation: breathe 3s ease-in-out infinite;
-  overflow: hidden;
-}
-
-@keyframes breathe {
-  0%, 100% {
-    box-shadow: 0 0 25px rgba(0, 169, 255, 0.6), 0 0 60px rgba(0, 169, 255, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 45px rgba(0, 169, 255, 0.9), 0 0 80px rgba(0, 169, 255, 0.5);
-  }
-}
-
-.circle-glow img {
-  width: 360px;
-  height: 360px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid rgba(0, 169, 255, 0.5);
-  box-shadow: 0 0 20px rgba(0, 169, 255, 0.4);
-}
-
-/* FEATURED PROJECTS */
-#projects {
-  text-align: center;
-  padding: 5rem 2rem;
-}
-
-#projects h2 {
-  color: var(--accent-primary);
-  margin-bottom: 2rem;
-  font-size: 2.2rem;
-}
-
-.project-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 3rem auto;
-  width: 85%;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.project-row.reverse {
-  flex-direction: row-reverse;
-}
-
-.project-text {
-  flex: 1;
-  min-width: 300px;
-  color: var(--text-light);
-  text-align: left;
-}
-
-.project-text h3 {
-  font-size: 1.8rem;
-  color: var(--accent-primary);
-  margin-bottom: 0.8rem;
-}
-
-.project-text p {
-  color: #cfcfcf;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
-
-.btn-group {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.project-media {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.neon-box {
-  position: relative;
-  width: 420px;
-  height: 250px;
-  border: 3px solid var(--accent-primary);
-  border-radius: 12px;
-  box-shadow: 0 0 25px rgba(0, 169, 255, 0.6), 0 0 60px rgba(0, 169, 255, 0.3);
-  overflow: hidden;
-  animation: slideGlow 6s linear infinite;
-}
-
-.neon-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.9;
-}
-
-@keyframes slideGlow {
-  0% {
-    box-shadow: 0 0 25px rgba(0, 169, 255, 0.6), 0 0 60px rgba(0, 169, 255, 0.3);
-    transform: translateX(0);
-  }
-  50% {
-    box-shadow: 0 0 45px rgba(0, 169, 255, 0.9), 0 0 90px rgba(0, 169, 255, 0.5);
-    transform: translateX(-10px);
-  }
-  100% {
-    box-shadow: 0 0 25px rgba(0, 169, 255, 0.6), 0 0 60px rgba(0, 169, 255, 0.3);
-    transform: translateX(0);
-  }
-}
-
-/* CONTACT + FOOTER */
-.social-links {
-  margin-top: 1.5rem;
-}
-
-/* ===== CONNECT SECTION ===== */
-/* ===== CONNECT SECTION (Compact Centered White Version) ===== */
-#contact {
-  background-color: var(--bg-section);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 3.5rem 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-#contact h2 {
-  font-size: 2.2rem;
-  color: #ffffff;
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin-bottom: 0.8rem;
-}
-
-#contact p {
-  font-size: 1.05rem;
-  color: #ffffff;
-  margin-bottom: 1.5rem;
-}
-
-#contact a {
-  color: #ffffff;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-#contact a:hover {
-  color: #00d9ff;
-}
-
-.social-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.8rem;
-}
-
-.social-btn {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 0.7rem 1.4rem;
-  border-radius: 8px;
-  color: white;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.social-btn:hover {
-  transform: scale(1.05);
-  background: rgba(0, 169, 255, 0.25);
-  box-shadow: 0 0 12px rgba(0, 169, 255, 0.5);
-}
-
-/* Neon breathing effect for title */
-@keyframes glowPulse {
-  0%, 100% {
-    text-shadow: 0 0 15px rgba(0, 169, 255, 0.6), 0 0 35px rgba(0, 169, 255, 0.3);
-  }
-  50% {
-    text-shadow: 0 0 30px rgba(0, 169, 255, 0.9), 0 0 60px rgba(0, 169, 255, 0.6);
-  }
-}
-
-
-footer {
-  background-color: var(--bg-section);
-  text-align: center;
-  padding: 1rem 0;
-  border-top: 1px solid rgba(0, 169, 255, 0.25);
-}
-
-/* RESPONSIVE */
-@media (max-width: 850px) {
-  #hero {
-    flex-direction: column;
-    text-align: center;
-  }
-  .hero-left, .hero-right {
-    justify-content: center;
-  }
-  .project-row, .project-row.reverse {
-    flex-direction: column;
-    text-align: center;
-  }
-  .project-text {
-    text-align: center;
-  }
-}
-
-/* ===== ABOUT SECTION ===== */
-#about {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 6rem 8rem;
-  background: radial-gradient(circle at top left, rgba(0, 174, 255, 0.1), transparent 60%);
-}
-
-.about-container {
-  max-width: 700px;
-  color: #d9d9d9;
-  text-align: left;
-}
-
-#about h2 {
-  font-size: 3rem;
-  color: var(--accent-primary);
-  margin-bottom: 1.5rem;
-  text-shadow: 0 0 25px rgba(0, 174, 255, 0.8), 0 0 50px rgba(0, 174, 255, 0.5);
-  letter-spacing: 2px;
-}
-
-#about p {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  color: #bfbfbf;
-  background: rgba(0, 174, 255, 0.05);
-  padding: 1.5rem;
-  border-left: 4px solid var(--accent-primary);
-  border-radius: 8px;
-  box-shadow: inset 0 0 25px rgba(0, 174, 255, 0.1);
-}
-
-/* Responsive Design */
-@media (max-width: 900px) {
-  #about {
-    padding: 4rem 2rem;
-  }
-  #about h2 {
-    font-size: 2.3rem;
-  }
-  #about p {
-    font-size: 1rem;
-  }
-}
+  <script src="script.js"></script>
+</body>
+</html>
