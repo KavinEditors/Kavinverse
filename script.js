@@ -1,49 +1,47 @@
 // Scroll animations
 window.addEventListener("scroll", () => {
-  document.querySelectorAll("section, .project-row").forEach(el => {
+  document.querySelectorAll(".fade-in").forEach(el => {
     const rect = el.getBoundingClientRect();
     if (rect.top < window.innerHeight - 150) el.classList.add("visible");
   });
 });
 
-// AI Widget
+// Widget behavior
 const aiCircle = document.getElementById("ai-circle");
 const chatBox = document.getElementById("chat-box");
 aiCircle.addEventListener("click", () => chatBox.classList.toggle("hidden"));
 
+// Chat logic
 const sendBtn = document.getElementById("send-btn");
 const userInput = document.getElementById("user-input");
 const chatBody = document.getElementById("chat-body");
 
 async function sendMessage() {
-  const userMsg = userInput.value.trim();
-  if (!userMsg) return;
+  const msg = userInput.value.trim();
+  if (!msg) return;
 
-  // User message bubble
-  const userBubble = document.createElement("div");
-  userBubble.className = "user-message";
-  userBubble.textContent = userMsg;
-  chatBody.appendChild(userBubble);
+  const userMsg = document.createElement("div");
+  userMsg.className = "user-message";
+  userMsg.textContent = msg;
+  chatBody.appendChild(userMsg);
   userInput.value = "";
+
+  const botMsg = document.createElement("div");
+  botMsg.className = "bot-message";
+  botMsg.textContent = "Thinking...";
+  chatBody.appendChild(botMsg);
   chatBody.scrollTop = chatBody.scrollHeight;
 
-  // Bot loading bubble
-  const botBubble = document.createElement("div");
-  botBubble.className = "bot-message";
-  botBubble.textContent = "Thinking...";
-  chatBody.appendChild(botBubble);
-
   try {
-    const response = await fetch("/api/groq-chat", {
+    const res = await fetch("/api/groq-chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ prompt: userMsg })
+      body: JSON.stringify({ prompt: msg })
     });
-
-    const data = await response.json();
-    botBubble.textContent = data.reply || "No response received.";
-  } catch (err) {
-    botBubble.textContent = "Error connecting to AI.";
+    const data = await res.json();
+    botMsg.textContent = data.reply || "I'm still processing that.";
+  } catch (e) {
+    botMsg.textContent = "⚠️ AI connection error.";
   }
 
   chatBody.scrollTop = chatBody.scrollHeight;
