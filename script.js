@@ -19,6 +19,7 @@ async function sendMessage() {
   const userMsg = userInput.value.trim();
   if (!userMsg) return;
 
+  // User message bubble
   const userBubble = document.createElement("div");
   userBubble.className = "user-message";
   userBubble.textContent = userMsg;
@@ -26,32 +27,25 @@ async function sendMessage() {
   userInput.value = "";
   chatBody.scrollTop = chatBody.scrollHeight;
 
+  // Bot loading bubble
   const botBubble = document.createElement("div");
   botBubble.className = "bot-message";
   botBubble.textContent = "Thinking...";
   chatBody.appendChild(botBubble);
 
   try {
-    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+    const response = await fetch("/api/groq-chat", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${import.meta.env.VERCEL_GROQAPI}`
-      },
-      body: JSON.stringify({
-        model: "llama3-8b-8192",
-        messages: [
-          { role: "system", content: "You are a helpful personal assistant for a developer’s website. Repos: https://github.com/KavinEditors/Kavinverse, https://github.com/KavinEditors/NEXA-Next-gen-Executive-Assistant, https://github.com/KavinEditors/R.O.A.S.T, https://github.com/KavinEditors/SussyCommentor" },
-          { role: "user", content: userMsg }
-        ]
-      })
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ prompt: userMsg })
     });
 
     const data = await response.json();
-    botBubble.textContent = data.choices?.[0]?.message?.content || "No response.";
+    botBubble.textContent = data.reply || "No response received.";
   } catch (err) {
     botBubble.textContent = "Error connecting to AI.";
   }
+
   chatBody.scrollTop = chatBody.scrollHeight;
 }
 
