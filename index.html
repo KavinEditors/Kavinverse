@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kavinverse | Developer Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -17,10 +17,10 @@
     </nav>
   </header>
 
-  <!-- HERO -->
-  <section id="hero">
+  <!-- HERO SECTION -->
+  <section id="hero" class="fade-section">
     <div class="hero-container">
-      <div class="hero-left">
+      <div class="hero-left slide-left">
         <h1>Welcome to <span>Kavinverse</span></h1>
         <p>Innovating through code, design, and technology.</p>
         <p class="intro">
@@ -30,7 +30,7 @@
         <a href="#projects" class="btn">Explore Projects</a>
       </div>
 
-      <div class="hero-right">
+      <div class="hero-right slide-up">
         <div class="circle-glow">
           <img src="https://raw.githubusercontent.com/KavinEditors/Kavinverse/main/assets/image.png" alt="Kavinverse Logo">
         </div>
@@ -38,51 +38,56 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
+  <!-- PROJECTS SECTION -->
   <section id="projects">
     <h2>Featured Projects</h2>
 
-    <div class="project-row">
-      <div class="project-text">
+    <div class="project-row fade-section">
+      <div class="project-text slide-left">
         <h3>R.O.A.S.T</h3>
-        <p>R.O.A.S.T is an AI-powered roast bot that mixes humor and automation for fun AI interactions.</p>
+        <p>
+          R.O.A.S.T is an AI-powered roast bot that mixes humor and automation.
+          It’s always one punchline ahead, designed for creative and entertaining AI interactions.
+        </p>
         <div class="btn-group">
           <a href="https://github.com/KavinEditors/R.O.A.S.T" target="_blank" class="btn">See Repo</a>
-          <a href="https://really-offensive-automated-sus-terminator.streamlit.app/" target="_blank" class="btn">Website</a>
+          <a href="https://really-offensive-automated-sus-terminator.streamlit.app/" target="_blank" class="btn">See Website</a>
         </div>
       </div>
-      <div class="project-media">
+      <div class="project-media slide-right">
         <div class="neon-box">
-          <img src="https://raw.githubusercontent.com/KavinEditors/Kavinverse/main/assets/sub1.png" alt="R.O.A.S.T Project">
+          <img src="https://raw.githubusercontent.com/KavinEditors/Kavinverse/main/assets/sub1.png" alt="R.O.A.S.T Project Image">
         </div>
       </div>
     </div>
 
-    <div class="project-row reverse">
-      <div class="project-text">
+    <div class="project-row reverse fade-section">
+      <div class="project-text slide-right">
         <h3>NEXA</h3>
-        <p>NEXA (Next-gen Executive Assistant) automates tasks and boosts workflow productivity intelligently.</p>
+        <p>
+          NEXA (Next-gen Executive Assistant) is a smart digital productivity companion that helps users automate tasks and optimize their workflow efficiently.
+        </p>
         <div class="btn-group">
           <a href="https://github.com/KavinEditors/NEXA-Next-gen-Executive-Assistant" target="_blank" class="btn">See Repo</a>
         </div>
       </div>
-      <div class="project-media">
+      <div class="project-media slide-left">
         <div class="neon-box">
-          <img src="https://raw.githubusercontent.com/KavinEditors/Kavinverse/main/assets/sub2.png" alt="NEXA Project">
+          <img src="https://raw.githubusercontent.com/KavinEditors/Kavinverse/main/assets/sub2.png" alt="NEXA Project Image">
         </div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact">
+  <section id="contact" class="fade-section">
     <h2>Connect with Me</h2>
     <p>Email: <a href="mailto:kavinjm311@gmail.com">kavinjm311@gmail.com</a></p>
     <div class="social-links">
-      <a href="https://discord.com/users/1180531027832217661" class="social-btn discord">Discord</a>
-      <a href="https://www.instagram.com/speedkavin311" class="social-btn insta">Instagram</a>
-      <a href="https://x.com/SpeedKavin311" class="social-btn x">X</a>
-      <a href="https://github.com/KavinEditors/" class="social-btn github">GitHub</a>
+      <a href="https://discord.com/users/1180531027832217661" target="_blank" class="social-btn discord">Discord</a>
+      <a href="https://www.instagram.com/speedkavin311" target="_blank" class="social-btn insta">Instagram</a>
+      <a href="https://x.com/SpeedKavin311" target="_blank" class="social-btn x">X (Twitter)</a>
+      <a href="https://github.com/KavinEditors/" target="_blank" class="social-btn github">GitHub</a>
     </div>
   </section>
 
@@ -100,10 +105,10 @@
     <div id="chat-box" class="hidden">
       <div class="chat-header">Kavinverse Assistant</div>
       <div id="chat-body">
-        <div class="bot-message">Hi 👋 How can I help you today?</div>
+        <div class="bot-message">Hi there 👋 How can I help you today?</div>
       </div>
       <div class="chat-input-area">
-        <input type="text" id="user-input" placeholder="Type your message...">
+        <input type="text" id="user-input" placeholder="Type your message..." />
         <button id="send-btn">Send</button>
       </div>
     </div>
