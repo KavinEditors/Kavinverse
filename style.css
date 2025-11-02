@@ -231,6 +231,7 @@ nav a:hover {
 }
 
 /* ===== CONNECT SECTION ===== */
+/* ===== CONNECT SECTION (Compact Centered White Version) ===== */
 #contact {
   background-color: var(--bg-section);
   display: flex;
@@ -238,27 +239,26 @@ nav a:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 6rem 2rem;
-  border-top: 1px solid rgba(0, 169, 255, 0.25);
-  min-height: 60vh;
+  padding: 3.5rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 #contact h2 {
-  font-size: 2.8rem;
-  color: var(--accent-primary);
-  text-shadow: 0 0 15px rgba(0, 169, 255, 0.7);
-  margin-bottom: 1rem;
-  animation: glowPulse 3s infinite ease-in-out;
+  font-size: 2.2rem;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 0.8rem;
 }
 
 #contact p {
-  font-size: 1.2rem;
-  color: #d0d0d0;
-  margin-bottom: 2.5rem;
+  font-size: 1.05rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
 }
 
 #contact a {
-  color: var(--accent-primary);
+  color: #ffffff;
   text-decoration: none;
   transition: 0.3s;
 }
@@ -268,30 +268,28 @@ nav a:hover {
 }
 
 .social-links {
-  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
 }
 
 .social-btn {
-  display: inline-block;
-  margin: 0.6rem;
-  padding: 0.9rem 1.8rem;
-  border-radius: 10px;
-  text-decoration: none;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
   color: white;
   font-weight: 500;
   letter-spacing: 0.5px;
-  transition: 0.3s;
-  font-size: 1.05rem;
+  text-decoration: none;
+  transition: 0.3s ease;
 }
 
-.discord { background: #5865F2; }
-.insta { background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF); }
-.x { background: #1D9BF0; }
-.github { background: #333; }
-
 .social-btn:hover {
-  transform: scale(1.07);
-  box-shadow: 0 0 25px rgba(0, 169, 255, 0.6);
+  transform: scale(1.05);
+  background: rgba(0, 169, 255, 0.25);
+  box-shadow: 0 0 12px rgba(0, 169, 255, 0.5);
 }
 
 /* Neon breathing effect for title */
