@@ -1,165 +1,196 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kavinverse</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="hero">
-        <div class="hero-text">
-            <h1>Kavinverse</h1>
-            <p>Innovating at the intersection of code and creativity.</p>
-        </div>
-        <div class="circle-glow">
-            <img src="https://raw.githubusercontent.com/KavinEditors/Kavinverse/main/image.png" alt="Kavinverse Logo">
-        </div>
-    </header>
+body {
+    margin: 0;
+    background: #000;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
 
-    <section class="featured">
-        <h2>Featured Projects</h2>
+/* HERO */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 8%;
+}
 
-        <!-- Sub 1 -->
-        <div class="project sub1">
-            <div class="project-text">
-                <h3>R.O.A.S.T</h3>
-                <p>An automated humor engine that blends sarcasm with intelligence — built using advanced NLP and Streamlit UI.</p>
-                <div class="project-buttons">
-                    <a href="https://github.com/KavinEditors/R.O.A.S.T/" target="_blank" class="btn repo">See Repo</a>
-                    <a href="https://really-offensive-automated-sus-terminator.streamlit.app/" target="_blank" class="btn site">See Website</a>
-                </div>
-            </div>
-            <div class="project-img neon-border">
-                <img src="sub1.png" alt="R.O.A.S.T Preview">
-            </div>
-        </div>
+.hero-text h1 {
+    font-size: 4rem;
+    color: #00bfff;
+    text-shadow: 0 0 20px #00bfff;
+}
 
-        <!-- Sub 2 -->
-        <div class="project sub2">
-            <div class="project-img neon-border">
-                <img src="sub2.png" alt="Project 2 Preview">
-            </div>
-            <div class="project-text">
-                <h3>Project Alpha</h3>
-                <p>A next-gen AI experiment exploring pattern recognition and deep-learning in creative content generation.</p>
-                <div class="project-buttons">
-                    <a href="#" class="btn repo">See Repo</a>
-                    <a href="#" class="btn site">See Website</a>
-                </div>
-            </div>
-        </div>
-    </section>
+.hero-text p {
+    color: #aaa;
+    font-size: 1.2rem;
+}
 
-    <section class="contact">
-        <h2>Connect with Me</h2>
-        <p>Email: <span>kavinjm311@gmail.com</span></p>
-        <div class="socials">
-            <a href="https://x.com/SpeedKavin311" target="_blank" class="social x">𝕏</a>
-            <a href="https://www.instagram.com/speedkavin311" target="_blank" class="social insta">Instagram</a>
-            <a href="https://discord.com/users/1180531027832217661" target="_blank" class="social discord">Discord</a>
-        </div>
-    </section>
+.circle-glow {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,191,255,0.15), transparent 70%);
+    border: 2px solid #00bfff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 30px #00bfff, 0 0 60px #00bfff;
+    animation: pulse 3s infinite ease-in-out;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kavinverse | Developer Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <div class="logo">Kavinverse</div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+.circle-glow img {
+    width: 75%;
+    border-radius: 50%;
+}
 
-  <section id="hero">
-    <div class="hero-left">
-      <h1>Welcome to <span>Kavinverse</span></h1>
-      <p>Innovating through code, design, and technology.</p>
-      <a href="#projects" class="btn">Explore Projects</a>
-    </div>
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 0 20px #00bfff; }
+    50% { box-shadow: 0 0 50px #00bfff; }
+}
 
-    <div class="hero-right">
-      <div class="circle-glow">
-        <img src="https://raw.githubusercontent.com/KavinEditors/Kavinverse/main/image.png" alt="Kavinverse Logo">
-      </div>
-    </div>
-  </section>
+/* FEATURED PROJECTS */
+.featured {
+    padding: 80px 8%;
+    text-align: center;
+}
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I'm <strong>Kavin</strong>, a developer passionate about building modern, scalable, and creative software systems.  
-      I love blending design and logic to create clean and meaningful digital experiences.
-    </p>
-  </section>
+.featured h2 {
+    font-size: 2.5rem;
+    color: #00bfff;
+    margin-bottom: 40px;
+    text-shadow: 0 0 15px #00bfff;
+}
 
-  <section id="projects">
-    <h2>Featured Projects</h2>
+.project {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 70px 0;
+    gap: 60px;
+}
 
-    <!-- Project 1 -->
-    <div class="project project-left">
-      <div class="project-text">
-        <h3>R.O.A.S.T</h3>
-        <p>
-          R.O.A.S.T (Really Offensive Automated Sus Terminator) is an AI-powered chatbot
-          that humorously roasts your messages in real time. Built with Streamlit and Python.
-        </p>
-        <div class="project-buttons">
-          <a href="https://github.com/KavinEditors/R.O.A.S.T/" target="_blank" class="btn">See Repo</a>
-          <a href="https://really-offensive-automated-sus-terminator.streamlit.app/" target="_blank" class="btn">See Website</a>
-        </div>
-      </div>
-      <div class="project-image">
-        <img src="sub1.png" alt="R.O.A.S.T Preview">
-      </div>
-    </div>
+.project-text {
+    flex: 1;
+    text-align: left;
+}
 
-    <!-- Project 2 -->
-    <div class="project project-right">
-      <div class="project-image">
-        <img src="sub2.png" alt="Project 2">
-      </div>
-      <div class="project-text">
-        <h3>Sub Project Two</h3>
-        <p>
-          A futuristic AI-driven utility tool for developers. This project focuses on automation, design precision, and smart workflow handling.
-        </p>
-        <div class="project-buttons">
-          <a href="https://github.com/KavinEditors" target="_blank" class="btn">See Repo</a>
-          <a href="#" class="btn">See Website</a>
-        </div>
-      </div>
-    </div>
-  </section>
+.project-text h3 {
+    color: #00bfff;
+    font-size: 2rem;
+}
 
-  <section id="contact">
-    <div class="contact-container">
-      <h2>Connect</h2>
-      <p>Email: <a href="mailto:kavinjm311@gmail.com">kavinjm311@gmail.com</a></p>
+.project-text p {
+    color: #ddd;
+    margin: 15px 0 25px;
+}
 
-      <div class="contact-links">
-        <a href="https://discord.com/users/1180531027832217661" target="_blank">Discord</a>
-        <a href="https://www.instagram.com/speedkavin311" target="_blank">Instagram</a>
-        <a href="https://x.com/SpeedKavin311" target="_blank">X</a>
-        <a href="https://github.com/KavinEditors" target="_blank">GitHub</a>
-      </div>
-    </div>
-  </section>
+.project-buttons {
+    display: flex;
+    gap: 20px;
+}
 
-  <footer>
-    <p>© 2025 Kavinverse. Crafted with precision and code.</p>
-  </footer>
-</body>
-</html>
+.btn {
+    padding: 10px 20px;
+    border: 2px solid #00bfff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #00bfff;
+    color: #000;
+}
+
+.neon-border {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    animation: glowMove 4s infinite alternate ease-in-out;
+    border: 2px solid #00bfff;
+    box-shadow: 0 0 30px #00bfff;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.neon-border img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+@keyframes glowMove {
+    0% { box-shadow: -20px 0 40px #00bfff; }
+    100% { box-shadow: 20px 0 40px #00bfff; }
+}
+
+.sub2 {
+    flex-direction: row-reverse;
+}
+
+/* CONTACT SECTION */
+.contact {
+    text-align: center;
+    padding: 80px 0;
+    border-top: 1px solid #00bfff;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    color: #00bfff;
+    text-shadow: 0 0 20px #00bfff;
+}
+
+.contact p {
+    color: #ddd;
+    font-size: 1.2rem;
+    margin: 15px 0;
+}
+
+.contact span {
+    color: #fff;
+}
+
+.socials {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.social {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.social.x {
+    background: #000;
+    border: 2px solid #fff;
+}
+
+.social.x:hover {
+    background: #1DA1F2;
+    color: #000;
+    box-shadow: 0 0 25px #1DA1F2;
+}
+
+.social.insta {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    border: 2px solid #fff;
+}
+
+.social.insta:hover {
+    box-shadow: 0 0 25px #ff007f;
+}
+
+.social.discord {
+    background: #5865F2;
+    border: 2px solid #fff;
+}
+
+.social.discord:hover {
+    box-shadow: 0 0 25px #5865F2;
+}
