@@ -1,65 +1,62 @@
-// =============== Scroll Reveal Animations ===============
-function revealOnScroll() {
-  const reveals = document.querySelectorAll(".reveal");
-  reveals.forEach((el) => {
-    const windowHeight = window.innerHeight;
-    const revealTop = el.getBoundingClientRect().top;
-    const revealPoint = 150;
-    if (revealTop < windowHeight - revealPoint) {
-      el.classList.add("active");
+// Scroll-triggered animations
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('fade-in');
+      entry.target.querySelectorAll('.slide-left, .slide-right, .slide-up').forEach(el => el.classList.add('active'));
     }
   });
-}
+}, { threshold: 0.3 });
 
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
+document.querySelectorAll('.fade-section').forEach(section => observer.observe(section));
 
-// =============== AI Chat Widget ===============
-const widget = document.getElementById("ai-widget");
-const chatBox = document.getElementById("chat-box");
-const chatBody = document.getElementById("chat-body");
-const userInput = document.getElementById("user-input");
-const sendBtn = document.getElementById("send-btn");
+// AI Widget toggle
+const aiCircle = document.getElementById('ai-circle');
+const chatBox = document.getElementById('chat-box');
 
-// Toggle chat visibility
-widget.addEventListener("click", () => {
-  chatBox.classList.toggle("hidden");
-  setTimeout(() => chatBox.classList.toggle("visible"), 10);
+aiCircle.addEventListener('click', () => {
+  chatBox.classList.toggle('show');
 });
 
-// Handle send message
-sendBtn.addEventListener("click", sendMessage);
-userInput.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") sendMessage();
-});
+// Chat interaction
+const sendBtn = document.getElementById('send-btn');
+const userInput = document.getElementById('user-input');
+const chatBody = document.getElementById('chat-body');
 
 async function sendMessage() {
-  const message = userInput.value.trim();
-  if (!message) return;
-  appendMessage("user", message);
-  userInput.value = "";
+  const msg = userInput.value.trim();
+  if (!msg) return;
 
-  // Typing effect placeholder
-  const loadingMsg = appendMessage("bot", "...");
-  try {
-    const res = await fetch("/api/groq", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message }),
-    });
-
-    const data = await res.json();
-    loadingMsg.textContent = data.reply || "Error getting response.";
-  } catch (err) {
-    loadingMsg.textContent = "⚠️ Unable to reach AI server.";
-  }
-}
-
-function appendMessage(sender, text) {
-  const msg = document.createElement("div");
-  msg.classList.add("message", sender);
-  msg.textContent = text;
-  chatBody.appendChild(msg);
+  const userMsgDiv = document.createElement('div');
+  userMsgDiv.className = 'user-message';
+  userMsgDiv.textContent = msg;
+  chatBody.appendChild(userMsgDiv);
   chatBody.scrollTop = chatBody.scrollHeight;
-  return msg;
+
+  userInput.value = '';
+
+  const botMsgDiv = document.createElement('div');
+  botMsgDiv.className = 'bot-message';
+  botMsgDiv.textContent = 'Thinking...';
+  chatBody.appendChild(botMsgDiv);
+  chatBody.scrollTop = chatBody.scrollHeight;
+
+  try {
+    const res = await fetch('/api/groq-chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: msg })
+    });
+    const data = await res.json();
+    botMsgDiv.textContent = data.reply;
+  } catch (err) {
+    botMsgDiv.textContent = 'Error fetching response.';
+  }
+
+  chatBody.scrollTop = chatBody.scrollHeight;
 }
+
+sendBtn.addEventListener('click', sendMessage);
+userInput.addEventListener('keypress', e => {
+  if (e.key === 'Enter') sendMessage();
+});
