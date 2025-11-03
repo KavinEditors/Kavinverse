@@ -1,3 +1,9 @@
+// ===============================
+// /api/groq-chat.js
+// ===============================
+// Uses Groq API key stored securely in Vercel Environment Variables
+// (Vercel Dashboard → Project Settings → Environment Variables → Key: groqapi)
+
 export default async function handler(req, res) {
   try {
     const { prompt } = req.body;
