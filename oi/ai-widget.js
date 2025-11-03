@@ -1,51 +1,48 @@
-// ===== Kavinverse AI Widget =====
+// Widget toggle
 const aiCircle = document.getElementById("ai-circle");
 const chatBox = document.getElementById("chat-box");
-const chatBody = document.getElementById("chat-body");
-const chatInput = document.getElementById("chat-input");
-const sendBtn = document.getElementById("send-btn");
 
-// Toggle open/close
 aiCircle.addEventListener("click", () => {
   chatBox.classList.toggle("hidden");
-  if (!chatBox.classList.contains("hidden")) chatInput.focus();
 });
 
-// Send button or Enter key
-sendBtn.addEventListener("click", sendMessage);
-chatInput.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") sendMessage();
-});
+// Chat logic
+const sendBtn = document.getElementById("send-btn");
+const userInput = document.getElementById("user-input");
+const chatBody = document.getElementById("chat-body");
 
 async function sendMessage() {
-  const prompt = chatInput.value.trim();
-  if (!prompt) return;
+  const msg = userInput.value.trim();
+  if (!msg) return;
 
-  addMessage("user", prompt);
-  chatInput.value = "";
-  const loading = addMessage("bot", "Thinking...");
+  const userMsg = document.createElement("div");
+  userMsg.className = "user-message";
+  userMsg.textContent = msg;
+  chatBody.appendChild(userMsg);
+  userInput.value = "";
+
+  const botMsg = document.createElement("div");
+  botMsg.className = "bot-message";
+  botMsg.textContent = "Thinking...";
+  chatBody.appendChild(botMsg);
+  chatBody.scrollTop = chatBody.scrollHeight;
 
   try {
-    const response = await fetch("/api/groq-chat", {
+    const res = await fetch("/api/groq-chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ prompt }),
+      body: JSON.stringify({ prompt: msg }),
     });
-
-    const data = await response.json();
-    chatBody.removeChild(loading);
-    addMessage("bot", data.reply);
-  } catch (error) {
-    chatBody.removeChild(loading);
-    addMessage("bot", "⚠️ Error connecting to AI.");
+    const data = await res.json();
+    botMsg.textContent = data.reply || "No response.";
+  } catch {
+    botMsg.textContent = "⚠️ AI connection error.";
   }
+
+  chatBody.scrollTop = chatBody.scrollHeight;
 }
 
-function addMessage(role, text) {
-  const div = document.createElement("div");
-  div.classList.add(role === "user" ? "user-message" : "bot-message");
-  div.textContent = text;
-  chatBody.appendChild(div);
-  chatBody.scrollTop = chatBody.scrollHeight;
-  return div;
-}
+sendBtn.addEventListener("click", sendMessage);
+userInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") sendMessage();
+});
