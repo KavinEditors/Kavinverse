@@ -1,43 +1,45 @@
-// ---------- Fade-in on Scroll ----------
-function handleFadeIn() {
-  document.querySelectorAll(".fade-in").forEach(el => {
+// ---------- Fade Section Animation ----------
+window.addEventListener("scroll", () => {
+  document.querySelectorAll(".fade-section").forEach(el => {
     const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 150) el.classList.add("visible");
+    if (rect.top < window.innerHeight - 100) el.classList.add("visible");
   });
-}
+});
 
-window.addEventListener("scroll", handleFadeIn);
-window.addEventListener("load", handleFadeIn);
-
-// ---------- AI Widget ----------
+// ---------- AI Widget Behavior ----------
 const aiCircle = document.getElementById("ai-circle");
 const chatBox = document.getElementById("chat-box");
 const sendBtn = document.getElementById("send-btn");
 const userInput = document.getElementById("user-input");
 const chatBody = document.getElementById("chat-body");
 
-if (aiCircle && chatBox) {
+// Toggle widget open/close
+if (aiCircle) {
   aiCircle.addEventListener("click", () => {
     chatBox.classList.toggle("hidden");
   });
 }
 
+// ---------- Chat Logic ----------
 async function sendMessage() {
   const msg = userInput.value.trim();
   if (!msg) return;
 
-  // User message bubble (right side)
+  // Create user bubble (right)
   const userMsg = document.createElement("div");
   userMsg.className = "user-message";
   userMsg.textContent = msg;
   chatBody.appendChild(userMsg);
+
+  // Clear input
   userInput.value = "";
 
-  // Bot placeholder bubble (left side)
+  // Create bot placeholder bubble (left)
   const botMsg = document.createElement("div");
   botMsg.className = "bot-message";
   botMsg.textContent = "Thinking...";
   chatBody.appendChild(botMsg);
+
   chatBody.scrollTop = chatBody.scrollHeight;
 
   try {
@@ -46,19 +48,19 @@ async function sendMessage() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ prompt: msg })
     });
+
     const data = await res.json();
     botMsg.textContent = data.reply || "I'm still processing that.";
-  } catch (err) {
-    console.error("AI Error:", err);
+  } catch (e) {
     botMsg.textContent = "⚠️ AI connection error.";
   }
 
   chatBody.scrollTop = chatBody.scrollHeight;
 }
 
-// Send button
-if (sendBtn && userInput) {
-  sendBtn.addEventListener("click", sendMessage);
+// Send button + Enter key
+if (sendBtn) sendBtn.addEventListener("click", sendMessage);
+if (userInput) {
   userInput.addEventListener("keypress", e => {
     if (e.key === "Enter") sendMessage();
   });
