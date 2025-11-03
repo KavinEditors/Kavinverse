@@ -6,12 +6,15 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// Widget behavior
+// AI Widget Toggle
 const aiCircle = document.getElementById("ai-circle");
 const chatBox = document.getElementById("chat-box");
-aiCircle.addEventListener("click", () => chatBox.classList.toggle("hidden"));
 
-// Chat logic
+aiCircle.addEventListener("click", () => {
+  chatBox.classList.toggle("hidden");
+});
+
+// Chat Logic
 const sendBtn = document.getElementById("send-btn");
 const userInput = document.getElementById("user-input");
 const chatBody = document.getElementById("chat-body");
