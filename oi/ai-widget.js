@@ -1,15 +1,12 @@
-// Widget toggle
 const aiCircle = document.getElementById("ai-circle");
 const chatBox = document.getElementById("chat-box");
+const sendBtn = document.getElementById("send-btn");
+const userInput = document.getElementById("user-input");
+const chatBody = document.getElementById("chat-body");
 
 aiCircle.addEventListener("click", () => {
   chatBox.classList.toggle("hidden");
 });
-
-// Chat logic
-const sendBtn = document.getElementById("send-btn");
-const userInput = document.getElementById("user-input");
-const chatBody = document.getElementById("chat-body");
 
 async function sendMessage() {
   const msg = userInput.value.trim();
@@ -34,7 +31,7 @@ async function sendMessage() {
       body: JSON.stringify({ prompt: msg }),
     });
     const data = await res.json();
-    botMsg.textContent = data.reply || "No response.";
+    botMsg.textContent = data.reply || "No reply.";
   } catch {
     botMsg.textContent = "⚠️ AI connection error.";
   }
