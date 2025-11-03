@@ -4,8 +4,17 @@ const sendBtn = document.getElementById("send-btn");
 const userInput = document.getElementById("user-input");
 const chatBody = document.getElementById("chat-body");
 
+// Ensure widget starts hidden
+window.addEventListener("load", () => {
+  chatBox.classList.add("hidden");
+});
+
+// Toggle chat visibility
 aiCircle.addEventListener("click", () => {
   chatBox.classList.toggle("hidden");
+  if (!chatBox.classList.contains("hidden")) {
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
 });
 
 async function sendMessage() {
@@ -40,6 +49,4 @@ async function sendMessage() {
 }
 
 sendBtn.addEventListener("click", sendMessage);
-userInput.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") sendMessage();
-});
+userInput.addEventListener("keypress", e => e.key === "Enter" && sendMessage());
