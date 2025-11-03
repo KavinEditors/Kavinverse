@@ -11,14 +11,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 60px;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 10;
-  background: rgba(10,10,20,0.7);
-  backdrop-filter: blur(10px);
+  padding: 18px 60px;
+  background: #0a0a0a;
+  border-bottom: 1px solid #1e1e1e;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
+
 .logo { font-size: 1.8rem; font-weight: 600; color: #00bfff; }
 nav a { margin: 0 15px; color: #fff; text-decoration: none; transition: 0.3s; }
 nav a:hover { color: #ff77ff; }
