@@ -6,26 +6,12 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// Select elements
+// AI Widget toggle
 const aiCircle = document.getElementById("ai-circle");
 const chatBox = document.getElementById("chat-box");
 
-// Make sure it's hidden on load
-window.addEventListener("DOMContentLoaded", () => {
-  chatBox.classList.add("hidden");
-});
-
-// Toggle chat visibility when AI icon is clicked
-aiCircle.addEventListener("click", (e) => {
-  e.stopPropagation(); // Prevent closing immediately after opening
+aiCircle.addEventListener("click", () => {
   chatBox.classList.toggle("hidden");
-});
-
-// Close chat when clicking outside
-document.addEventListener("click", (e) => {
-  if (!chatBox.classList.contains("hidden") && !chatBox.contains(e.target) && !aiCircle.contains(e.target)) {
-    chatBox.classList.add("hidden");
-  }
 });
 
 // Chat Logic
