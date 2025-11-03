@@ -1,54 +1,35 @@
-// Fade-in scroll animation
-window.addEventListener("scroll", () => {
-  document.querySelectorAll(".fade-section").forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 150) el.classList.add("visible");
-  });
-});
-
-// AI Widget toggle
-const aiCircle = document.getElementById("ai-circle");
+const chatIcon = document.getElementById("chat-icon");
 const chatBox = document.getElementById("chat-box");
+const sendBtn = document.getElementById("send-btn");
+const chatInput = document.getElementById("chat-input");
+const chatBody = document.getElementById("chat-body");
 
-aiCircle.addEventListener("click", () => {
+// Open/close chat on icon click
+chatIcon.addEventListener("click", () => {
   chatBox.classList.toggle("hidden");
 });
 
-// Chat Logic
-const sendBtn = document.getElementById("send-btn");
-const userInput = document.getElementById("user-input");
-const chatBody = document.getElementById("chat-body");
+// Send message
+sendBtn.addEventListener("click", () => {
+  const message = chatInput.value.trim();
+  if (!message) return;
 
-async function sendMessage() {
-  const msg = userInput.value.trim();
-  if (!msg) return;
-
+  // user message
   const userMsg = document.createElement("div");
   userMsg.className = "user-message";
-  userMsg.textContent = msg;
+  userMsg.textContent = message;
   chatBody.appendChild(userMsg);
-  userInput.value = "";
+  chatInput.value = "";
 
-  const botMsg = document.createElement("div");
-  botMsg.className = "bot-message";
-  botMsg.textContent = "Thinking...";
-  chatBody.appendChild(botMsg);
+  // scroll stays inside widget
   chatBody.scrollTop = chatBody.scrollHeight;
 
-  try {
-    const res = await fetch("/api/groq-chat", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ prompt: msg })
-    });
-    const data = await res.json();
-    botMsg.textContent = data.reply || "I'm still processing that.";
-  } catch {
-    botMsg.textContent = "⚠️ AI connection error.";
-  }
-
-  chatBody.scrollTop = chatBody.scrollHeight;
-}
-
-sendBtn.addEventListener("click", sendMessage);
-userInput.addEventListener("keypress", e => e.key === "Enter" && sendMessage());
+  // simulate AI reply
+  setTimeout(() => {
+    const botMsg = document.createElement("div");
+    botMsg.className = "bot-message";
+    botMsg.textContent = "Processing your request...";
+    chatBody.appendChild(botMsg);
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }, 600);
+});
