@@ -1,4 +1,4 @@
-// Scroll animations
+// Fade-in scroll
 window.addEventListener("scroll", () => {
   document.querySelectorAll(".fade-in").forEach(el => {
     const rect = el.getBoundingClientRect();
@@ -6,7 +6,7 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// AI Widget Toggle
+// AI Widget
 const aiCircle = document.getElementById("ai-circle");
 const chatBox = document.getElementById("chat-box");
 
@@ -14,7 +14,6 @@ aiCircle.addEventListener("click", () => {
   chatBox.classList.toggle("hidden");
 });
 
-// Chat Logic
 const sendBtn = document.getElementById("send-btn");
 const userInput = document.getElementById("user-input");
 const chatBody = document.getElementById("chat-body");
@@ -43,7 +42,7 @@ async function sendMessage() {
     });
     const data = await res.json();
     botMsg.textContent = data.reply || "I'm still processing that.";
-  } catch (e) {
+  } catch {
     botMsg.textContent = "⚠️ AI connection error.";
   }
 
