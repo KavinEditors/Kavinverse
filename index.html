@@ -3,114 +3,116 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KavinVerse | Developer Portfolio</title>
+  <title>Kavinverse | Developer Portfolio</title>
   <link rel="icon" href="assets/image.png" type="image/png" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header>
-    <h1 class="fade-section">KavinVerse</h1>
-    <p class="fade-section subtitle">Developer • Programmer • Creator</p>
+    <div class="logo">Kavinverse</div>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <!-- Intro Section -->
-  <section id="intro" class="fade-section">
-    <div class="intro-text">
-      <h2>Welcome to My World</h2>
-      <p>
-        I’m Kavin — a passionate developer who loves crafting intelligent, innovative, and impactful software experiences.
-        Explore my projects, connect with me, and dive into the logic behind my creations.
-      </p>
-    </div>
-    <div class="intro-image">
-      <img src="assets/main.png" alt="KavinVerse Intro Image" />
+  <!-- HERO SECTION -->
+  <section id="hero" class="fade-section">
+    <div class="hero-container">
+      <div class="hero-left slide-left">
+        <h1>Welcome to <span>Kavinverse</span></h1>
+        <p>Innovating through code, design, and technology.</p>
+        <p class="intro">
+          I'm Kavin — a passionate developer who blends creativity with logic.
+          I build intelligent, efficient, and visually engaging digital experiences that push the boundaries of innovation.
+        </p>
+        <a href="#projects" class="btn">Explore Projects</a>
+      </div>
+
+      <div class="hero-right slide-up">
+        <div class="circle-glow">
+          <img src="assets/image.png" alt="Kavinverse Logo">
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Projects -->
+  <!-- PROJECTS SECTION -->
   <section id="projects">
     <h2>Featured Projects</h2>
 
-    <!-- R.O.A.S.T (normal) -->
     <div class="project-row fade-section">
-      <div class="project-text">
+      <div class="project-text slide-left">
         <h3>R.O.A.S.T</h3>
         <p>
-          <strong>R.O.A.S.T (Really Offensive Automated Sus Terminator)</strong> is a playful AI bot built to test your wit.
-          It uses adaptive language models to generate sharp, humorous roasts in real time — designed to challenge your comebacks.
-          Despite its sarcasm, it’s trainable and can be beaten with clever responses, making it both entertaining and competitive.
+          <strong>R.O.A.S.T (Really Offensive Automated Sus Terminator)</strong> is a bold and witty AI bot that roasts you with clever comebacks — but smart enough to be beaten if you can outwit it.
         </p>
         <div class="btn-group">
-          <a class="btn" href="https://github.com/KavinEditors/R.O.A.S.T" target="_blank" rel="noopener">See Repo</a>
-          <a class="btn" href="https://really-offensive-automated-sus-terminator.streamlit.app/" target="_blank" rel="noopener">See Website</a>
+          <a href="https://github.com/KavinEditors/R.O.A.S.T" target="_blank" class="btn">See Repo</a>
+          <a href="https://really-offensive-automated-sus-terminator.streamlit.app/" target="_blank" class="btn">See Website</a>
         </div>
       </div>
-      <div class="project-media">
+      <div class="project-media slide-right">
         <div class="neon-box">
-          <img src="assets/sub1.png" alt="R.O.A.S.T Project Image" />
+          <img src="assets/sub1.png" alt="R.O.A.S.T Project Image">
         </div>
       </div>
     </div>
 
-    <!-- NEXA (reverse) -->
     <div class="project-row reverse fade-section">
-      <div class="project-text">
+      <div class="project-text slide-right">
         <h3>NEXA</h3>
         <p>
-          <strong>NEXA (Next-Gen Executive Assistant)</strong> is a futuristic AI companion engineered to streamline your digital workflow.
-          It performs intelligent automation, voice command execution, and context-aware decision making — bringing cinematic AI realism to everyday computing.
-          Designed with modular intelligence and a refined UI, NEXA redefines what a personal digital assistant can do.
+          <strong>NEXA (Next-gen Executive Assistant)</strong> is an advanced digital AI assistant that behaves like a futuristic companion — intelligent, responsive, and always learning. It automates your tasks, manages workflows, and brings a cinematic AI experience to your screen.
         </p>
         <div class="btn-group">
-          <a class="btn" href="https://github.com/KavinEditors/NEXA-Next-gen-Executive-Assistant/" target="_blank" rel="noopener">See Repo</a>
-          <a class="btn" href="https://really-offensive-automated-sus-terminator.streamlit.app/" target="_blank" rel="noopener">See Website</a>
+          <a href="https://github.com/KavinEditors/NEXA-Next-gen-Executive-Assistant/" target="_blank" class="btn">See Repo</a>
         </div>
       </div>
-      <div class="project-media">
+      <div class="project-media slide-left">
         <div class="neon-box">
-          <img src="assets/sub2.png" alt="NEXA Project Image" />
+          <img src="assets/sub2.png" alt="NEXA Project Image">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Connect Section -->
-  <section id="connect" class="fade-section">
-    <h2>Connect With Me</h2>
-    <div class="socials">
-      <a href="https://github.com/KavinEditors" target="_blank" rel="noopener">
-        <img src="assets/github.png" alt="GitHub" />
-      </a>
-      <a href="https://discord.com/users/yourdiscordid" target="_blank" rel="noopener">
-        <img src="assets/discord.png" alt="Discord" />
-      </a>
-      <a href="https://x.com/yourxprofile" target="_blank" rel="noopener">
-        <img src="assets/x.png" alt="X" />
-      </a>
-      <a href="https://instagram.com/yourinsta" target="_blank" rel="noopener">
-        <img src="assets/insta.png" alt="Instagram" />
-      </a>
+  <!-- CONTACT -->
+  <section id="contact" class="fade-section">
+    <h2>Connect with Me</h2>
+    <p>Email: <a href="mailto:kavinjm311@gmail.com">kavinjm311@gmail.com</a></p>
+    <div class="social-links">
+      <a href="https://discord.com/users/1180531027832217661" target="_blank" class="social-btn discord">Discord</a>
+      <a href="https://www.instagram.com/speedkavin311" target="_blank" class="social-btn insta">Instagram</a>
+      <a href="https://x.com/SpeedKavin311" target="_blank" class="social-btn x">X (Twitter)</a>
+      <a href="https://github.com/KavinEditors/" target="_blank" class="social-btn github">GitHub</a>
     </div>
   </section>
 
-  <!-- Floating AI Widget -->
+  <footer>
+    <p>© 2025 Kavinverse. Crafted with precision and code.</p>
+  </footer>
+
+  <!-- AI Widget -->
   <div id="ai-widget">
     <div id="ai-circle">
-      <img src="assets/ai.png" alt="AI Icon" />
+      <img src="assets/help.png" alt="AI Assistant" id="ai-icon">
+      <div class="ai-ring"></div>
     </div>
+
     <div id="chat-box" class="hidden">
-      <div id="chat-header">NEXA Chat</div>
-      <div id="chat-body"></div>
-      <div id="chat-input">
-        <input type="text" id="user-input" placeholder="Type a message..." />
+      <div class="chat-header">Kavinverse Assistant</div>
+      <div id="chat-body">
+        <div class="bot-message">Hi there 👋 How can I help you today?</div>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" id="user-input" placeholder="Type your message..." />
         <button id="send-btn">Send</button>
       </div>
     </div>
   </div>
-
-  <footer>
-    <p>© 2025 KavinVerse. All rights reserved.</p>
-  </footer>
 
   <script src="script.js"></script>
 </body>
