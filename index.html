@@ -3,114 +3,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kavinverse | Developer Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="icon" href="assets/image.png" />
+  <title>Kavinverse</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <!-- HEADER -->
+
+  <!-- ---------- HEADER ---------- -->
   <header>
-    <div class="logo">Kavinverse</div>
+    <h1>Kavinverse</h1>
     <nav>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
-  <!-- HERO SECTION -->
-  <section id="hero" class="fade-section">
-    <div class="hero-container">
-      <div class="hero-left slide-left">
-        <h1>Welcome to <span>Kavinverse</span></h1>
-        <p>Innovating through code, design, and technology.</p>
-        <p class="intro">
-          I'm Kavin — a passionate developer who blends creativity with logic.
-          I build intelligent, efficient, and visually engaging digital experiences that push the boundaries of innovation.
-        </p>
-        <a href="#projects" class="btn">Explore Projects</a>
-      </div>
-
-      <div class="hero-right slide-up">
-        <div class="circle-glow">
-          <img src="assets/image.png" alt="Kavinverse Logo">
-        </div>
-      </div>
+  <!-- ---------- HERO SECTION ---------- -->
+  <section class="hero">
+    <h2>Welcome to Kavinverse</h2>
+    <p>Where innovation meets intelligence.</p>
+    <div class="circle-glow">
+      <img src="assets/image.png" alt="Main Logo" />
     </div>
   </section>
 
-  <!-- PROJECTS SECTION -->
-  <section id="projects">
-    <h2>Featured Projects</h2>
+  <!-- ---------- PROJECTS ---------- -->
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
 
-    <div class="project-row fade-section">
-      <div class="project-text slide-left">
-        <h3>R.O.A.S.T</h3>
-        <p>
-          R.O.A.S.T is an AI-powered roast bot that mixes humor and automation.
-          It’s always one punchline ahead, designed for creative and entertaining AI interactions.
-        </p>
-        <div class="btn-group">
-          <a href="https://github.com/KavinEditors/R.O.A.S.T" target="_blank" class="btn">See Repo</a>
-          <a href="https://really-offensive-automated-sus-terminator.streamlit.app/" target="_blank" class="btn">See Website</a>
+      <div class="project-card">
+        <div class="project-media">
+          <img src="assets/sun1.png" alt="Project 1" />
         </div>
-      </div>
-      <div class="project-media slide-right">
-        <div class="neon-box">
-          <img src="assets/sub1.png" alt="R.O.A.S.T Project Image">
-        </div>
-      </div>
-    </div>
-
-    <div class="project-row reverse fade-section">
-      <div class="project-text slide-right">
         <h3>NEXA</h3>
-        <p>
-          NEXA (Next-gen Executive Assistant) is a smart digital productivity companion that helps users automate tasks and optimize their workflow efficiently.
-        </p>
-        <div class="btn-group">
-          <a href="https://github.com/KavinEditors/NEXA-Next-gen-Executive-Assistant" target="_blank" class="btn">See Repo</a>
-        </div>
+        <p>Next-gen Executive AI Assistant designed for productivity and intelligence.</p>
       </div>
-      <div class="project-media slide-left">
-        <div class="neon-box">
-          <img src="assets/sub2.png" alt="NEXA Project Image">
+
+      <div class="project-card">
+        <div class="project-media">
+          <img src="assets/sub2.png" alt="Project 2" />
         </div>
+        <h3>R.O.A.S.T</h3>
+        <p>AI-based humor generator with attitude and precision. Built for entertainment.</p>
       </div>
+
+      <div class="project-card">
+        <div class="project-media">
+          <img src="assets/sun1.png" alt="Project 3" />
+        </div>
+        <h3>Sussy Commentor</h3>
+        <p>Smart comment generator for videos and discussions. Uses contextual sarcasm.</p>
+      </div>
+
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="fade-section">
-    <h2>Connect with Me</h2>
-    <p>Email: <a href="mailto:kavinjm311@gmail.com">kavinjm311@gmail.com</a></p>
-    <div class="social-links">
-      <a href="https://discord.com/users/1180531027832217661" target="_blank" class="social-btn discord">Discord</a>
-      <a href="https://www.instagram.com/speedkavin311" target="_blank" class="social-btn insta">Instagram</a>
-      <a href="https://x.com/SpeedKavin311" target="_blank" class="social-btn x">X (Twitter)</a>
-      <a href="https://github.com/KavinEditors/" target="_blank" class="social-btn github">GitHub</a>
-    </div>
+  <!-- ---------- CONTACT ---------- -->
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Want to collaborate or have an idea? Reach out anytime.</p>
+    <a href="mailto:connect@kavinverse.com">connect@kavinverse.com</a>
   </section>
 
+  <!-- ---------- FOOTER ---------- -->
   <footer>
-    <p>© 2025 Kavinverse. Crafted with precision and code.</p>
+    <p>© 2025 Kavinverse. All Rights Reserved.</p>
   </footer>
 
-  <!-- AI Widget -->
+  <!-- ---------- AI WIDGET ---------- -->
   <div id="ai-widget">
     <div id="ai-circle">
-      <img src="assets/help.png" alt="AI Assistant" id="ai-icon">
       <div class="ai-ring"></div>
+      <img id="ai-icon" src="assets/help.png" alt="AI Assistant" />
     </div>
 
     <div id="chat-box" class="hidden">
-      <div class="chat-header">Kavinverse Assistant</div>
-      <div id="chat-body">
-        <div class="bot-message">Hi there 👋 How can I help you today?</div>
-      </div>
+      <div class="chat-header">Kavinverse AI</div>
+      <div id="chat-body"></div>
       <div class="chat-input-area">
-        <input type="text" id="user-input" placeholder="Type your message..." />
+        <input id="user-input" type="text" placeholder="Ask Kavinverse..." />
         <button id="send-btn">Send</button>
       </div>
     </div>
