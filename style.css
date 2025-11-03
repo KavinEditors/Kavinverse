@@ -27,12 +27,14 @@ nav a:hover { color: #ff77ff; }
 /* HERO SECTION */
 /* HERO SECTION */
 #hero {
-  padding-top: 90px; /* was 150px */
-  padding-bottom: 80px; /* slightly reduced */
-  min-height: 100vh;
+  padding-top: 40px; /* was 150px originally, then 90px */
+  padding-bottom: 60px;
+  min-height: calc(100vh - 80px);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
 }
 .hero-container {
   display: flex;
