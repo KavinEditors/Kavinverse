@@ -46,6 +46,8 @@ nav a:hover { color: #ff77ff; }
 .hero-left h1 {
   font-size: 3rem;
   margin-bottom: 10px;
+  line-height: 1.2;
+  text-align: left;
 }
 .hero-left h1 span { color: #00bfff; }
 .hero-left p { color: #ccc; margin: 10px 0 25px; line-height: 1.6; }
@@ -135,32 +137,34 @@ footer {
 /* AI Widget */
 #ai-widget {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 20px;
+  right: 25px;
   z-index: 999;
 }
+
+/* Smaller Circle */
 #ai-circle {
   position: relative;
-  width: 70px;
-  height: 70px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   cursor: pointer;
 }
 #ai-icon {
-  width: 70px;
-  height: 70px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
 }
 .ai-ring {
   position: absolute;
-  top: -6px;
-  left: -6px;
-  width: 82px;
-  height: 82px;
+  top: -5px;
+  left: -5px;
+  width: 65px;
+  height: 65px;
   border-radius: 50%;
-  border: 3px solid transparent;
-  border-top: 3px solid #00bfff;
-  border-right: 3px solid #ff77ff;
+  border: 2px solid transparent;
+  border-top: 2px solid #00bfff;
+  border-right: 2px solid #ff77ff;
   animation: spin 2.5s linear infinite;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
@@ -168,10 +172,10 @@ footer {
 /* CHAT BOX */
 #chat-box {
   position: fixed;
-  bottom: 110px;
-  right: 30px;
-  width: 320px;
-  max-height: 450px;
+  bottom: 90px;
+  right: 25px;
+  width: 290px;
+  max-height: 400px;
   background: linear-gradient(145deg, rgba(0,191,255,0.2), rgba(255,119,255,0.2));
   backdrop-filter: blur(20px);
   border-radius: 20px;
@@ -203,10 +207,12 @@ footer {
 .bot-message {
   background: rgba(0,191,255,0.15);
   align-self: flex-start;
+  text-align: left;
 }
 .user-message {
   background: rgba(255,255,255,0.1);
   align-self: flex-end;
+  text-align: right;
 }
 .chat-input-area {
   display: flex;
