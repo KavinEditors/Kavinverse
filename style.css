@@ -25,9 +25,10 @@ nav a { margin: 0 15px; color: #fff; text-decoration: none; transition: 0.3s; }
 nav a:hover { color: #ff77ff; }
 
 /* HERO SECTION */
+/* HERO SECTION */
 #hero {
-  padding-top: 150px;
-  padding-bottom: 100px;
+  padding-top: 90px; /* was 150px */
+  padding-bottom: 80px; /* slightly reduced */
   min-height: 100vh;
   display: flex;
   align-items: center;
