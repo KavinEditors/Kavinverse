@@ -14,7 +14,7 @@ export default async function handler(req, res) {
           {
             role: "system",
             content:
-              "You are a helpful personal assistant for the Kavinverse website. You can answer user queries and discuss Kavin's repositories: https://github.com/KavinEditors/Kavinverse, https://github.com/KavinEditors/NEXA-Next-gen-Executive-Assistant, https://github.com/KavinEditors/R.O.A.S.T, https://github.com/KavinEditors/SussyCommentor.",
+              "You are a helpful assistant for the Kavinverse website. You can answer user queries and discuss Kavin's repositories.",
           },
           { role: "user", content: prompt },
         ],
@@ -22,9 +22,7 @@ export default async function handler(req, res) {
     });
 
     const data = await response.json();
-    res.status(200).json({
-      reply: data.choices?.[0]?.message?.content || "No reply.",
-    });
+    res.status(200).json({ reply: data.choices?.[0]?.message?.content || "No reply." });
   } catch (error) {
     console.error(error);
     res.status(500).json({ reply: "Error reaching AI service." });
