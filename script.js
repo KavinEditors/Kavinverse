@@ -1,7 +1,9 @@
-// Scroll fade animation
-window.addEventListener("scroll", () => {
-  document.querySelectorAll(".fade-section").forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 150) el.classList.add("visible");
+// Smooth scrolling for navigation (optional if you add a nav)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth"
+    });
   });
 });
