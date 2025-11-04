@@ -5,12 +5,12 @@ const chatBody = document.getElementById("chat-body");
 const sendBtn = document.getElementById("send-btn");
 const userInput = document.getElementById("user-input");
 
-// Toggle chat open
+// Show chat when icon clicked
 chatIcon.addEventListener("click", () => {
   chatBox.classList.remove("hidden");
 });
 
-// Close chat box
+// Close chat when ✖ clicked
 closeChat.addEventListener("click", () => {
   chatBox.classList.add("hidden");
 });
@@ -33,12 +33,12 @@ function sendMessage() {
   userInput.value = "";
   chatBody.scrollTop = chatBody.scrollHeight;
 
-  // Fake AI reply (replace this part with your actual Groq API)
+  // Simulated AI reply (replace with Groq API)
   setTimeout(() => {
     const aiMsg = document.createElement("div");
     aiMsg.classList.add("msg", "ai");
-    aiMsg.textContent = "🤖 Thinking... (Replace this with Groq API reply)";
+    aiMsg.textContent = "🤖 Thinking... (API integration placeholder)";
     chatBody.appendChild(aiMsg);
     chatBody.scrollTop = chatBody.scrollHeight;
-  }, 800);
+  }, 700);
 }
