@@ -1,22 +1,82 @@
+/* === Base Page === */
 body {
   font-family: Arial, sans-serif;
   background: #0a0a0a;
   color: white;
   margin: 0;
+  padding: 0;
 }
 
-/* Header & Hero */
+/* === Header === */
 #header {
   text-align: center;
   padding: 40px 0 10px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
 }
 
+#header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+#header nav {
+  margin-top: 10px;
+}
+
+#header nav a {
+  color: #00bfff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 600;
+}
+
+#header nav a:hover {
+  color: #ff77ff;
+}
+
+/* === Hero Section === */
 #hero {
   text-align: center;
   margin-top: 30px; /* reduced gap */
+  padding: 60px 20px;
 }
 
-/* Chat icon (floating trigger button) */
+.hero-content h2 {
+  font-size: 36px;
+  color: #00bfff;
+}
+
+.hero-content p {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  margin: 10px auto;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #00bfff, #ff77ff);
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+}
+
+/* === Main Content === */
+#content {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* === Chat Icon === */
 #chat-icon {
   position: fixed;
   bottom: 30px;
@@ -32,13 +92,14 @@ body {
   box-shadow: 0 0 25px rgba(0,191,255,0.5), 0 0 40px rgba(255,119,255,0.5);
   cursor: pointer;
   transition: all 0.3s ease;
+  z-index: 999;
 }
 
 #chat-icon:hover {
   transform: scale(1.1);
 }
 
-/* Chat box */
+/* === Chat Box === */
 #chat-box {
   position: fixed;
   bottom: 100px;
@@ -52,15 +113,9 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: opacity 0.3s ease, transform 0.3s ease;
   animation: fadeIn 0.3s ease;
-  z-index: 999;
-}
-
-/* Animation for popup */
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+  transition: all 0.4s ease;
+  z-index: 1000;
 }
 
 /* Hidden state */
@@ -68,14 +123,20 @@ body {
   display: none;
 }
 
-/* Chat header */
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Chat Header */
 #chat-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 15px;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
   font-weight: bold;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
 #chat-header button {
@@ -86,7 +147,7 @@ body {
   cursor: pointer;
 }
 
-/* Chat body */
+/* Chat Body */
 #chat-body {
   flex: 1;
   overflow-y: auto;
@@ -113,7 +174,7 @@ body {
   align-self: flex-start;
 }
 
-/* Input area */
+/* Chat Input */
 #chat-input {
   display: flex;
   padding: 10px;
