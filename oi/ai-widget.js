@@ -4,6 +4,8 @@ const sendBtn = document.getElementById("send-btn");
 const userInput = document.getElementById("user-input");
 const chatBody = document.getElementById("chat-body");
 
+chatBox.classList.add("hidden");
+
 aiCircle.addEventListener("click", () => {
   chatBox.classList.toggle("hidden");
 });
@@ -40,6 +42,4 @@ async function sendMessage() {
 }
 
 sendBtn.addEventListener("click", sendMessage);
-userInput.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") sendMessage();
-});
+userInput.addEventListener("keypress", e => e.key === "Enter" && sendMessage());
