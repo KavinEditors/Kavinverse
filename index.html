@@ -3,54 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kavin’s Website</title>
+  <title>Kavinverse</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ===== Header Section ===== -->
   <header id="header">
-    <h1>Kavin’s Futuristic Hub</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Projects</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
+    <h1>Kavinverse</h1>
   </header>
 
-  <!-- ===== Hero Section ===== -->
   <section id="hero">
-    <div class="hero-content">
-      <h2>Welcome to Innovation</h2>
-      <p>Explore the future of development, AI, and design — crafted by Kavin.</p>
-      <button class="btn-primary">Get Started</button>
-    </div>
+    <h2>Welcome to the Future</h2>
+    <p>Exploring innovation, intelligence, and imagination.</p>
   </section>
 
-  <!-- ===== Main Content (Placeholder for your layout) ===== -->
-  <section id="content">
-    <h3>Featured Projects</h3>
-    <p>Here’s where your main page content, cards, and images stay exactly as before.</p>
-  </section>
+  <!-- Chat Trigger Button -->
+  <div id="chat-icon">💬</div>
 
-  <!-- ===== Chat Icon ===== -->
-  <div id="chat-icon" title="Chat with AI">💬</div>
-
-  <!-- ===== Chat Widget ===== -->
+  <!-- Chat Widget -->
   <div id="chat-box" class="hidden">
-    <div id="chat-header">
-      <span>AI Assistant</span>
-      <button id="close-chat">✖</button>
-    </div>
-
+    <div class="chat-header">AI Assistant</div>
     <div id="chat-body">
-      <div class="msg ai">Hello! How can I help you today?</div>
+      <div class="bot-message">Hi! How can I help you today?</div>
     </div>
-
-    <div id="chat-input">
-      <input type="text" id="user-input" placeholder="Type a message..." />
-      <button id="send-btn">➤</button>
+    <div class="chat-input-area">
+      <input type="text" id="chat-input" placeholder="Type your message..." />
+      <button id="send-btn">Send</button>
     </div>
   </div>
 
