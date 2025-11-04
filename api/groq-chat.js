@@ -1,9 +1,3 @@
-// ===============================
-// /api/groq-chat.js
-// ===============================
-// Uses Groq API key stored securely in Vercel Environment Variables
-// (Vercel Dashboard → Project Settings → Environment Variables → Key: groqapi)
-
 export default async function handler(req, res) {
   try {
     const { prompt } = req.body;
@@ -12,7 +6,7 @@ export default async function handler(req, res) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${process.env.groqapi}`,
+        "Authorization": `Bearer ${process.env.GROQAPI}`,
       },
       body: JSON.stringify({
         model: "llama3-8b-8192",
@@ -28,7 +22,9 @@ export default async function handler(req, res) {
     });
 
     const data = await response.json();
-    res.status(200).json({ reply: data.choices?.[0]?.message?.content || "No reply." });
+    res.status(200).json({
+      reply: data.choices?.[0]?.message?.content || "No reply.",
+    });
   } catch (error) {
     console.error(error);
     res.status(500).json({ reply: "Error reaching AI service." });
