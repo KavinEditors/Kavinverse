@@ -1,44 +1,35 @@
 const chatIcon = document.getElementById("chat-icon");
 const chatBox = document.getElementById("chat-box");
-const closeChat = document.getElementById("close-chat");
-const chatBody = document.getElementById("chat-body");
 const sendBtn = document.getElementById("send-btn");
-const userInput = document.getElementById("user-input");
+const chatInput = document.getElementById("chat-input");
+const chatBody = document.getElementById("chat-body");
 
-// Show chat when icon clicked
+// Open/close chat on icon click
 chatIcon.addEventListener("click", () => {
-  chatBox.classList.remove("hidden");
-});
-
-// Close chat when ✖ clicked
-closeChat.addEventListener("click", () => {
-  chatBox.classList.add("hidden");
+  chatBox.classList.toggle("hidden");
 });
 
 // Send message
-sendBtn.addEventListener("click", sendMessage);
-userInput.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") sendMessage();
-});
+sendBtn.addEventListener("click", () => {
+  const message = chatInput.value.trim();
+  if (!message) return;
 
-function sendMessage() {
-  const text = userInput.value.trim();
-  if (!text) return;
-
+  // user message
   const userMsg = document.createElement("div");
-  userMsg.classList.add("msg", "user");
-  userMsg.textContent = text;
+  userMsg.className = "user-message";
+  userMsg.textContent = message;
   chatBody.appendChild(userMsg);
+  chatInput.value = "";
 
-  userInput.value = "";
+  // scroll stays inside widget
   chatBody.scrollTop = chatBody.scrollHeight;
 
-  // Simulated AI reply (replace with Groq API)
+  // simulate AI reply
   setTimeout(() => {
-    const aiMsg = document.createElement("div");
-    aiMsg.classList.add("msg", "ai");
-    aiMsg.textContent = "🤖 Thinking... (API integration placeholder)";
-    chatBody.appendChild(aiMsg);
+    const botMsg = document.createElement("div");
+    botMsg.className = "bot-message";
+    botMsg.textContent = "Processing your request...";
+    chatBody.appendChild(botMsg);
     chatBody.scrollTop = chatBody.scrollHeight;
-  }, 700);
-}
+  }, 600);
+});
