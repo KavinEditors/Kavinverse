@@ -1,3 +1,7 @@
+// This API expects the Groq API key to be set in Vercel environment variables
+// with the name: GROQAPI (case-sensitive).
+// In Vercel dashboard: Project → Settings → Environment Variables → Add "GROQAPI" = <your-key>
+
 export default async function handler(req, res) {
   try {
     const { prompt } = req.body;
@@ -6,6 +10,7 @@ export default async function handler(req, res) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        // Uses the environment variable GROQAPI provided by Vercel
         "Authorization": `Bearer ${process.env.GROQAPI}`,
       },
       body: JSON.stringify({
