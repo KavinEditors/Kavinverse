@@ -1,26 +1,18 @@
-// ===========================
-// Kavinverse AI Widget Script
-// ===========================
-
 const aiCircle = document.getElementById("ai-circle");
 const chatBox = document.getElementById("chat-box");
 const sendBtn = document.getElementById("send-btn");
 const userInput = document.getElementById("user-input");
 const chatBody = document.getElementById("chat-body");
 
-// Start with widget closed
-window.addEventListener("load", () => {
-  chatBox.classList.add("hidden");
-});
+// Widget starts closed
+chatBox.classList.add("hidden");
 
-// Toggle chat open/close
+// Toggle open/close
 aiCircle.addEventListener("click", () => {
   chatBox.classList.toggle("hidden");
-  if (!chatBox.classList.contains("hidden")) {
-    chatBody.scrollTop = chatBody.scrollHeight;
-  }
 });
 
+// Send message
 async function sendMessage() {
   const msg = userInput.value.trim();
   if (!msg) return;
@@ -53,4 +45,6 @@ async function sendMessage() {
 }
 
 sendBtn.addEventListener("click", sendMessage);
-userInput.addEventListener("keypress", e => e.key === "Enter" && sendMessage());
+userInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") sendMessage();
+});
