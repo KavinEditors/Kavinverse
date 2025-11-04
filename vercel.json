@@ -11,5 +11,8 @@
   "routes": [
     { "src": "/api/groq-chat", "dest": "/api/groq-chat.js" },
     { "src": "/(.*)", "dest": "/index.html" }
-  ]
+  ],
+  "env": {
+    "GROQAPI": "@groqapi"
+  }
 }
