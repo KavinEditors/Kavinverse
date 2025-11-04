@@ -3,35 +3,111 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kavinverse</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Kavinverse | Developer Portfolio</title>
+  <link rel="icon" href="assets/image.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header id="header">
-    <h1>Kavinverse</h1>
+  <header>
+    <div class="logo">Kavinverse</div>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <section id="hero">
-    <h2>Welcome to the Future</h2>
-    <p>Exploring innovation, intelligence, and imagination.</p>
+  <!-- HERO SECTION -->
+  <section id="hero" class="fade-section">
+    <div class="hero-container">
+      <div class="hero-left slide-left">
+        <h1>Welcome to <span>Kavinverse</span></h1>
+        <p>Innovating through code, design, and technology.</p>
+        <p class="intro">
+          I'm Kavin — a passionate developer who blends creativity with logic.
+          I build intelligent, efficient, and visually engaging digital experiences that push the boundaries of innovation.
+        </p>
+        <a href="#projects" class="btn">Explore Projects</a>
+      </div>
+      <div class="hero-right slide-up">
+        <div class="circle-glow">
+          <img src="assets/image.png" alt="Kavinverse Logo">
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Chat Trigger Button -->
-  <div id="chat-icon">💬</div>
-
-  <!-- Chat Widget -->
-  <div id="chat-box" class="hidden">
-    <div class="chat-header">AI Assistant</div>
-    <div id="chat-body">
-      <div class="bot-message">Hi! How can I help you today?</div>
+  <!-- PROJECTS SECTION -->
+  <section id="projects">
+    <h2>Featured Projects</h2>
+    <div class="project-row fade-section">
+      <div class="project-text slide-left">
+        <h3>R.O.A.S.T</h3>
+        <p><strong>R.O.A.S.T</strong> (Really Offensive Automated Sus Terminator) is a bold and witty AI bot that roasts you with clever comebacks — but smart enough to be beaten if you can outwit it.</p>
+        <div class="btn-group">
+          <a href="https://github.com/KavinEditors/R.O.A.S.T" target="_blank" class="btn">See Repo</a>
+          <a href="https://really-offensive-automated-sus-terminator.streamlit.app/" target="_blank" class="btn">See Website</a>
+        </div>
+      </div>
+      <div class="project-media slide-right">
+        <div class="neon-box">
+          <img src="assets/sub1.png" alt="R.O.A.S.T Project Image">
+        </div>
+      </div>
     </div>
-    <div class="chat-input-area">
-      <input type="text" id="chat-input" placeholder="Type your message..." />
-      <button id="send-btn">Send</button>
+
+    <div class="project-row reverse fade-section">
+      <div class="project-text slide-right">
+        <h3>NEXA</h3>
+        <p><strong>NEXA</strong> (Next-gen Executive Assistant) is an advanced digital AI assistant that behaves like a futuristic companion — intelligent, responsive, and always learning.</p>
+        <div class="btn-group">
+          <a href="https://github.com/KavinEditors/NEXA-Next-gen-Executive-Assistant/" target="_blank" class="btn">See Repo</a>
+        </div>
+      </div>
+      <div class="project-media slide-left">
+        <div class="neon-box">
+          <img src="assets/sub2.png" alt="NEXA Project Image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="fade-section">
+    <h2>Connect with Me</h2>
+    <p>Email: <a href="mailto:kavinjm311@gmail.com">kavinjm311@gmail.com</a></p>
+    <div class="social-links">
+      <a href="https://discord.com/users/1180531027832217661" target="_blank" class="social-btn discord">Discord</a>
+      <a href="https://www.instagram.com/speedkavin311" target="_blank" class="social-btn insta">Instagram</a>
+      <a href="https://x.com/SpeedKavin311" target="_blank" class="social-btn x">X (Twitter)</a>
+      <a href="https://github.com/KavinEditors/" target="_blank" class="social-btn github">GitHub</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Kavinverse. Crafted with precision and code.</p>
+  </footer>
+
+  <!-- AI Widget -->
+  <div id="ai-widget">
+    <div id="ai-circle">
+      <img src="assets/help.png" alt="AI Assistant" id="ai-icon">
+      <div class="ai-ring"></div>
+    </div>
+
+    <div id="chat-box" class="hidden">
+      <div class="chat-header">Kavinverse Assistant</div>
+      <div id="chat-body">
+        <div class="bot-message">Hi there 👋 How can I help you today?</div>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" id="user-input" placeholder="Type your message..." />
+        <button id="send-btn">Send</button>
+      </div>
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="ai-widget.js"></script>
 </body>
 </html>
