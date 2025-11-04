@@ -4,15 +4,10 @@ const sendBtn = document.getElementById("send-btn");
 const userInput = document.getElementById("user-input");
 const chatBody = document.getElementById("chat-body");
 
-// Widget starts closed
-chatBox.classList.add("hidden");
-
-// Toggle open/close
 aiCircle.addEventListener("click", () => {
   chatBox.classList.toggle("hidden");
 });
 
-// Send message
 async function sendMessage() {
   const msg = userInput.value.trim();
   if (!msg) return;
