@@ -1,35 +1,44 @@
 const chatIcon = document.getElementById("chat-icon");
 const chatBox = document.getElementById("chat-box");
-const sendBtn = document.getElementById("send-btn");
-const chatInput = document.getElementById("chat-input");
+const closeChat = document.getElementById("close-chat");
 const chatBody = document.getElementById("chat-body");
+const sendBtn = document.getElementById("send-btn");
+const userInput = document.getElementById("user-input");
 
-// Open/close chat on icon click
+// Toggle chat open
 chatIcon.addEventListener("click", () => {
-  chatBox.classList.toggle("hidden");
+  chatBox.classList.remove("hidden");
+});
+
+// Close chat box
+closeChat.addEventListener("click", () => {
+  chatBox.classList.add("hidden");
 });
 
 // Send message
-sendBtn.addEventListener("click", () => {
-  const message = chatInput.value.trim();
-  if (!message) return;
+sendBtn.addEventListener("click", sendMessage);
+userInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") sendMessage();
+});
 
-  // user message
+function sendMessage() {
+  const text = userInput.value.trim();
+  if (!text) return;
+
   const userMsg = document.createElement("div");
-  userMsg.className = "user-message";
-  userMsg.textContent = message;
+  userMsg.classList.add("msg", "user");
+  userMsg.textContent = text;
   chatBody.appendChild(userMsg);
-  chatInput.value = "";
 
-  // scroll stays inside widget
+  userInput.value = "";
   chatBody.scrollTop = chatBody.scrollHeight;
 
-  // simulate AI reply
+  // Fake AI reply (replace this part with your actual Groq API)
   setTimeout(() => {
-    const botMsg = document.createElement("div");
-    botMsg.className = "bot-message";
-    botMsg.textContent = "Processing your request...";
-    chatBody.appendChild(botMsg);
+    const aiMsg = document.createElement("div");
+    aiMsg.classList.add("msg", "ai");
+    aiMsg.textContent = "🤖 Thinking... (Replace this with Groq API reply)";
+    chatBody.appendChild(aiMsg);
     chatBody.scrollTop = chatBody.scrollHeight;
-  }, 600);
-});
+  }, 800);
+}
