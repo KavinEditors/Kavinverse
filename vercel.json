@@ -1,11 +1,15 @@
 {
   "version": 2,
   "builds": [
+    { "src": "api/groq-chat.js", "use": "@vercel/node" },
     { "src": "index.html", "use": "@vercel/static" },
-    { "src": "api/groq-chat.js", "use": "@vercel/node" }
+    { "src": "style.css", "use": "@vercel/static" },
+    { "src": "script.js", "use": "@vercel/static" },
+    { "src": "oi/ai-widget.js", "use": "@vercel/static" },
+    { "src": "assets/**/*", "use": "@vercel/static" }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "src": "/api/groq-chat", "dest": "/api/groq-chat.js" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
