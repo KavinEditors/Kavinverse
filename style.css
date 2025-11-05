@@ -280,3 +280,50 @@ footer {
   box-shadow: 0 0 25px #5865f2;
 }
 
+.image-container {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(0, 153, 255, 0.6);
+}
+
+.orbit {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border-top: 3px solid rgba(0, 153, 255, 0.9);
+  border-bottom: 3px solid transparent;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  animation: spin 4s linear infinite;
+  z-index: 1;
+}
+
+.orbit.reverse {
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid rgba(0, 153, 255, 0.9);
+  animation: spin-reverse 4s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
