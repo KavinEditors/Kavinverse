@@ -15,39 +15,39 @@ body {
 }
 
 
-/* Header */
 header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 8%;
+  padding: 8px 60px; /* reduced height */
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
-  border-bottom: 1px solid #00ffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 header h1 {
-  color: #00ffff;
-  font-weight: 700;
+  font-size: 1.2rem; /* slightly smaller title */
   letter-spacing: 1px;
-  text-shadow: 0 0 20px #00ffff;
+  color: white;
 }
 
 nav a {
-  color: #bfbfbf;
-  margin-left: 30px;
   text-decoration: none;
-  transition: 0.3s;
+  color: white;
+  margin: 0 15px;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffff;
+  color: #00bfff; /* light blue hover */
 }
+
 
 /* Intro Section */
 .intro {
