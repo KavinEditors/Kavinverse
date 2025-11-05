@@ -8,50 +8,66 @@
   <script src="https://kit.fontawesome.com/a3f7b73f3d.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- Hero Section -->
-  <section class="hero">
+  <!-- HEADER -->
+  <header>
+    <h1 class="logo">Kavinverse</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
     <div class="hero-text">
       <h1>Welcome to Kavinverse</h1>
-      <p>Innovative Future — where technology meets imagination and every line of code builds a new universe.</p>
+      <p>Innovative Future — where ideas, logic, and creativity merge to form a digital universe.</p>
     </div>
     <div class="hero-image">
       <div class="circle-glow">
-        <img src="assets/image.png" alt="Kavinverse Image" />
+        <img src="assets/image.png" alt="Kavinverse" />
       </div>
     </div>
   </section>
 
-  <!-- Roast Section -->
-  <section class="project roast">
-    <div class="text">
-      <h2>Roast</h2>
-      <p>A playful experiment blending logic and creativity — proving that even humor can be coded.</p>
-      <div class="buttons">
-        <a href="#" class="btn">See Repo</a>
-        <a href="#" class="btn">See Website</a>
+  <!-- PROJECTS -->
+  <section class="projects" id="projects">
+
+    <!-- Roast -->
+    <div class="project roast">
+      <div class="text">
+        <h2>Roast</h2>
+        <p>A humorous AI roast — you can try to beat it, but it’ll always roast back smarter.</p>
+        <div class="buttons">
+          <a href="#" class="btn">See Repo</a>
+          <a href="#" class="btn">See Website</a>
+        </div>
+      </div>
+      <div class="image neon-border">
+        <img src="assets/sub1.png" alt="Roast Project" />
       </div>
     </div>
-    <div class="image neon-border">
-      <img src="assets/sub1.png" alt="Roast Project" />
+
+    <!-- Nexa -->
+    <div class="project nexa">
+      <div class="image neon-border">
+        <img src="assets/sub2.png" alt="Nexa Project" />
+      </div>
+      <div class="text">
+        <h2>Nexa</h2>
+        <p>An all-rounder AI assistant inspired by Jarvis — designed to assist, automate, and adapt to your workflow.</p>
+        <div class="buttons">
+          <a href="#" class="btn">See Repo</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Nexa Section -->
-  <section class="project nexa">
-    <div class="image neon-border">
-      <img src="assets/sub2.png" alt="Nexa Project" />
-    </div>
-    <div class="text">
-      <h2>Nexa</h2>
-      <p>An advanced ecosystem merging AI precision and futuristic UI to redefine modern development.</p>
-      <div class="buttons">
-        <a href="#" class="btn">See Repo</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="contact">
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
     <h2>Contact Me</h2>
     <div class="socials">
       <a href="https://github.com/" target="_blank" class="social-icon github"><i class="fa-brands fa-github"></i></a>
@@ -62,22 +78,5 @@
   </section>
 
   <script src="script.js"></script>
-</body>
-</html>    </div>
-
-    <div id="chat-box" class="hidden">
-      <div class="chat-header">Kavinverse Assistant</div>
-      <div id="chat-body">
-        <div class="bot-message">Hi there 👋 How can I help you today?</div>
-      </div>
-      <div class="chat-input-area">
-        <input type="text" id="user-input" placeholder="Type your message..." />
-        <button id="send-btn">Send</button>
-      </div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-  <script src="oi/ai-widget.js"></script>
 </body>
 </html>
