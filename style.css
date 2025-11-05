@@ -217,3 +217,62 @@ footer {
     justify-content: center;
   }
 }
+.social-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.btn-social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 1.05rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.btn-social i {
+  font-size: 1.3rem;
+}
+
+/* Individual button colors */
+.btn-social.github {
+  background: linear-gradient(135deg, #333, #555);
+}
+.btn-social.instagram {
+  background: linear-gradient(135deg, #feda75, #d62976, #962fbf);
+}
+.btn-social.twitter {
+  background: linear-gradient(135deg, #1da1f2, #0d8ddb);
+}
+.btn-social.discord {
+  background: linear-gradient(135deg, #5865f2, #404eed);
+}
+
+/* Hover effects */
+.btn-social:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+}
+
+/* Glow on hover by color */
+.btn-social.github:hover {
+  box-shadow: 0 0 25px #999;
+}
+.btn-social.instagram:hover {
+  box-shadow: 0 0 25px #ff5fa2;
+}
+.btn-social.twitter:hover {
+  box-shadow: 0 0 25px #1da1f2;
+}
+.btn-social.discord:hover {
+  box-shadow: 0 0 25px #5865f2;
+}
+
