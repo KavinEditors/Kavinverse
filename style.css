@@ -6,11 +6,14 @@
 }
 
 body {
-  background: linear-gradient(135deg, #0a0a0a 0%, #050505 50%, #000000 100%);
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f0f0f, #1b1b1b, #121212);
   color: #fff;
   overflow-x: hidden;
-  min-height: 100vh;
+  scroll-behavior: smooth;
 }
+
 
 /* Header */
 header {
