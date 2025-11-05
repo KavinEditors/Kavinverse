@@ -13,15 +13,13 @@ body {
   overflow-x: hidden;
 }
 
-section {
-  padding: 80px 10%;
-}
-
+/* --- HERO --- */
 .hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
   min-height: 90vh;
+  padding: 80px 10%;
   gap: 50px;
 }
 
@@ -30,38 +28,53 @@ section {
 }
 
 .hero-text h1 {
-  font-size: 2.8em;
+  font-size: 3em;
   color: #0ff;
-  text-shadow: 0 0 20px #0ff;
+  text-shadow: 0 0 20px #00ffff;
   animation: glow 3s ease-in-out infinite alternate;
 }
 
 .hero-text p {
   margin-top: 15px;
-  line-height: 1.6;
   font-size: 1.1em;
+  line-height: 1.6;
   color: #ccc;
 }
 
-.hero-image img {
-  width: 320px;
-  height: 320px;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 0 40px #00ffff;
-  animation: breathe 3s infinite ease-in-out;
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
+.circle-glow {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  border: 3px solid #00ffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 40px #00ffff;
+  animation: breathe 3s infinite ease-in-out;
+  position: relative;
+}
+
+.circle-glow img {
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  object-fit: cover;
+  animation: float 6s infinite ease-in-out;
+}
+
+/* --- PROJECTS --- */
 .project {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 40px;
-  margin-top: 50px;
-}
-
-.project.roast .text {
-  text-align: left;
+  padding: 80px 10%;
+  gap: 50px;
 }
 
 .project.nexa {
@@ -69,7 +82,7 @@ section {
 }
 
 .text h2 {
-  font-size: 2em;
+  font-size: 2.2em;
   color: #0ff;
   text-shadow: 0 0 20px #00ffff;
 }
@@ -97,7 +110,6 @@ section {
 
 .btn {
   text-decoration: none;
-  background: transparent;
   border: 2px solid #00ffff;
   color: #0ff;
   padding: 10px 20px;
@@ -106,6 +118,77 @@ section {
   transition: 0.3s;
   animation: borderGlow 2s infinite alternate;
 }
+
+.btn:hover {
+  background: #00ffff;
+  color: #000;
+  box-shadow: 0 0 20px #00ffff;
+}
+
+/* --- CONTACT --- */
+.contact {
+  text-align: center;
+  padding: 100px 0;
+}
+
+.contact h2 {
+  font-size: 2.2em;
+  color: #0ff;
+  margin-bottom: 30px;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.social-icon {
+  font-size: 2.5em;
+  color: #0ff;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  color: #fff;
+  text-shadow: 0 0 30px #00ffff, 0 0 50px #00ffff;
+}
+
+/* --- UNIQUE COLOR GLOWS --- */
+.github:hover { color: #00ffff; }
+.instagram:hover { color: #e1306c; text-shadow: 0 0 30px #e1306c; }
+.twitter:hover { color: #1da1f2; text-shadow: 0 0 30px #1da1f2; }
+.discord:hover { color: #5865f2; text-shadow: 0 0 30px #5865f2; }
+
+/* --- ANIMATIONS --- */
+@keyframes breathe {
+  0%, 100% { box-shadow: 0 0 40px #00ffff; }
+  50% { box-shadow: 0 0 10px #00ffff; }
+}
+
+@keyframes borderGlow {
+  0%, 100% { border-color: #00ffff; box-shadow: 0 0 20px #00ffff; }
+  50% { border-color: #0099ff; box-shadow: 0 0 5px #0099ff; }
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #00ffff; }
+  to { text-shadow: 0 0 30px #00ffff, 0 0 50px #00ffff; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@media (max-width: 900px) {
+  .hero, .project {
+    flex-direction: column;
+    text-align: center;
+  }
+}}
 
 .btn:hover {
   background: #00ffff;
