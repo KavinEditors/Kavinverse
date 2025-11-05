@@ -8,11 +8,12 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #0f0f0f, #1b1b1b, #121212);
-  color: #fff;
+  background: linear-gradient(135deg, #050505, #0b0b0b, #000000);
+  color: #ffffff;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
+
 
 
 header {
