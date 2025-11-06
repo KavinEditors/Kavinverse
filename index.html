@@ -1,231 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kavinverse | Developer Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    /* Base */
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #050505, #0b0b0b, #000000);
-      color: #ffffff;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-    }
-
-    /* Header */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 8px 60px;
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(8px);
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    header h1 {
-      font-size: 1.2rem;
-      letter-spacing: 1px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: white;
-      margin: 0 15px;
-      font-size: 0.95rem;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #00bfff;
-    }
-
-    /* Intro */
-    .intro {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 150px 10%;
-      flex-wrap: wrap;
-    }
-
-    .intro-text {
-      max-width: 500px;
-    }
-
-    .intro-text h2 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-      color: #00bfff;
-    }
-
-    .intro-text p {
-      color: #ccc;
-      line-height: 1.6;
-    }
-
-    .image-container {
-      position: relative;
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .profile-img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-      z-index: 2;
-      box-shadow: 0 0 20px rgba(0, 153, 255, 0.6);
-    }
-
-    .orbit {
-      position: absolute;
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      border-top: 3px solid rgba(0, 153, 255, 0.9);
-      border-bottom: 3px solid transparent;
-      border-left: 3px solid transparent;
-      border-right: 3px solid transparent;
-      animation: spin 4s linear infinite;
-      z-index: 1;
-    }
-
-    .orbit.reverse {
-      border-top: 3px solid transparent;
-      border-bottom: 3px solid rgba(0, 153, 255, 0.9);
-      animation: spin-reverse 4s linear infinite;
-    }
-
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    @keyframes spin-reverse {
-      from { transform: rotate(360deg); }
-      to { transform: rotate(0deg); }
-    }
-
-    /* Projects */
-    .projects {
-      padding: 80px 10%;
-    }
-
-    .project {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 100px;
-      border: 2px solid rgba(0, 191, 255, 0.5);
-      border-radius: 15px;
-      padding: 30px;
-      box-shadow: 0 0 20px rgba(0, 191, 255, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 30px rgba(0, 191, 255, 0.4);
-    }
-
-    .project img {
-      width: 300px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
-    }
-
-    .project-text {
-      max-width: 500px;
-      margin: 20px;
-    }
-
-    .project-text h3 {
-      color: #00bfff;
-      font-size: 1.6rem;
-      margin-bottom: 10px;
-    }
-
-    .buttons {
-      margin-top: 15px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 8px 18px;
-      margin-right: 10px;
-      border: none;
-      border-radius: 5px;
-      font-weight: 500;
-      color: white;
-      cursor: pointer;
-      text-decoration: none;
-      transition: transform 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
-    }
-
-    .btn-repo {
-      background: linear-gradient(135deg, #0077ff, #00bfff);
-    }
-
-    .btn-site {
-      background: linear-gradient(135deg, #ff0080, #ffb700);
-    }
-
-    /* Contact */
-    .contact {
-      text-align: center;
-      padding: 80px 0;
-    }
-
-    .contact h3 {
-      font-size: 1.8rem;
-      margin-bottom: 25px;
-      color: #00bfff;
-    }
-
-    .socials a {
-      display: inline-block;
-      margin: 0 10px;
-      text-decoration: none;
-      color: white;
-      font-size: 1rem;
-      padding: 10px 20px;
-      border-radius: 25px;
-      transition: transform 0.3s ease;
-    }
-
-    .socials a:hover {
-      transform: scale(1.1);
-    }
-
-    .github { background: linear-gradient(135deg, #333, #555); }
-    .instagram { background: linear-gradient(135deg, #feda75, #d62976, #962fbf); }
-    .x { background: linear-gradient(135deg, #000, #444); }
-    .discord { background: linear-gradient(135deg, #5865f2, #404eed); }
-  </style>
+  <link rel="icon" href="assets/image.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
   <header>
-    <h1>Kavinverse</h1>
+    <div class="logo">Kavinverse</div>
     <nav>
       <a href="#home">Home</a>
       <a href="#projects">Projects</a>
@@ -233,56 +19,66 @@
     </nav>
   </header>
 
-  <section id="home" class="intro">
-    <div class="intro-text">
-      <h2>Welcome to Kavinverse</h2>
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h2>Welcome to</h2>
+      <h1><span class="gradient-text">Kavinverse</span></h1>
       <p>Exploring innovation through creativity, logic, and design — where every line of code defines the future.</p>
     </div>
-    <div class="image-container">
-      <div class="orbit"></div>
-      <div class="orbit reverse"></div>
-      <img src="assets/image.png" alt="Kavin" class="profile-img" />
+    <div class="hero-image">
+      <div class="rotating-arcs">
+        <div class="arc arc1"></div>
+        <div class="arc arc2"></div>
+        <img src="assets/image.png" alt="Kavinverse" />
+      </div>
     </div>
   </section>
 
   <section id="projects" class="projects">
-    <div class="project">
-      <div class="project-text">
-        <h3>ROAST</h3>
-        <p>A witty, relentless AI that doesn’t just assist — it roasts you into being smarter. 
-        You can try to outsmart it, but you’ll end up charging it instead. 
-        It’s fun, fearless, and completely unapologetic — because some lessons are best delivered with sarcasm.</p>
+    <div class="project roast">
+      <div class="text">
+        <h2>R.O.A.S.T</h2>
+        <p>A humorous AI that roasts you intelligently — but you can’t roast it back. Smart, sarcastic, and brutally honest.</p>
         <div class="buttons">
-          <a href="https://github.com/KavinEditors/R.O.A.S.T" class="btn btn-repo">See Repo</a>
-          <a href="https://really-offensive-automated-sus-terminator.streamlit.app/" class="btn btn-site">See Website</a>
+          <a href="https://really-offensive-automated-sus-terminator.streamlit.app/" target="_blank" class="btn">See Website</a>
+          <a href="https://github.com/KavinEditors/R.O.A.S.T" target="_blank" class="btn">See Repo</a>
         </div>
       </div>
-      <img src="assets/sub1.png" alt="ROAST Project">
+      <div class="image">
+        <img src="assets/sub1.png" alt="ROAST">
+      </div>
     </div>
 
-    <div class="project">
-      <img src="assets/sub2.png" alt="NEXA Project">
-      <div class="project-text">
-        <h3>NEXA</h3>
-        <p>Your personal powerhouse — designed to think, execute, and evolve with you. 
-        Nexa is not just an assistant; it’s a strategist, a multitasker, and your silent collaborator. 
-        Built to adapt. Engineered to accelerate.</p>
+    <div class="project nexa">
+      <div class="image">
+        <img src="assets/sub2.png" alt="NEXA">
+      </div>
+      <div class="text">
+        <h2>NEXA</h2>
+        <p>An AI assistant that helps you code, search YouTube, open your favorite tabs, and make daily tasks effortless.</p>
         <div class="buttons">
-          <a href="https://github.com/KavinEditors/NEXA-Next-gen-Executive-Assistant" class="btn btn-repo">See Repo</a>
+          <a href="https://github.com/KavinEditors/NEXA-Next-gen-Executive-Assistant" target="_blank" class="btn">See Repo</a>
         </div>
       </div>
     </div>
   </section>
 
   <section id="contact" class="contact">
-    <h3>Contact Me</h3>
+    <h2>Contact Me</h2>
     <div class="socials">
-      <a href="https://github.com/KavinEditors/" class="github">GitHub</a>
-      <a href="https://www.instagram.com/speedkavin311/" class="instagram">Instagram</a>
-      <a href="https://x.com/SpeedKavin311" class="x">X (Twitter)</a>
-      <a href="https://discord.com/users/1180531027832217661" class="discord">Discord</a>
+      <a href="https://github.com/KavinEditors/" target="_blank" class="social github">GitHub</a>
+      <a href="https://www.instagram.com/speedkavin311/" target="_blank" class="social instagram">Instagram</a>
+      <a href="https://x.com/SpeedKavin311" target="_blank" class="social twitter">Twitter</a>
+      <a href="https://discord.com/users/1180531027832217661" target="_blank" class="social discord">Discord</a>
     </div>
   </section>
 
+  <div class="ai-widget">
+    <img src="assets/help.png" alt="AI Help">
+  </div>
+
+  <script src="api/groq-chat.js" defer></script>
+  <script src="oi/ai-widget.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
-</html>
+        </html>
