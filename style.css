@@ -1,43 +1,42 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
+/* ===== GLOBAL ===== */
 body {
-  background: linear-gradient(180deg, #050505, #0b0b0b, #000000);
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(160deg, #0a0a0a, #151515, #0d0d0d);
   color: #fff;
-  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-/* Header */
+/* ===== HEADER ===== */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 40px;
-  position: fixed;
-  width: 100%;
+  padding: 12px 60px;
+  border-bottom: 2px solid rgba(0, 255, 255, 0.4);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  background: rgba(10, 10, 10, 0.95);
+  position: sticky;
   top: 0;
-  background: rgba(0, 0, 0, 0.9);
-  border-bottom: 1px solid #0ff;
   z-index: 1000;
 }
 
-header .logo {
-  font-size: 1.5rem;
+.logo {
+  font-size: 1.6rem;
   font-weight: 700;
-  background: linear-gradient(90deg, #00eaff, #0077ff);
+}
+
+.logo span {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 nav a {
-  margin-left: 25px;
-  text-decoration: none;
+  margin-left: 28px;
   color: white;
-  font-weight: 500;
+  text-decoration: none;
+  font-size: 1rem;
   transition: 0.3s;
 }
 
@@ -45,203 +44,143 @@ nav a:hover {
   color: #00bfff;
 }
 
-/* Hero */
+/* ===== HERO ===== */
 .hero {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 150px 80px 80px;
-  gap: 40px;
+  align-items: center;
+  padding: 90px 80px;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 300px;
 }
 
 .hero-text h2 {
-  font-size: 1.5rem;
-  font-weight: 400;
+  font-size: 2.4rem;
   margin-bottom: 10px;
 }
 
-.hero-text h1 {
-  font-size: 3rem;
-  margin-bottom: 15px;
-}
-
-.gradient-text {
-  background: linear-gradient(90deg, #00eaff, #0077ff);
+.hero-text .gradient {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .hero-text p {
-  font-size: 1.1rem;
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 30px;
   max-width: 500px;
-  line-height: 1.6;
-  color: #d9d9d9;
 }
 
+.buttons .btn {
+  background: transparent;
+  border: 2px solid #00bfff;
+  color: white;
+  padding: 10px 18px;
+  margin-right: 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.buttons .btn:hover {
+  background: #00bfff;
+  color: black;
+}
+
+/* ===== IMAGE & ORBITS ===== */
 .hero-image {
   position: relative;
+  width: 280px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-image img {
-  width: 300px;
-  height: 300px;
+  width: 180px;
   border-radius: 50%;
-  border: 3px solid #00bfff;
-  animation: glow 3s ease-in-out infinite alternate;
-}
-
-/* Rotating Arcs */
-.rotating-arcs {
   position: relative;
-  width: 320px;
-  height: 320px;
+  z-index: 2;
 }
 
-.arc {
+/* Orbit rings */
+.orbit {
   position: absolute;
-  border: 3px solid transparent;
-  border-top-color: #00bfff;
+  border: 1.8px solid rgba(0, 255, 255, 0.6);
   border-radius: 50%;
+  transform-origin: center;
+}
+
+.orbit1 {
+  width: 240px;
+  height: 240px;
   animation: rotate 8s linear infinite;
 }
 
-.arc1 {
-  width: 340px;
-  height: 340px;
-  top: -20px;
-  left: -20px;
+.orbit2 {
+  width: 260px;
+  height: 260px;
+  animation: rotate 10s linear infinite reverse;
+  border-color: rgba(255, 0, 200, 0.6);
 }
 
-.arc2 {
-  width: 310px;
-  height: 310px;
-  top: 5px;
-  left: 5px;
-  animation-direction: reverse;
+/* Animation */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-/* Projects */
-.projects {
-  padding: 60px 80px;
+/* ===== NEXA ===== */
+.nexa {
   display: flex;
-  flex-direction: column;
-  gap: 100px;
-}
-
-.project {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 40px;
-}
-
-.project .text {
-  max-width: 500px;
-}
-
-.project h2 {
-  font-size: 2rem;
-  color: #00bfff;
-  margin-bottom: 10px;
-}
-
-.project p {
-  font-size: 1rem;
-  color: #ccc;
-  margin-bottom: 20px;
-}
-
-.project .btn {
-  text-decoration: none;
-  border: 2px solid #00bfff;
-  padding: 10px 20px;
-  color: white;
-  background: black;
-  margin-right: 10px;
-  transition: 0.3s;
-}
-
-.project .btn:hover {
-  background: #00bfff;
-  color: #000;
-}
-
-.project img {
-  width: 350px;
-  border-radius: 12px;
-  border: 2px solid #00bfff;
-}
-
-/* Contact */
-.contact {
-  text-align: center;
-  padding: 80px 20px;
-}
-
-.contact h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #00bfff;
-}
-
-.socials {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+  align-items: center;
+  padding: 80px;
   flex-wrap: wrap;
 }
 
-.social {
-  padding: 10px 20px;
-  border-radius: 8px;
-  color: white;
-  font-weight: 600;
-  text-decoration: none;
-  transition: 0.3s;
+.nexa-text {
+  flex: 1;
+  min-width: 300px;
 }
 
-.github { background: #333; }
-.instagram { background: linear-gradient(45deg, #ff0080, #ff8c00); }
-.twitter { background: #1DA1F2; }
-.discord { background: linear-gradient(45deg, #5865F2, #00bfff); }
-
-.social:hover {
-  filter: brightness(1.2);
+.nexa-text h2 {
+  font-size: 2.2rem;
+  color: #00bfff;
 }
 
-/* AI Widget */
+.nexa-text p {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 25px;
+  max-width: 500px;
+}
+
+.nexa-image img {
+  width: 240px;
+  border-radius: 12px;
+}
+
+/* ===== AI Widget ===== */
 .ai-widget {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(255,0,128,0.6), rgba(0,191,255,0.6));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: rotate 10s linear infinite;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.ai-widget:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px #00bfff;
+  bottom: 25px;
+  right: 25px;
+  animation: spin 10s linear infinite;
 }
 
 .ai-widget img {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  filter: drop-shadow(0 0 10px rgba(255, 0, 255, 0.5));
 }
 
-/* Animations */
-@keyframes rotate {
-  100% { transform: rotate(360deg); }
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
-
-@keyframes glow {
-  from { box-shadow: 0 0 10px #00bfff; }
-  to { box-shadow: 0 0 30px #00bfff; }
-    }
