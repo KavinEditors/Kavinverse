@@ -1,16 +1,8 @@
-// Smooth scroll for nav links
-document.querySelectorAll('nav a').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-});
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("Kavinverse Loaded Successfully ✨");
 
-// AI widget hover pulse (handled by CSS but we can extend later)
-const aiWidget = document.querySelector('.ai-widget');
-aiWidget.addEventListener('click', () => {
-  alert("AI Widget Placeholder — will connect to groq-chat.js soon.");
+  const widget = document.getElementById("aiWidget");
+  widget.addEventListener("click", () => {
+    alert("AI Widget coming soon — connected to groq-chat.js + ai-widget.js");
+  });
 });
