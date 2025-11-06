@@ -69,6 +69,14 @@
   </footer>
 
   <img src="assets/help.png" alt="AI Widget" id="aiWidget">
+  <div id="chatWidget" class="hidden">
+    <div class="chat-header">Kavinverse AI</div>
+    <div class="chat-body" id="chatBody"></div>
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Type your message...">
+      <button id="sendBtn">Send</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
   <script src="api/groq-chat.js"></script>
