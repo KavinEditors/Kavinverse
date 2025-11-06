@@ -1,22 +1,16 @@
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("Kavinverse | Interactive Portfolio Active ⚡");
-
-  // Smooth scroll highlight effect for active menu item
-  const navLinks = document.querySelectorAll('nav a');
-  const sections = document.querySelectorAll('section');
-
-  window.addEventListener('scroll', () => {
-    let current = "";
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 150;
-      if (pageYOffset >= sectionTop) current = section.getAttribute('id');
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href').includes(current)) {
-        link.classList.add('active');
-      }
-    });
+// Smooth scroll for nav links
+document.querySelectorAll('nav a').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
   });
+});
+
+// AI widget hover pulse (handled by CSS but we can extend later)
+const aiWidget = document.querySelector('.ai-widget');
+aiWidget.addEventListener('click', () => {
+  alert("AI Widget Placeholder — will connect to groq-chat.js soon.");
 });
