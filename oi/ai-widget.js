@@ -1,45 +1,33 @@
-const aiCircle = document.getElementById("ai-circle");
-const chatBox = document.getElementById("chat-box");
-const sendBtn = document.getElementById("send-btn");
-const userInput = document.getElementById("user-input");
-const chatBody = document.getElementById("chat-body");
+const widget = document.getElementById("aiWidget");
+const chatBox = document.getElementById("chatWidget");
+const sendBtn = document.getElementById("sendBtn");
+const userInput = document.getElementById("userInput");
+const chatBody = document.getElementById("chatBody");
 
-chatBox.classList.add("hidden");
-
-aiCircle.addEventListener("click", () => {
+widget.addEventListener("click", () => {
   chatBox.classList.toggle("hidden");
 });
 
-async function sendMessage() {
-  const msg = userInput.value.trim();
-  if (!msg) return;
+sendBtn.addEventListener("click", async () => {
+  const text = userInput.value.trim();
+  if (!text) return;
 
-  const userMsg = document.createElement("div");
-  userMsg.className = "user-message";
-  userMsg.textContent = msg;
-  chatBody.appendChild(userMsg);
+  appendMessage("You", text);
   userInput.value = "";
 
-  const botMsg = document.createElement("div");
-  botMsg.className = "bot-message";
-  botMsg.textContent = "Thinking...";
-  chatBody.appendChild(botMsg);
-  chatBody.scrollTop = chatBody.scrollHeight;
+  const res = await fetch("/api/groq-chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message: text }),
+  });
 
-  try {
-    const res = await fetch("/api/groq-chat", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ prompt: msg }),
-    });
-    const data = await res.json();
-    botMsg.textContent = data.reply || "No reply.";
-  } catch {
-    botMsg.textContent = "⚠️ AI connection error.";
-  }
+  const data = await res.json();
+  appendMessage("AI", data.reply || "Error getting response.");
+});
 
+function appendMessage(sender, msg) {
+  const div = document.createElement("div");
+  div.innerHTML = `<strong>${sender}:</strong> ${msg}`;
+  chatBody.appendChild(div);
   chatBody.scrollTop = chatBody.scrollHeight;
 }
-
-sendBtn.addEventListener("click", sendMessage);
-userInput.addEventListener("keypress", e => e.key === "Enter" && sendMessage());
