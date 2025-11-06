@@ -1,34 +1,29 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
+/* ===== Global Styles ===== */
 body {
-  background: linear-gradient(180deg, #050505, #0b0b0b, #000000);
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(180deg, #0d0d0d, #1a1a1a);
   color: #fff;
-  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-/* Header */
+/* ===== Header ===== */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 40px;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  background: rgba(0, 0, 0, 0.9);
-  border-bottom: 1px solid #0ff;
-  z-index: 1000;
+  padding: 15px 60px;
+  border-bottom: 2px solid rgba(0, 255, 255, 0.4);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  background-color: rgba(10, 10, 10, 0.8);
 }
 
-header .logo {
+header h1 {
   font-size: 1.5rem;
-  font-weight: 700;
-  background: linear-gradient(90deg, #00eaff, #0077ff);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #00ffff, #0077ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -36,290 +31,170 @@ header .logo {
 nav a {
   margin-left: 25px;
   text-decoration: none;
-  color: white;
-  font-weight: 500;
-  transition: 0.3s;
+  color: #fff;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #00bfff;
+  color: #00aaff;
 }
 
-/* Hero */
+/* ===== Hero Section ===== */
 .hero {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 150px 80px 80px;
-  gap: 40px;
+  align-items: center;
+  padding: 100px 10%;
+}
+
+.hero-text {
+  max-width: 45%;
 }
 
 .hero-text h2 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  margin-bottom: 10px;
-}
-
-.hero-text h1 {
-  font-size: 3rem;
-  margin-bottom: 15px;
-}
-
-.gradient-text {
-  background: linear-gradient(90deg, #00eaff, #0077ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 2.2rem;
 }
 
 .hero-text p {
-  font-size: 1.1rem;
-  max-width: 500px;
-  line-height: 1.6;
-  color: #d9d9d9;
+  font-size: 1rem;
+  margin-top: 10px;
 }
 
 .hero-image {
   position: relative;
+  width: 280px;
+  height: 280px;
 }
 
 .hero-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  z-index: 3;
+}
+
+.circle {
+  position: absolute;
+  border: 2px solid #00ffff;
+  border-radius: 50%;
+  animation: spin 8s linear infinite;
+  opacity: 0.8;
+}
+
+.circle1 {
   width: 300px;
   height: 300px;
-  border-radius: 50%;
-  border: 3px solid #00bfff;
-  animation: glow 3s ease-in-out infinite alternate;
+  top: -10px;
+  left: -10px;
 }
 
-/* Rotating Arcs */
-.rotating-arcs {
-  position: relative;
+.circle2 {
   width: 320px;
   height: 320px;
-}
-
-.arc {
-  position: absolute;
-  border: 3px solid transparent;
-  border-top-color: #00bfff;
-  border-radius: 50%;
-  animation: rotate 8s linear infinite;
-}
-
-.arc1 {
-  width: 340px;
-  height: 340px;
   top: -20px;
   left: -20px;
-}
-
-.arc2 {
-  width: 310px;
-  height: 310px;
-  top: 5px;
-  left: 5px;
   animation-direction: reverse;
-}
-
-/* Projects */
-.projects {
-  padding: 60px 80px;
-  display: flex;
-  flex-direction: column;
-  gap: 100px;
-}
-
-.project {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-}
-
-.project .text {
-  max-width: 500px;
-}
-
-.project h2 {
-  font-size: 2rem;
-  color: #00bfff;
-  margin-bottom: 10px;
-}
-
-.project p {
-  font-size: 1rem;
-  color: #ccc;
-  margin-bottom: 20px;
-}
-
-.project .btn {
-  text-decoration: none;
-  border: 2px solid #00bfff;
-  padding: 10px 20px;
-  color: white;
-  background: black;
-  margin-right: 10px;
-  transition: 0.3s;
-}
-
-.project .btn:hover {
-  background: #00bfff;
-  color: #000;
-}
-
-.project img {
-  width: 350px;
-  border-radius: 12px;
-  border: 2px solid #00bfff;
-}
-
-/* Contact */
-.contact {
-  text-align: center;
-  padding: 80px 20px;
-}
-
-.contact h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #00bfff;
-}
-
-.socials {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.social {
-  padding: 10px 20px;
-  border-radius: 8px;
-  color: white;
-  font-weight: 600;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.github { background: #333; }
-.instagram { background: linear-gradient(45deg, #ff0080, #ff8c00); }
-.twitter { background: #1DA1F2; }
-.discord { background: linear-gradient(45deg, #5865F2, #00bfff); }
-
-.social:hover {
-  filter: brightness(1.2);
-}
-
-/* AI Widget */
-.ai-widget {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(255,0,128,0.6), rgba(0,191,255,0.6));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: rotate 10s linear infinite;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.ai-widget:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px #00bfff;
-}
-
-.ai-widget img {
-  width: 40px;
-  height: 40px;
-}
-
-/* Animations */
-@keyframes rotate {
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes glow {
-  from { box-shadow: 0 0 10px #00bfff; }
-  to { box-shadow: 0 0 30px #00bfff; }
-}  position: relative;
-  z-index: 2;
-}
-
-/* Orbit rings */
-.orbit {
-  position: absolute;
-  border: 1.8px solid rgba(0, 255, 255, 0.6);
-  border-radius: 50%;
-  transform-origin: center;
-}
-
-.orbit1 {
-  width: 240px;
-  height: 240px;
-  animation: rotate 8s linear infinite;
-}
-
-.orbit2 {
-  width: 260px;
-  height: 260px;
-  animation: rotate 10s linear infinite reverse;
-  border-color: rgba(255, 0, 200, 0.6);
-}
-
-/* Animation */
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* ===== NEXA ===== */
-.nexa {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 80px;
-  flex-wrap: wrap;
-}
-
-.nexa-text {
-  flex: 1;
-  min-width: 300px;
-}
-
-.nexa-text h2 {
-  font-size: 2.2rem;
-  color: #00bfff;
-}
-
-.nexa-text p {
-  font-size: 1rem;
-  color: #ccc;
-  margin-bottom: 25px;
-  max-width: 500px;
-}
-
-.nexa-image img {
-  width: 240px;
-  border-radius: 12px;
-}
-
-/* ===== AI Widget ===== */
-.ai-widget {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  animation: spin 10s linear infinite;
-}
-
-.ai-widget img {
-  width: 60px;
-  filter: drop-shadow(0 0 10px rgba(255, 0, 255, 0.5));
 }
 
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+/* ===== Projects ===== */
+.project {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 10%;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.project .text {
+  max-width: 45%;
+}
+
+.project .text h3 {
+  font-size: 1.8rem;
+  color: #00aaff;
+}
+
+.project img {
+  width: 400px;
+  border: 2px solid #00aaff;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.4);
+}
+
+.buttons {
+  margin-top: 15px;
+}
+
+.btn {
+  background: #000;
+  border: 1px solid #00aaff;
+  color: white;
+  padding: 10px 22px;
+  margin-right: 12px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #00aaff;
+  color: black;
+}
+
+/* Alternate layout for NEXA */
+.nexa {
+  flex-direction: row-reverse;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 60px 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer h3 {
+  color: #00aaff;
+  margin-bottom: 20px;
+}
+
+.socials a {
+  margin: 0 12px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.github { background: linear-gradient(90deg, #555, #333); }
+.instagram { background: linear-gradient(90deg, #feda75, #d62976); }
+.twitter { background: linear-gradient(90deg, #1DA1F2, #0a66c2); }
+.discord { background: linear-gradient(90deg, #5865F2, #3a45c9); }
+
+.socials a:hover {
+  filter: brightness(1.2);
+}
+
+/* ===== AI Widget ===== */
+#aiWidget {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 70px;
+  height: 70px;
+  animation: revolve 6s linear infinite;
+  border-radius: 50%;
+  box-shadow: 0 0 25px rgba(255, 0, 150, 0.6);
+  cursor: pointer;
+}
+
+@keyframes revolve {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
