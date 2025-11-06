@@ -1,13 +1,12 @@
-/* ===== Global Styles ===== */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(180deg, #0d0d0d, #1a1a1a);
+  background: #0a0a0a;
   color: #fff;
   overflow-x: hidden;
 }
 
-/* ===== Header ===== */
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
@@ -34,12 +33,9 @@ nav a {
   color: #fff;
   transition: color 0.3s ease;
 }
+nav a:hover { color: #00aaff; }
 
-nav a:hover {
-  color: #00aaff;
-}
-
-/* ===== Hero Section ===== */
+/* Hero Section */
 .hero {
   display: flex;
   justify-content: space-between;
@@ -47,13 +43,9 @@ nav a:hover {
   padding: 100px 10%;
 }
 
-.hero-text {
-  max-width: 45%;
-}
+.hero-text { max-width: 45%; }
 
-.hero-text h2 {
-  font-size: 2.2rem;
-}
+.hero-text h2 { font-size: 2.2rem; }
 
 .hero-text p {
   font-size: 1rem;
@@ -88,7 +80,6 @@ nav a:hover {
   top: -10px;
   left: -10px;
 }
-
 .circle2 {
   width: 320px;
   height: 320px;
@@ -96,16 +87,153 @@ nav a:hover {
   left: -20px;
   animation-direction: reverse;
 }
-
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
-/* ===== Projects ===== */
+/* Projects */
 .project {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 80px 10%;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.project .text { max-width: 45%; }
+
+.project .text h3 {
+  font-size: 1.8rem;
+  color: #00aaff;
+}
+
+.project .text p {
+  margin-bottom: 25px;
+}
+
+.project img {
+  width: 400px;
+  border: 2px solid #00aaff;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.4);
+}
+
+.btn {
+  background: #000;
+  border: 1px solid #00aaff;
+  color: white;
+  padding: 10px 22px;
+  margin-right: 12px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #00aaff;
+  color: black;
+}
+
+.nexa {
+  flex-direction: row;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 60px 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+footer h3 {
+  color: #00aaff;
+  margin-bottom: 20px;
+}
+.socials a {
+  margin: 0 12px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+}
+.github { background: linear-gradient(90deg, #555, #333); }
+.instagram { background: linear-gradient(90deg, #feda75, #d62976); }
+.twitter { background: linear-gradient(90deg, #1DA1F2, #0a66c2); }
+.discord { background: linear-gradient(90deg, #5865F2, #3a45c9); }
+.socials a:hover { filter: brightness(1.2); }
+
+/* AI Widget */
+#aiWidget {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  box-shadow: 0 0 25px rgba(255, 0, 150, 0.8);
+  animation: pulse 2s ease-in-out infinite;
+  cursor: pointer;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 0, 150, 0.6), 0 0 40px rgba(0, 120, 255, 0.4); }
+  50% { box-shadow: 0 0 40px rgba(255, 0, 150, 0.9), 0 0 60px rgba(0, 120, 255, 0.6); }
+}
+
+/* Chat Box */
+#chatWidget {
+  position: fixed;
+  bottom: 110px;
+  right: 40px;
+  width: 320px;
+  height: 400px;
+  background: rgba(15,15,15,0.9);
+  border: 1px solid #00aaff;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  z-index: 999;
+  transition: opacity 0.3s ease;
+}
+.hidden { display: none; }
+
+.chat-header {
+  background: linear-gradient(90deg, #00ffff, #0077ff);
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+
+.chat-body {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  font-size: 0.9rem;
+}
+
+.chat-input {
+  display: flex;
+  padding: 8px;
+  background: rgba(0,0,0,0.8);
+}
+.chat-input input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  padding: 8px;
+}
+.chat-input button {
+  background: #00aaff;
+  border: none;
+  color: black;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}  align-items: center;
   justify-content: space-between;
   padding: 80px 10%;
   border-top: 1px solid rgba(255,255,255,0.1);
