@@ -1,85 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Kavinverse | Developer Portfolio</title>
-  <link rel="icon" href="assets/image.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/image.png" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1><span class="gradient-text">Kavinverse</span></h1>
-    <nav>
+  <header class="site-header">
+    <div class="brand"><span class="brand-title">Kavinverse</span></div>
+    <nav class="main-nav">
       <a href="#home">Home</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <section id="home" class="hero">
-    <div class="hero-text">
-      <h2>Welcome to <span class="gradient-text">Kavinverse</span></h2>
-      <p>Exploring innovation through creativity, logic, and design — where every line of code defines the future.</p>
-    </div>
-    <div class="hero-image">
-      <div class="circle circle1"></div>
-      <div class="circle circle2"></div>
-      <img src="assets/image.png" alt="Kavinverse Hero">
-    </div>
-  </section>
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero section">
+      <div class="hero-left">
+        <p class="lead">Welcome to</p>
+        <h1 class="hero-title"><span class="gradient">Kavinverse</span></h1>
+        <p class="hero-desc">Innovator. Developer. Creator. Every project is a step toward the extraordinary.</p>
+      </div>
 
-  <section id="projects">
-    <div class="project roast">
-      <div class="text">
-        <h3>R.O.A.S.T</h3>
-        <p>A humorous AI that roasts you intelligently — but you can’t roast it back. Smart, sarcastic, and brutally honest.</p>
-        <div class="buttons">
-          <a href="https://really-offensive-automated-sus-terminator.streamlit.app/" target="_blank" class="btn">See Website</a>
-          <a href="https://github.com/KavinEditors/R.O.A.S.T" target="_blank" class="btn">See Repo</a>
+      <div class="hero-right">
+        <!-- SVG arcs (blue-only) + image -->
+        <div class="hero-orbit">
+          <svg class="orbit orbit-outer" viewBox="0 0 340 340" aria-hidden="true">
+            <circle cx="170" cy="170" r="140" fill="none" stroke-linecap="round" stroke-width="4"
+              stroke="#00bfff" stroke-dasharray="565 377" stroke-dashoffset="0"></circle>
+          </svg>
+
+          <svg class="orbit orbit-inner" viewBox="0 0 320 320" aria-hidden="true">
+            <circle cx="160" cy="160" r="125" fill="none" stroke-linecap="round" stroke-width="3"
+              stroke="#00e5ff" stroke-dasharray="94 848" stroke-dashoffset="0"></circle>
+          </svg>
+
+          <img src="assets/image.png" alt="Kavinverse" class="hero-image neon-breathe" />
         </div>
       </div>
-      <div class="image">
-        <img src="assets/sub1.png" alt="ROAST Project">
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects section">
+      <!-- ROAST: text left, image right -->
+      <article class="project roast reveal-left">
+        <div class="proj-text">
+          <h2>R.O.A.S.T</h2>
+          <p class="proj-desc">
+            A humorous AI that roasts you intelligently — you can try to outsmart it, but it’ll always roast back smarter.
+          </p>
+          <div class="proj-actions">
+            <a class="btn" href="https://really-offensive-automated-sus-terminator.streamlit.app/" target="_blank">See Website</a>
+            <a class="btn" href="https://github.com/KavinEditors/R.O.A.S.T" target="_blank">See Repo</a>
+          </div>
+        </div>
+        <div class="proj-media reveal-right">
+          <img src="assets/sub1.png" alt="ROAST" class="project-img neon-breathe" />
+        </div>
+      </article>
+
+      <!-- NEXA: image left, text right -->
+      <article class="project nexa reveal-right">
+        <div class="proj-media reveal-left">
+          <img src="assets/sub2.png" alt="NEXA" class="project-img neon-breathe" />
+        </div>
+        <div class="proj-text">
+          <h2>NEXA</h2>
+          <p class="proj-desc">
+            Nexa — an AI assistant that helps you code, search YouTube, open your favorite tabs, and streamline daily tasks.
+          </p>
+          <div class="proj-actions">
+            <a class="btn" href="https://github.com/KavinEditors/NEXA-Next-gen-Executive-Assistant" target="_blank">See Repo</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact section">
+      <h3>Contact Me</h3>
+      <div class="socials">
+        <a class="social github" href="https://github.com/KavinEditors/" target="_blank">GitHub</a>
+        <a class="social insta" href="https://www.instagram.com/speedkavin311/" target="_blank">Instagram</a>
+        <a class="social x" href="https://x.com/SpeedKavin311" target="_blank">X</a>
+        <a class="social discord" href="https://discord.com/users/1180531027832217661" target="_blank">Discord</a>
       </div>
+    </section>
+  </main>
+
+  <!-- Widget: help.png + popup (glass) -->
+  <div id="widgetRoot">
+    <div id="helpBtn" class="help-btn" role="button" aria-label="Open projects">
+      <!-- helper SVG arcs around the icon -->
+      <svg class="widget-arc arc-blue" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="40" fill="none" stroke="#00bfff" stroke-width="4" stroke-linecap="round"
+                stroke-dasharray="150 100" stroke-dashoffset="0"></circle>
+      </svg>
+
+      <svg class="widget-arc arc-pink" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="28" fill="none" stroke="#ff66b2" stroke-width="3" stroke-linecap="round"
+                stroke-dasharray="25 400" stroke-dashoffset="0"></circle>
+      </svg>
+
+      <img src="assets/help.png" alt="Help" class="help-icon" />
     </div>
 
-    <div class="project nexa">
-      <div class="image">
-        <img src="assets/sub2.png" alt="Nexa Project">
-      </div>
-      <div class="text">
-        <h3>NEXA</h3>
-        <p>An AI assistant that helps you code, search YouTube, open your favorite tabs, and make daily tasks effortless.</p>
-        <div class="buttons">
-          <a href="https://github.com/KavinEditors/NEXA-Next-gen-Executive-Assistant" target="_blank" class="btn">See Repo</a>
+    <div id="widgetPopup" class="widget-popup hidden" role="dialog" aria-hidden="true">
+      <div class="popup-header">Quick links</div>
+      <div class="popup-body">
+        <div class="popup-item">
+          <div class="item-title">NEXA</div>
+          <a class="popup-btn" href="https://github.com/KavinEditors/NEXA-Next-gen-Executive-Assistant" target="_blank">View Repository</a>
+        </div>
+        <div class="popup-item">
+          <div class="item-title">Mood Mate</div>
+          <a class="popup-btn" href="https://github.com/KavinEditors/MoodMate" target="_blank">View Repository</a>
+        </div>
+        <div class="popup-item">
+          <div class="item-title">Meme Stream</div>
+          <a class="popup-btn" href="https://github.com/KavinEditors/MemeStream" target="_blank">View Repository</a>
+        </div>
+        <div class="popup-item">
+          <div class="item-title">R.O.A.S.T</div>
+          <a class="popup-btn" href="https://github.com/KavinEditors/R.O.A.S.T" target="_blank">View Repository</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <footer id="contact">
-    <h3>Contact Me</h3>
-    <div class="socials">
-      <a href="https://github.com/KavinEditors/" target="_blank" class="github">GitHub</a>
-      <a href="https://www.instagram.com/speedkavin311/" target="_blank" class="instagram">Instagram</a>
-      <a href="https://x.com/SpeedKavin311" target="_blank" class="twitter">X</a>
-      <a href="https://discord.com/users/1180531027832217661" target="_blank" class="discord">Discord</a>
-    </div>
-  </footer>
-
-  <img src="assets/help.png" alt="AI Widget" id="aiWidget">
-  <div id="chatWidget" class="hidden">
-    <div class="chat-header">Kavinverse AI</div>
-    <div class="chat-body" id="chatBody"></div>
-    <div class="chat-input">
-      <input type="text" id="userInput" placeholder="Type your message...">
-      <button id="sendBtn">Send</button>
     </div>
   </div>
 
-  <script src="script.js"></script>
-  <script src="api/groq-chat.js"></script>
   <script src="oi/ai-widget.js"></script>
+  <script src="script.js"></script>
 </body>
-          </html>
+</html>
