@@ -1,28 +1,20 @@
-// Intersection Observer scroll reveals + direction control
-document.addEventListener("DOMContentLoaded", () => {
-  // Elements to observe
-  const revealEls = document.querySelectorAll('.reveal-left, .reveal-right');
+// Toggle UniLink popup
+const helpIcon = document.getElementById('help-icon');
+const unilinkPopup = document.getElementById('unilink-popup');
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        observer.unobserve(entry.target); // animate once
-      }
-    });
-  }, { threshold: 0.25 });
-
-  revealEls.forEach(el => observer.observe(el));
-
-  // Additional: ensure hero fades in on load
-  const hero = document.querySelector('.hero');
-  if (hero) {
-    hero.style.opacity = 0;
-    hero.style.transform = "translateY(10px)";
-    setTimeout(() => {
-      hero.style.transition = "opacity .6s ease, transform .6s ease";
-      hero.style.opacity = 1;
-      hero.style.transform = "translateY(0)";
-    }, 80);
-  }
+helpIcon.addEventListener('click', () => {
+  unilinkPopup.style.display =
+    unilinkPopup.style.display === 'block' ? 'none' : 'block';
 });
+
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+document.querySelectorAll('.project, .hero-text, .project-image')
+  .forEach(el => observer.observe(el));
