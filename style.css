@@ -11,6 +11,7 @@ body {
   overflow-x: hidden;
 }
 
+/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
@@ -46,16 +47,18 @@ nav a:hover {
   color: #00bfff;
 }
 
-/* Hero Section */
+/* HERO SECTION */
 .hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 100px 80px;
+  flex-wrap: wrap;
 }
 
 .hero-text {
   width: 50%;
+  min-width: 300px;
 }
 
 .hero-text h2 {
@@ -78,6 +81,10 @@ nav a:hover {
   position: relative;
   width: 300px;
   height: 300px;
+  margin: 40px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-image img {
@@ -113,24 +120,35 @@ nav a:hover {
   animation: rotateAnti 10s linear infinite;
 }
 
-/* Projects */
+/* PROJECTS */
 .projects {
-  padding: 80px;
+  padding: 80px 60px;
 }
 
 .project {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 100px;
+  margin-bottom: 120px;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .project-text {
   width: 45%;
+  min-width: 280px;
+}
+
+.project-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  margin: auto;
 }
 
 .project-image img {
-  width: 350px;
+  width: 100%;
   border-radius: 20px;
   animation: glow 3s infinite alternate;
 }
@@ -155,7 +173,7 @@ nav a:hover {
   color: #000;
 }
 
-/* Contact */
+/* CONTACT */
 .contact {
   text-align: center;
   padding: 60px;
@@ -185,7 +203,7 @@ nav a:hover {
 .twitter { background: #1da1f2; }
 .discord { background: #5865f2; }
 
-/* Floating Widget */
+/* FLOATING WIDGET */
 .unilink-container {
   position: fixed;
   bottom: 30px;
@@ -263,7 +281,7 @@ nav a:hover {
   border-bottom: 1px solid #00bfff;
 }
 
-/* Animations */
+/* ANIMATIONS */
 @keyframes rotateClock {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
@@ -279,11 +297,11 @@ nav a:hover {
   to { filter: drop-shadow(0 0 20px #00bfff); }
 }
 
-/* --- Responsive Section --- */
+/* --- RESPONSIVE DESIGN --- */
 @media (max-width: 900px) {
   header {
     flex-direction: column;
-    padding: 10px 20px;
+    padding: 15px 20px;
   }
 
   nav {
@@ -300,23 +318,34 @@ nav a:hover {
     width: 100%;
   }
 
-  .hero-text h2 {
-    font-size: 2em;
+  .hero-image {
+    width: 250px;
+    height: 250px;
+    margin: 40px auto;
   }
 
-  .hero-image {
-    margin-top: 40px;
-    width: 220px;
-    height: 220px;
+  .outer {
+    width: 280px;
+    height: 280px;
+    top: -15px;
+    left: -15px;
+  }
+
+  .inner {
+    width: 230px;
+    height: 230px;
+    top: 10px;
+    left: 10px;
   }
 
   .projects {
-    padding: 50px 20px;
+    padding: 60px 20px;
   }
 
   .project {
     flex-direction: column;
     text-align: center;
+    margin-bottom: 100px;
   }
 
   .project-text, .project-image {
@@ -324,22 +353,12 @@ nav a:hover {
   }
 
   .project-image img {
-    width: 80%;
+    width: 85%;
     max-width: 320px;
-    margin-top: 20px;
-  }
-
-  .btn {
-    margin-top: 10px;
   }
 
   .contact {
     padding: 40px 20px;
-  }
-
-  .social {
-    padding: 8px 18px;
-    font-size: 0.9em;
   }
 
   .help-icon {
@@ -374,5 +393,9 @@ nav a:hover {
   .btn {
     padding: 8px 15px;
     font-size: 0.9em;
+  }
+
+  .project {
+    margin-bottom: 90px;
   }
 }
