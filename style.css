@@ -278,3 +278,125 @@ nav a:hover {
   from { filter: drop-shadow(0 0 10px #00bfff); }
   to { filter: drop-shadow(0 0 20px #00bfff); }
   }
+
+/* ---------------- Responsive Design ---------------- */
+
+/* For tablets and small laptops */
+@media (max-width: 1024px) {
+  header {
+    padding: 15px 25px;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 80px 40px;
+    text-align: center;
+  }
+
+  .hero-text {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .hero-image {
+    width: 250px;
+    height: 250px;
+  }
+
+  .projects {
+    padding: 60px 40px;
+  }
+
+  .project {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .project-text, .project-image {
+    width: 100%;
+  }
+
+  .project-image img {
+    width: 80%;
+    max-width: 320px;
+  }
+
+  .btn {
+    margin: 10px 5px;
+  }
+
+  .contact {
+    padding: 50px 30px;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .social {
+    margin: 10px;
+  }
+}
+
+/* For phones and very small screens */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 10px;
+  }
+
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .hero-text h2 {
+    font-size: 1.8em;
+  }
+
+  .hero-text p {
+    font-size: 1em;
+  }
+
+  .hero-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .projects {
+    padding: 40px 20px;
+  }
+
+  .project {
+    margin-bottom: 60px;
+  }
+
+  .project-text h3 {
+    font-size: 1.4em;
+  }
+
+  .project-image img {
+    width: 90%;
+  }
+
+  .contact {
+    padding: 40px 20px;
+  }
+
+  .unilink-container {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .help-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
