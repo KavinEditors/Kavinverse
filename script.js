@@ -2,9 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Scroll animations
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('show');
     });
   });
   document.querySelectorAll('.project, .hero-text, .project-image')
