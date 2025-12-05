@@ -165,30 +165,8 @@ nav a:hover { color: #ff66cc; text-shadow: 0 0 10px #ff66cc; }
   .btn { padding: 8px 15px; font-size: 0.9em; }
 }
 
-.project-text p {
-  display: grid;
-  grid-template-columns: 1fr 1fr;   /* split into 2 even columns */
-  gap: 20px;                        /* space between columns */
-  white-space: pre-line;            /* keep manual line breaks in HTML */
+.project-text p {           /* keep manual line breaks in HTML */
   line-height: 1.7;
-}
-
-.project-list {
-  list-style: none;
-  padding: 0;
-  margin: 15px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  font-size: 1.05em;
-  max-width: 450px;
-  line-height: 1.4;
-}
-
-.project-list li::before {
-  content: "• ";
-  color: #ff66cc;
-  font-weight: bold;
 }
 
 
