@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!helpBtn || !popup) return;
 
-  // Initialize hidden state
   popup.classList.add("hidden");
   popup.setAttribute("aria-hidden", "true");
 
@@ -20,13 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Clicking outside closes popup
   document.addEventListener("click", (e) => {
-    if (!popup.classList.contains("hidden")) {
-      if (!popup.contains(e.target) && !helpBtn.contains(e.target)) {
-        popup.classList.add("hidden");
-        popup.setAttribute("aria-hidden", "true");
-      }
+    if (!popup.classList.contains("hidden") && !popup.contains(e.target) && !helpBtn.contains(e.target)) {
+      popup.classList.add("hidden");
+      popup.setAttribute("aria-hidden", "true");
     }
   });
 });
