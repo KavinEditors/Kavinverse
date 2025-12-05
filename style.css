@@ -165,10 +165,4 @@ nav a:hover { color: #ff66cc; text-shadow: 0 0 10px #ff66cc; }
   .btn { padding: 8px 15px; font-size: 0.9em; }
 }
 
-.project-text p {
-  column-count: 3;            /* split into 3 columns */
-  column-gap: 30px;           /* spacing between columns */
-  column-fill: balance;       /* balance height evenly */
-  text-align: justify;        /* clean edge alignment */
-  line-height: 1.4;
-}
+
