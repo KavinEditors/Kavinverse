@@ -100,3 +100,21 @@ nav a:hover { color: #ff66cc; text-shadow: 0 0 10px #ff66cc; }
   box-shadow: 0 0 5px #ff66cc;
 }
 
+.hero-image {
+  width: 350px;
+  height: 350px;
+  margin: 40px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;            /* critical to clip the image */
+  box-shadow: 0 0 30px #ff66cc;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;           /* ensures clean circular cropping */
+  border-radius: 50%;
+}
