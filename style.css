@@ -1,3 +1,4 @@
+/* Reset & Basics */
 * {
   margin: 0;
   padding: 0;
@@ -6,33 +7,50 @@
 }
 
 body {
-  background: #000;
-  color: #fff;
+  background: radial-gradient(ellipse at bottom, #000 0%, #050005 100%);
+  color: #ccc;
   overflow-x: hidden;
+  position: relative;
 }
 
-/* HEADER */
+/* Starfield Background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: transparent;
+  z-index: -2;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle 3s infinite alternate;
+}
+
+/* Header - Black Hole Semicircle */
 header {
+  position: relative;
+  height: 120px;
+  width: 100%;
+  background: black;
+  border-bottom-left-radius: 50% 100%;
+  border-bottom-right-radius: 50% 100%;
+  box-shadow: 0 0 25px #ff66cc;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 50px;
-  border-bottom: 1px solid #0ff;
-  position: sticky;
-  top: 0;
-  background: rgba(0, 0, 0, 0.85);
+  padding: 0 50px;
   z-index: 1000;
+  animation: pulse 3s infinite alternate;
 }
 
-.logo {
+header .logo {
   font-size: 1.6em;
-  background: linear-gradient(90deg, #00bfff, #0080ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.logo span {
-  color: #fff;
+  color: #ff66cc;
 }
 
 nav a {
@@ -40,11 +58,19 @@ nav a {
   margin-left: 20px;
   text-decoration: none;
   font-size: 1em;
-  transition: color 0.3s;
+  transition: all 0.3s;
 }
 
 nav a:hover {
-  color: #00bfff;
+  color: #ff66cc;
+  text-shadow: 0 0 10px #ff66cc;
+}
+
+/* Header Animation */
+@keyframes pulse {
+  0% { box-shadow: 0 0 15px #ff66cc; }
+  50% { box-shadow: 0 0 25px #ff66cc; }
+  100% { box-shadow: 0 0 15px #ff66cc; }
 }
 
 /* HERO SECTION */
@@ -52,8 +78,9 @@ nav a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 100px 80px;
+  padding: 40px 80px;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .hero-text {
@@ -63,10 +90,7 @@ nav a:hover {
 
 .hero-text h2 {
   font-size: 2.5em;
-}
-
-.hero-text h2 span {
-  background: linear-gradient(90deg, #00bfff, #0066ff);
+  background: linear-gradient(90deg, #ff66cc, #cc33ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -85,44 +109,14 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.hero-image img {
-  width: 100%;
-  height: 100%;
+  box-shadow: 0 0 30px #ff66cc;
   border-radius: 50%;
-  animation: glow 3s infinite alternate;
-}
-
-.circle {
-  position: absolute;
-  border: 2px solid #00bfff;
-  border-radius: 50%;
-  opacity: 0.8;
-  pointer-events: none;
-}
-
-.outer {
-  width: 330px;
-  height: 330px;
-  top: -15px;
-  left: -15px;
-  border-top: transparent;
-  animation: rotateClock 12s linear infinite;
-}
-
-.inner {
-  width: 270px;
-  height: 270px;
-  top: 15px;
-  left: 15px;
-  border-bottom: transparent;
-  animation: rotateAnti 10s linear infinite;
 }
 
 /* PROJECTS */
 .projects {
   padding: 80px 60px;
+  position: relative;
 }
 
 .project {
@@ -132,35 +126,49 @@ nav a:hover {
   margin-bottom: 120px;
   flex-wrap: wrap;
   gap: 30px;
+  position: relative;
+  overflow: hidden;
 }
 
-.project-text {
-  width: 45%;
-  min-width: 280px;
+.project::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background: url('assets/nebula.png') no-repeat center/cover;
+  opacity: 0.15;
+  filter: blur(15px);
+  z-index: 0;
+  animation: drift 30s linear infinite;
 }
 
+.project-text,
 .project-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 350px;
-  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.project-text h3 {
+  color: #ff66cc;
 }
 
 .project-image img {
   width: 100%;
   border-radius: 20px;
-  animation: glow 3s infinite alternate;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.btns {
-  margin-top: 20px;
+.project-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #ff66cc;
 }
 
-.btn {
+.btns .btn {
   display: inline-block;
   padding: 10px 20px;
-  border: 1px solid #00bfff;
+  border: 1px solid #ff66cc;
   background: #000;
   color: #fff;
   text-decoration: none;
@@ -169,7 +177,7 @@ nav a:hover {
 }
 
 .btn:hover {
-  background: #00bfff;
+  background: #ff66cc;
   color: #000;
 }
 
@@ -177,10 +185,7 @@ nav a:hover {
 .contact {
   text-align: center;
   padding: 60px;
-}
-
-.contact-links {
-  margin-top: 20px;
+  position: relative;
 }
 
 .social {
@@ -191,19 +196,15 @@ nav a:hover {
   text-decoration: none;
   color: #fff;
   font-weight: 500;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .social:hover {
   transform: scale(1.1);
+  box-shadow: 0 0 15px #ff66cc;
 }
 
-.github { background: #333; }
-.instagram { background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7); }
-.twitter { background: #1da1f2; }
-.discord { background: #5865f2; }
-
-/* FLOATING WIDGET */
+/* FLOATING WIDGET - unchanged */
 .unilink-container {
   position: fixed;
   bottom: 30px;
@@ -211,195 +212,34 @@ nav a:hover {
   z-index: 100;
 }
 
-.help-icon {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  animation: glow 3s infinite alternate;
-  cursor: pointer;
-  position: relative;
-}
-
-.help-icon::before {
-  content: "";
-  position: absolute;
-  top: -15px;
-  left: -15px;
-  width: 100px;
-  height: 100px;
-  border: 2px solid #00bfff;
-  border-top-color: transparent;
-  border-right-color: transparent;
-  border-radius: 50%;
-  animation: rotateClock 10s linear infinite;
-}
-
-.help-icon::after {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  width: 90px;
-  height: 90px;
-  border: 2px solid #ff66cc;
-  border-bottom-color: transparent;
-  border-left-color: transparent;
-  border-radius: 50%;
-  animation: rotateAnti 12s linear infinite;
-}
-
-.unilink-popup {
-  display: none;
-  position: absolute;
-  bottom: 90px;
-  right: 0;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid #00bfff;
-  border-radius: 15px;
-  padding: 15px;
-  width: 250px;
-  text-align: center;
-}
-
-.unilink-popup h4 {
-  margin-bottom: 10px;
-  color: #00bfff;
-}
-
-.unilink-popup a {
-  display: block;
-  margin: 6px 0;
-  color: #fff;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: all 0.3s;
-}
-
-.unilink-popup a:hover {
-  color: #00bfff;
-  border-bottom: 1px solid #00bfff;
-}
-
 /* ANIMATIONS */
-@keyframes rotateClock {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@keyframes drift {
+  0% { transform: translate(0,0) scale(1); }
+  50% { transform: translate(10px,5px) scale(1.02); }
+  100% { transform: translate(0,0) scale(1); }
 }
 
-@keyframes rotateAnti {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(-360deg); }
+@keyframes twinkle {
+  0% { opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { opacity: 0.2; }
 }
 
-@keyframes glow {
-  from { filter: drop-shadow(0 0 10px #00bfff); }
-  to { filter: drop-shadow(0 0 20px #00bfff); }
-}
-
-/* --- RESPONSIVE DESIGN --- */
+/* RESPONSIVE DESIGN */
 @media (max-width: 900px) {
-  header {
-    flex-direction: column;
-    padding: 15px 20px;
-  }
-
-  nav {
-    margin-top: 10px;
-  }
-
-  .hero {
-    flex-direction: column;
-    padding: 60px 30px;
-    text-align: center;
-  }
-
-  .hero-text {
-    width: 100%;
-  }
-
-  .hero-image {
-    width: 250px;
-    height: 250px;
-    margin: 40px auto;
-  }
-
-  .outer {
-    width: 280px;
-    height: 280px;
-    top: -15px;
-    left: -15px;
-  }
-
-  .inner {
-    width: 230px;
-    height: 230px;
-    top: 10px;
-    left: 10px;
-  }
-
-  .projects {
-    padding: 60px 20px;
-  }
-
-  .project {
-    flex-direction: column;
-    text-align: center;
-    margin-bottom: 100px;
-  }
-
-  .project-text, .project-image {
-    width: 100%;
-  }
-
-  .project-image img {
-    width: 85%;
-    max-width: 320px;
-  }
-
-  .contact {
-    padding: 40px 20px;
-  }
-
-  .help-icon {
-    width: 60px;
-    height: 60px;
-  }
-
-  .unilink-popup {
-    width: 200px;
-    right: -10px;
-  }
+  header { flex-direction: column; padding: 15px 20px; height: 150px; }
+  nav { margin-top: 10px; }
+  .hero { flex-direction: column; text-align: center; padding: 60px 30px; }
+  .hero-image { width: 250px; height: 250px; }
+  .projects { padding: 60px 20px; }
+  .project { flex-direction: column; text-align: center; margin-bottom: 100px; }
 }
 
 @media (max-width: 500px) {
-  .hero-text h2 {
-    font-size: 1.8em;
-  }
-
-  .hero-text p {
-    font-size: 1em;
-  }
-
-  .project-image img {
-    width: 90%;
-  }
-
-  .social {
-    margin: 5px;
-    padding: 7px 14px;
-  }
-
-  .btn {
-    padding: 8px 15px;
-    font-size: 0.9em;
-  }
-
-  .project {
-    margin-bottom: 90px;
-  }
-}
-
-html {
-  scroll-behavior: smooth;
+  .hero-text h2 { font-size: 1.8em; }
+  .hero-text p { font-size: 1em; }
+  .project-image img { width: 90%; }
+  .social { margin: 5px; padding: 7px 14px; }
+  .btn { padding: 8px 15px; font-size: 0.9em; }
+  .project { margin-bottom: 90px; }
 }
