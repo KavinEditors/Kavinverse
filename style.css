@@ -170,7 +170,7 @@ nav a:hover { color: #ff66cc; text-shadow: 0 0 10px #ff66cc; }
   grid-template-columns: 1fr 1fr;   /* split into 2 even columns */
   gap: 20px;                        /* space between columns */
   white-space: pre-line;            /* keep manual line breaks in HTML */
-  line-height: 1.5;
+  line-height: 8.5;
 }
 
 
