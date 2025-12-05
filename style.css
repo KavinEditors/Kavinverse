@@ -169,4 +169,9 @@ nav a:hover { color: #ff66cc; text-shadow: 0 0 10px #ff66cc; }
   line-height: 1.7;
 }
 
+body {
+  min-height: 200vh; /* allow stars to appear through full scroll */
+  position: relative;
+  overflow-x: hidden;
+}
 
