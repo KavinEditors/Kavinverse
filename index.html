@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <!-- Header / Black Hole Bar -->
   <header>
     <h1 class="logo">Kavinverse</h1>
@@ -72,8 +73,8 @@
 
   <!-- Floating UniLink Widget -->
   <div class="unilink-container">
-    <img src="assets/help.png" class="help-icon" alt="Help" id="help-icon" />
-    <div class="unilink-popup" id="unilink-popup">
+    <img src="assets/help.png" class="help-icon" alt="Help" id="helpBtn" />
+    <div class="unilink-popup hidden" id="widgetPopup" aria-hidden="true">
       <h4>UniLink</h4>
       <a href="https://github.com/KavinEditors/NEXA-Next-gen-Executive-Assistant" target="_blank">Nexa</a>
       <a href="https://github.com/KavinEditors/MoodMate" target="_blank">Mood Mate</a>
@@ -82,6 +83,8 @@
     </div>
   </div>
 
+  <!-- JS -->
   <script src="script.js"></script>
+  <script src="widget.js"></script>
 </body>
 </html>
