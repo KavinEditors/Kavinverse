@@ -13,10 +13,14 @@ document.addEventListener("DOMContentLoaded", () => {
     helpBtn.classList.toggle("active");
   });
 
+  // Ensure clicking outside closes the popup
   document.addEventListener("click", (e) => {
-    if (!popup.classList.contains("hidden") && !popup.contains(e.target) && !helpBtn.contains(e.target)) {
+    if (!popup.contains(e.target) && !helpBtn.contains(e.target)) {
       popup.classList.add("hidden");
       helpBtn.classList.remove("active");
     }
   });
+
+  // Optional: stop propagation on popup clicks
+  popup.addEventListener("click", (e) => e.stopPropagation());
 });
