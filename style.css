@@ -165,4 +165,13 @@ nav a:hover { color: #ff66cc; text-shadow: 0 0 10px #ff66cc; }
   .btn { padding: 8px 15px; font-size: 0.9em; }
 }
 
+.project-text p {
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* split into 2 even columns */
+  gap: 20px;                        /* space between columns */
+  white-space: pre-line;            /* keep manual line breaks in HTML */
+  line-height: 1.5;
+}
+
+
 
