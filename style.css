@@ -1,100 +1,178 @@
-/* General reset and box-sizing */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* ===== Reset & Basics ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
+  background: black;
+  color: #ccc;
+  overflow-x: hidden;
+  position: relative;
 }
 
-/* Container for projects or cards */
-.project-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+/* ===== Starfield Background ===== */
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  opacity: 0.8;
+  animation: twinkle 3s infinite alternate;
+}
+@keyframes twinkle {
+  0% { opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { opacity: 0.2; }
 }
 
-/* Individual project card */
-.project-card {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* ===== Header / Rectangular ===== */
+header {
+  position: sticky;
+  top: 0; z-index: 1000;
+  height: 80px;
+  width: 100%;
+  background: black;
+  box-shadow: 0 0 18px #3399ff; /* blue shadow */
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0 50px;
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+header .logo { font-size: 1.7em; color: #3399ff; font-weight: 600; }
+nav a {
+  color: #fff; margin-left: 25px; text-decoration: none; font-weight: 500; transition: all 0.3s;
+}
+nav a:hover { color: #3399ff; text-shadow: 0 0 10px #3399ff; }
+
+/* ===== Hero ===== */
+.hero {
+  display: flex; flex-wrap: wrap;
+  justify-content: center; align-items: center;
+  padding: 40px 20px;
+  position: relative;
 }
 
-/* Project image */
-.project-card img {
-    width: 100%;
-    height: auto;
-    display: block;
+.hero-text {
+  max-width: 500px; width: 100%;
+  margin-right: 40px; /* text shifted slightly right */
+  text-align: left;
 }
 
-/* Project content */
-.project-content {
-    padding: 15px;
-    flex: 1;
+.hero-text h2 {
+  font-size: 2.7em;
+  background: linear-gradient(90deg, #3399ff, #33ccff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.project-content h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+.hero-text p { margin-top: 15px; font-size: 1.1em; color: #ccc; }
+
+.hero-image {
+  width: 380px; height: 380px;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; box-shadow: 0 0 0px transparent; /* no glow */
 }
 
-.project-content p {
-    font-size: 0.95rem;
-    line-height: 1.5;
+.hero-image img {
+  width: 100%; height: 100%;
+  object-fit: cover;
 }
 
-/* Buttons container */
-.project-buttons {
-    width: 100%;
-    display: flex;
-    justify-content: center;   /* center all buttons */
-    align-items: center;
-    gap: 15px;
-    padding: 15px;
-    border-top: 1px solid #eee;
+/* ===== Projects ===== */
+.projects { padding: 60px 20px; position: relative; }
+
+.project {
+  display: flex; flex-wrap: wrap;
+  justify-content: center; align-items: flex-start;
+  gap: 30px; margin-bottom: 100px; position: relative; overflow: hidden;
 }
 
-/* Individual buttons */
-.project-buttons a,
-.project-buttons button {
-    padding: 8px 16px;
-    border-radius: 6px;
-    border: none;
-    text-decoration: none;
-    color: #fff;
-    background-color: #007BFF;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.project::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: black url('assets/nebula.png') no-repeat center/cover;
+  opacity: 0.2; filter: blur(10px);
+  z-index: 0; animation: drift 30s linear infinite;
 }
 
-.project-buttons a:hover,
-.project-buttons button:hover {
-    background-color: #0056b3;
+.project-text, .project-image { position: relative; z-index: 1; max-width: 500px; width: 100%; }
+
+.project-text h3 { color: #3399ff; margin-bottom: 15px; }
+
+.project-image img {
+  width: 350px; height: 250px; /* fixed size */
+  border-radius: 20px;
+  transition: transform 0.3s; /* removed glow */
 }
 
-/* Responsive tweaks */
+.project-image img:hover { transform: scale(1.05); }
+
+/* ===== Buttons ===== */
+.btns { margin-top: 20px; display: flex; gap: 15px; flex-wrap: wrap; }
+.btn {
+  text-decoration: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+/* See Website Button - solid blue */
+.btn[href*="streamlit"] {
+  background: #3399ff;
+  color: #fff;
+}
+.btn[href*="streamlit"]:hover { transform: scale(1.05); box-shadow: 0 0 15px #3399ff; }
+
+/* See Repo Button - transparent, blue border & glow on hover */
+.btn[href*="github"] {
+  background: transparent;
+  color: #3399ff;
+  border: 2px solid #3399ff;
+}
+.btn[href*="github"]:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #3399ff;
+  color: #33ccff;
+  border-color: #33ccff;
+}
+
+/* ===== Contact ===== */
+.contact { text-align: center; padding: 60px; }
+.social {
+  display: inline-block; margin: 10px;
+  padding: 10px 25px; border-radius: 8px;
+  text-decoration: none; color: #fff;
+  font-weight: 500; transition: transform 0.3s, box-shadow 0.3s;
+}
+.social:hover { transform: scale(1.1); box-shadow: 0 0 15px #3399ff; }
+
+/* ===== UniLink Widget ===== */
+.unilink-container { position: fixed; bottom: 30px; right: 30px; z-index: 999999; }
+.help-icon { width: 60px; height: 60px; border-radius: 50%; cursor: pointer; object-fit: cover; transition: 0.3s; box-shadow: 0 0 10px #3399ff; }
+.help-icon.active { width: 45px; height: 45px; transform: translateY(-10px); box-shadow: 0 0 6px #3399ff; }
+
+.unilink-popup {
+  position: absolute; bottom: 80px; right: 0;
+  background: #000; border: 1px solid #3399ff;
+  border-radius: 12px; padding: 15px 20px; z-index: 999999;
+  box-shadow: 0 0 20px #3399ff;
+}
+.unilink-popup.hidden { display: none; }
+
+/* ===== Animations ===== */
+@keyframes drift {
+  0% { transform: translate(0,0) scale(1); }
+  50% { transform: translate(10px,5px) scale(1.02); }
+  100% { transform: translate(0,0) scale(1); }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  header { height: 110px; flex-direction: column; padding: 10px 20px; }
+  nav { margin-top: 5px; }
+  .hero-image { width: 300px; height: 300px; }
+  .project-image img { width: 100%; height: auto; }
+}
+
 @media (max-width: 500px) {
-    .project-buttons {
-        flex-direction: column;
-        gap: 10px;
-    }
+  .hero-text h2 { font-size: 1.8em; }
+  .hero-text p { font-size: 1em; }
+  .hero-image { width: 260px; height: 260px; }
 }
