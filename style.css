@@ -80,3 +80,23 @@ nav a:hover { color: #ff66cc; text-shadow: 0 0 10px #ff66cc; }
   .btn { padding: 8px 15px; font-size: 0.9em; }
   .project { margin-bottom: 90px; }
 }
+
+/* Help icon / UniLink widget */
+.help-icon {
+  width: 60px;            /* initial size */
+  height: 60px;           /* initial size */
+  border-radius: 50%;     /* circular shape */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  object-fit: cover;      /* ensures image stays inside circle */
+  box-shadow: 0 0 10px #ff66cc;
+}
+
+/* Shrunk version when popup is open */
+.help-icon.active {
+  width: 40px;
+  height: 40px;
+  transform: translateY(-10px); /* small upward move */
+  box-shadow: 0 0 5px #ff66cc;
+}
+
