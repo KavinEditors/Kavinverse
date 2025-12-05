@@ -176,3 +176,31 @@ nav a:hover { color: #3399ff; text-shadow: 0 0 10px #3399ff; }
   .hero-text p { font-size: 1em; }
   .hero-image { width: 260px; height: 260px; }
 }
+
+.project {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; /* center for symmetry */
+  gap: 50px;
+  margin-bottom: 100px;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(51, 153, 255, 0.5);
+  background: rgba(0,0,0,0.6);
+}
+
+.project:hover {
+  box-shadow: 0 0 25px #3399ff;
+  border: 2px solid #3399ff;
+}
+
+.project-text, .project-image {
+  max-width: 500px;
+  width: 100%;
+  text-align: left;
+}
