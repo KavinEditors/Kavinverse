@@ -148,33 +148,34 @@ nav a:hover {
   margin: auto;
 }
 
+/* REDUCED GLOW FOR PROJECT IMAGES */
 .project-image img {
   width: 100%;
   border-radius: 20px;
   animation: glow 3s infinite alternate;
-  box-shadow: 0 0 20px #00bfff, 0 0 40px #00bfff, 0 0 60px #00bfff;
+  box-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project-image img:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 30px #00bfff, 0 0 50px #00bfff, 0 0 80px #00bfff;
+  box-shadow: 0 0 20px #00bfff, 0 0 35px #00bfff, 0 0 50px #00bfff;
 }
 
 .project.roast img,
 .project.nexa img {
-  /* explicit glow for Nexa and Roast */
   animation: glow 3s infinite alternate;
-  box-shadow: 0 0 20px #00bfff, 0 0 40px #00bfff, 0 0 60px #00bfff;
+  box-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project.roast img:hover,
 .project.nexa img:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 30px #00bfff, 0 0 50px #00bfff, 0 0 80px #00bfff;
+  box-shadow: 0 0 20px #00bfff, 0 0 35px #00bfff, 0 0 50px #00bfff;
 }
 
+/* BUTTONS */
 .btns {
   margin-top: 20px;
 }
@@ -326,8 +327,8 @@ nav a:hover {
 }
 
 @keyframes glow {
-  from { filter: drop-shadow(0 0 10px #00bfff); }
-  to { filter: drop-shadow(0 0 20px #00bfff); }
+  from { filter: drop-shadow(0 0 5px #00bfff); }
+  to   { filter: drop-shadow(0 0 15px #00bfff); }
 }
 
 /* RESPONSIVE DESIGN */
@@ -359,6 +360,7 @@ nav a:hover {
 
 html { scroll-behavior: smooth; }
 
+/* NEXA IMAGE ALIGN LEFT */
 .project.nexa .project-image {
   justify-content: flex-start; /* moves image to the left */
 }
