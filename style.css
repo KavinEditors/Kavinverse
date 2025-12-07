@@ -366,5 +366,5 @@ html { scroll-behavior: smooth; }
 }
 
 .project.nexa .project-image img {
-  transform: translateX(-30px); /* optional fine-tuning */
+  transform: translateX(-70px); /* optional fine-tuning */
 }
