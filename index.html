@@ -1,87 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kavinverse | Developer Portfolio</title>
-  <link rel="icon" href="assets/image.png" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kavin's Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Header / Navigation -->
   <header>
-    <h1 class="logo">Kavin<span>verse</span></h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="container header-container">
+      <h1 class="logo">Kavin</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <!-- Hero Section -->
   <section id="home" class="hero">
-    <div class="hero-text">
-      <h2>Hello I Am <span>Kavin</span></h2>
-      <p>Innovator. Developer. Creator. Every project is a step toward the extraordinary.</p>
-    </div>
-    <div class="hero-image">
-      <div class="circle outer"></div>
-      <div class="circle inner"></div>
-      <img src="assets/image.png" alt="Kavinverse Logo" />
+    <div class="hero-content">
+      <h2>Hello, I'm Kavin</h2>
+      <p>Developer | Programmer | Innovator</p>
+      <a href="#projects" class="btn">See My Work</a>
     </div>
   </section>
 
-  <!-- Projects -->
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container about-container">
+      <img src="profile.jpg" alt="Kavin Profile" class="profile-img">
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>I'm a passionate developer and programmer focused on creating innovative and interactive digital experiences. I enjoy building projects that combine creativity and functionality.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
   <section id="projects" class="projects">
-    <div class="project roast">
-      <div class="project-text">
-        <h3>R.O.A.S.T</h3>
-        <p>A humorous AI that roasts you intelligently — you can’t beat it, but it’ll always roast back smarter.</p>
-        <div class="btns">
-          <a href="https://really-offensive-automated-sus-terminator.streamlit.app/" target="_blank" class="btn">See Website</a>
-          <a href="https://github.com/KavinEditors/R.O.A.S.T" target="_blank" class="btn">See Repo</a>
+    <div class="container">
+      <h2>My Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <img src="project1.jpg" alt="Project 1">
+          <h3>Project One</h3>
+          <p>Brief description of project one.</p>
         </div>
-      </div>
-      <div class="project-image">
-        <img src="assets/sub1.png" alt="ROAST Project" />
-      </div>
-    </div>
-
-    <div class="project nexa">
-      <div class="project-image">
-        <img src="assets/sub2.png" alt="NEXA Project" />
-      </div>
-      <div class="project-text">
-        <h3>NEXA</h3>
-        <p>An AI assistant that helps you code, search YouTube, open favorite tabs, and simplify your workflow effortlessly.</p>
-        <div class="btns">
-          <a href="https://github.com/KavinEditors/NEXA-Next-gen-Executive-Assistant" target="_blank" class="btn">See Repo</a>
+        <div class="project-card">
+          <img src="project2.jpg" alt="Project 2">
+          <h3>Project Two</h3>
+          <p>Brief description of project two.</p>
+        </div>
+        <div class="project-card">
+          <img src="project3.jpg" alt="Project 3">
+          <h3>Project Three</h3>
+          <p>Brief description of project three.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- Contact Section -->
   <section id="contact" class="contact">
-    <h3>Contact Me</h3>
-    <div class="contact-links">
-      <a href="https://github.com/KavinEditors/" target="_blank" class="social github">GitHub</a>
-      <a href="https://www.instagram.com/speedkavin311/" target="_blank" class="social instagram">Instagram</a>
-      <a href="https://x.com/SpeedKavin311" target="_blank" class="social twitter">X</a>
-      <a href="https://discord.com/users/1180531027832217661" target="_blank" class="social discord">Discord</a>
+    <div class="container contact-container">
+      <h2>Contact Me</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
     </div>
   </section>
-
-  <!-- Floating UniLink Widget -->
-  <div class="unilink-container">
-    <img src="assets/help.png" class="help-icon" alt="Help" id="help-icon" />
-    <div class="unilink-popup" id="unilink-popup">
-      <h4>UniLink</h4>
-      <a href="https://github.com/KavinEditors/NEXA-Next-gen-Executive-Assistant" target="_blank">Nexa</a>
-      <a href="https://github.com/KavinEditors/MoodMate" target="_blank">Mood Mate</a>
-      <a href="https://github.com/KavinEditors/MemeStream" target="_blank">Meme Stream</a>
-      <a href="https://github.com/KavinEditors/R.O.A.S.T" target="_blank">R.O.A.S.T</a>
-    </div>
-  </div>
 
   <script src="script.js"></script>
 </body>
