@@ -358,3 +358,11 @@ nav a:hover {
 }
 
 html { scroll-behavior: smooth; }
+
+.project.nexa .project-image {
+  justify-content: flex-start; /* moves image to the left */
+}
+
+.project.nexa .project-image img {
+  transform: translateX(-30px); /* optional fine-tuning */
+}
