@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kavinverse | Developer Portfolio</title>
   <link rel="icon" href="assets/image.png" />
   <link rel="stylesheet" href="style.css" />
@@ -13,44 +13,26 @@
     <nav>
       <a href="#home">Home</a>
       <a href="#projects">Projects</a>
-      <a href="#tech-arsenal">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="hero-text">
-      <div class="welcome-wrap">
-        <div id="welcome-typing" class="welcome-typing"></div>
-      </div>
-      <h2 class="hero-title">Hello I Am <span>Kavin</span></h2>
-      <p class="hero-sub">Innovator. Developer. Creator. Every project is a step toward the extraordinary.</p>
+      <h2>Hello I Am <span>Kavinv</span></h2>
+      <p>Innovator. Developer. Creator. Every project is a step toward the extraordinary.</p>
     </div>
-
-    <div class="hero-images">
-      <!-- Nexa (left) -->
-      <div class="hero-image left-hero">
-        <div class="circle outer"></div>
-        <div class="circle inner"></div>
-        <img src="assets/sub2.png" alt="NEXA Project (sub2)" />
-      </div>
-
-      <!-- Roast (right) -->
-      <div class="hero-image right-hero">
-        <div class="circle outer"></div>
-        <div class="circle inner"></div>
-        <img src="assets/sub1.png" alt="ROAST Project (sub1)" />
-      </div>
+    <div class="hero-image">
+      <div class="circle outer"></div>
+      <div class="circle inner"></div>
+      <img src="assets/image.png" alt="Kavinverse Logo" />
     </div>
   </section>
 
-  <!-- PROJECTS -->
+  <!-- Projects -->
   <section id="projects" class="projects">
     <div class="project roast">
-      <div class="project-image">
-        <img src="assets/sub1.png" alt="ROAST Project" />
-      </div>
       <div class="project-text">
         <h3>R.O.A.S.T</h3>
         <p>A humorous AI that roasts you intelligently — you can’t beat it, but it’ll always roast back smarter.</p>
@@ -59,9 +41,15 @@
           <a href="https://github.com/KavinEditors/R.O.A.S.T" target="_blank" class="btn">See Repo</a>
         </div>
       </div>
+      <div class="project-image">
+        <img src="assets/sub1.png" alt="ROAST Project" />
+      </div>
     </div>
 
     <div class="project nexa">
+      <div class="project-image">
+        <img src="assets/sub2.png" alt="NEXA Project" />
+      </div>
       <div class="project-text">
         <h3>NEXA</h3>
         <p>An AI assistant that helps you code, search YouTube, open favorite tabs, and simplify your workflow effortlessly.</p>
@@ -69,92 +57,10 @@
           <a href="https://github.com/KavinEditors/NEXA-Next-gen-Executive-Assistant" target="_blank" class="btn">See Repo</a>
         </div>
       </div>
-      <div class="project-image">
-        <img src="assets/sub2.png" alt="NEXA Project" />
-      </div>
     </div>
   </section>
 
-  <!-- TECH ARSENAL (branching skill tree) -->
-  <section id="tech-arsenal" class="tech-arsenal">
-    <h2>My Tech Arsenal</h2>
-
-    <div class="tech-wrap">
-      <svg id="skill-net" viewBox="0 0 1000 420" preserveAspectRatio="xMidYMid meet"
-           xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-        <defs>
-          <filter id="pulseGlow">
-            <feGaussianBlur stdDeviation="6" result="b" />
-            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-        </defs>
-
-        <!-- base white horizontal line -->
-        <path id="base" d="M60 340 L940 340" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" opacity="0.95" />
-
-        <!-- branching paths (white) -->
-        <path id="pA" d="M200 340 C200 300, 220 240, 260 200" stroke="#ffffff" stroke-width="1.6" fill="none" opacity="0.95" />
-        <path id="pB" d="M340 340 C340 300, 380 240, 420 200" stroke="#ffffff" stroke-width="1.6" fill="none" opacity="0.95" />
-        <path id="pC" d="M520 340 C520 300, 560 240, 600 200" stroke="#ffffff" stroke-width="1.6" fill="none" opacity="0.95" />
-        <path id="pD" d="M700 340 C700 300, 740 240, 780 200" stroke="#ffffff" stroke-width="1.6" fill="none" opacity="0.95" />
-        <path id="pE" d="M840 340 C840 300, 880 240, 920 200" stroke="#ffffff" stroke-width="1.6" fill="none" opacity="0.95" />
-
-        <!-- small connectors -->
-        <path id="c1" d="M260 200 C240 190, 220 180, 200 170" stroke="#ffffff" stroke-width="1.2" fill="none" opacity="0.95" />
-        <path id="c2" d="M600 200 C620 190, 640 180, 660 170" stroke="#ffffff" stroke-width="1.2" fill="none" opacity="0.95" />
-
-        <!-- pulse (animated by JS) -->
-        <g id="pulseG"><circle id="pulse" r="7" fill="#ffffff" filter="url(#pulseGlow)"/></g>
-      </svg>
-
-      <!-- tech icons (positioned by JS at branch endpoints). Icons are blue -->
-      <div class="tech-icons">
-        <div class="tech-item" data-path="pA" title="Python — scripting, ML">
-          <img src="https://cdn.simpleicons.org/python/0b5eeb" alt="Python" /><span>Python</span>
-        </div>
-
-        <div class="tech-item" data-path="pB" title="AI / ML — models & pipelines">
-          <img src="https://cdn.simpleicons.org/brain/0b5eeb" alt="AI/ML" /><span>AI / ML</span>
-        </div>
-
-        <div class="tech-item" data-path="pC" title="JavaScript — front-end">
-          <img src="https://cdn.simpleicons.org/javascript/0b5eeb" alt="JavaScript" /><span>JavaScript</span>
-        </div>
-
-        <div class="tech-item" data-path="pD" title="Streamlit — demos & dashboards">
-          <img src="https://cdn.simpleicons.org/streamlit/0b5eeb" alt="Streamlit" /><span>Streamlit</span>
-        </div>
-
-        <div class="tech-item" data-path="pE" title="C# — backend & tooling">
-          <img src="https://cdn.simpleicons.org/csharp/0b5eeb" alt="C#" /><span>C#</span>
-        </div>
-
-        <div class="tech-item" data-path="c1" title="Node.js — backend, APIs">
-          <img src="https://cdn.simpleicons.org/node.js/0b5eeb" alt="Node.js" /><span>Node.js</span>
-        </div>
-
-        <div class="tech-item" data-path="c2" title="GitHub — repos & source">
-          <img src="https://cdn.simpleicons.org/github/0b5eeb" alt="GitHub" /><span>GitHub</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GITHUB STATS -->
-  <section id="github-stats" class="github-stats">
-    <h2>GitHub Live Stats</h2>
-    <div class="stat-cards">
-      <div class="stat-card">Total Projects <div class="stat-number" id="total-projects">0</div></div>
-      <div class="stat-card">Followers <div class="stat-number" id="followers">0</div></div>
-      <div class="stat-card">Estimated Commits <div class="stat-number" id="commit-count">—</div></div>
-    </div>
-
-    <div class="graph-wrap">
-      <img id="gh-graph" src="https://ghchart.rshah.org/KavinEditors" alt="GitHub contribution graph" />
-    </div>
-  </section>
-
-  <!-- CONTACT -->
+  <!-- Contact -->
   <section id="contact" class="contact">
     <h3>Contact Me</h3>
     <div class="contact-links">
@@ -165,7 +71,7 @@
     </div>
   </section>
 
-  <!-- UniLink widget -->
+  <!-- Floating UniLink Widget -->
   <div class="unilink-container">
     <img src="assets/help.png" class="help-icon" alt="Help" id="help-icon" />
     <div class="unilink-popup" id="unilink-popup">
@@ -179,4 +85,4 @@
 
   <script src="script.js"></script>
 </body>
-</html>
+                                                                                                        </html>
