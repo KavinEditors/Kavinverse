@@ -403,3 +403,24 @@ nav a:hover {
 html {
   scroll-behavior: smooth;
 }
+
+/* ===== Scroll Reveal Base ===== */
+.reveal {
+  opacity: 0;
+  transition: transform 0.9s ease, opacity 0.9s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Directions */
+.from-left {
+  transform: translateX(-80px);
+}
+
+.from-right {
+  transform: translateX(80px);
+}
+
