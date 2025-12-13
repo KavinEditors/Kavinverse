@@ -5,6 +5,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #000;
   color: #fff;
@@ -52,8 +56,11 @@ nav a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 100px 80px;
   flex-wrap: wrap;
+
+  /* vertical correction */
+  padding: 60px 80px 100px;
+  transform: translateY(-40px);
 }
 
 .hero-text {
@@ -297,113 +304,6 @@ nav a:hover {
   to { filter: drop-shadow(0 0 20px #00bfff); }
 }
 
-/* --- RESPONSIVE DESIGN --- */
-@media (max-width: 900px) {
-  header {
-    flex-direction: column;
-    padding: 15px 20px;
-  }
-
-  nav {
-    margin-top: 10px;
-  }
-
-  .hero {
-    flex-direction: column;
-    padding: 60px 30px;
-    text-align: center;
-  }
-
-  .hero-text {
-    width: 100%;
-  }
-
-  .hero-image {
-    width: 250px;
-    height: 250px;
-    margin: 40px auto;
-  }
-
-  .outer {
-    width: 280px;
-    height: 280px;
-    top: -15px;
-    left: -15px;
-  }
-
-  .inner {
-    width: 230px;
-    height: 230px;
-    top: 10px;
-    left: 10px;
-  }
-
-  .projects {
-    padding: 60px 20px;
-  }
-
-  .project {
-    flex-direction: column;
-    text-align: center;
-    margin-bottom: 100px;
-  }
-
-  .project-text, .project-image {
-    width: 100%;
-  }
-
-  .project-image img {
-    width: 85%;
-    max-width: 320px;
-  }
-
-  .contact {
-    padding: 40px 20px;
-  }
-
-  .help-icon {
-    width: 60px;
-    height: 60px;
-  }
-
-  .unilink-popup {
-    width: 200px;
-    right: -10px;
-  }
-}
-
-@media (max-width: 500px) {
-  .hero-text h2 {
-    font-size: 1.8em;
-  }
-
-  .hero-text p {
-    font-size: 1em;
-  }
-
-  .project-image img {
-    width: 90%;
-  }
-
-  .social {
-    margin: 5px;
-    padding: 7px 14px;
-  }
-
-  .btn {
-    padding: 8px 15px;
-    font-size: 0.9em;
-  }
-
-  .project {
-    margin-bottom: 90px;
-  }
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
 /* subtle dark animated gradient */
 body::before {
   content: "";
@@ -419,13 +319,7 @@ body::before {
 }
 
 @keyframes bgmove {
-  0% {
-    transform: scale(1) translate(0, 0);
-  }
-  50% {
-    transform: scale(1.05) translate(-2%, -1%);
-  }
-  100% {
-    transform: scale(1) translate(0, 0);
-  }
+  0% { transform: scale(1) translate(0, 0); }
+  50% { transform: scale(1.05) translate(-2%, -1%); }
+  100% { transform: scale(1) translate(0, 0); }
 }
