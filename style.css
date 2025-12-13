@@ -103,8 +103,8 @@ nav a:hover {
 }
 
 .outer {
-  width: 490px;
-  height: 490px;
+  width: 510px;
+  height: 510px;
   top: -15px;
   left: -15px;
   border-top: transparent;
@@ -112,8 +112,8 @@ nav a:hover {
 }
 
 .inner {
-  width: 270px;
-  height: 270px;
+  width: 490px;
+  height: 490px;
   top: 15px;
   left: 15px;
   border-bottom: transparent;
