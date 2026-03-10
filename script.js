@@ -1,7 +1,21 @@
 /* UniLink toggle */
 const helpIcon = document.getElementById("help-icon");
 const popup = document.getElementById("unilink-popup");
+const uniLink = document.getElementById("unilink-btn");
 
+let lastClick = 0;
+
+uniLink.addEventListener("click", function(e) {
+  e.preventDefault();
+
+  const now = Date.now();
+
+  if (now - lastClick < 400) {
+    window.open("https://pagenotfound-phi.vercel.app/", "_blank");
+  }
+
+  lastClick = now;
+});
 helpIcon.addEventListener("click", (e) => {
   e.stopPropagation();
   popup.style.display = popup.style.display === "block" ? "none" : "block";
