@@ -321,3 +321,16 @@ body::before {
   50% { transform: scale(1.05) translate(-2%, -1%); }
   100% { transform: scale(1) translate(0, 0); }
 }
+
+.unilink-popup h4 a {
+  color: #00bfff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.unilink-popup h4 a:hover {
+  text-decoration: none;
+  color: #00bfff;
+}
