@@ -1,82 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kavinverse | Developer Portfolio</title>
-  <link rel="icon" href="assets/image.png" />
-  <link rel="stylesheet" href="style.css" />
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kavinverse | Developer portfolio</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
-  <header>
-    <h1 class="logo">Kavin<span>verse</span></h1>
-    <nav aria-label="Main navigation">
-      <a href="#home">Home</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#platforms">Platforms</a>
+<a href="#contact">Contact</a>
+</header>
 
-  <!-- Hero -->
-  <section id="home" class="hero">
-    <div class="hero-text">
-      <h2>Hello I Am <span>Kavin</span></h2>
-      <p>Innovator. Developer. Creator. Every project is a step toward the extraordinary.</p>
-    </div>
+<!-- HOME -->
 
-    <div class="hero-image">
-      <div class="circle outer"></div>
-      <div class="circle inner"></div>
-      <img src="assets/image.png" alt="Kavinverse logo" />
-    </div>
-  </section>
+<section id="home">
 
-  <!-- Projects -->
-  <section id="projects" class="projects">
+<h1>Hello! I am <span>Kavin</span></h1>
+<p class="hero-sub">Developer • Designer • Builder</p>
 
-    <article class="project roast">
-      <div class="project-text">
-        <h3>R.O.A.S.T</h3>
-        <p>R.O.A.S.T (Really Offensive Automated Sus Terminator) is a minimal Streamlit app built for entertainment. It generates humorous or sarcastic “roast” responses from user input using a generative AI model. The project prioritizes simplicity and quick deployment, serving as a fun example of AI-powered text generation rather than a productivity tool.</p>
-        <div class="btns">
-          <a class="btn" href="https://really-offensive-automated-sus-terminator.streamlit.app/" target="_blank">See Website</a>
-          <a class="btn" href="https://github.com/KavinEditors/R.O.A.S.T" target="_blank">See Repo</a>
-        </div>
-      </div>
-      <div class="project-image">
-        <img src="assets/sub1.png" alt="ROAST project preview" loading="lazy" />
-      </div>
-    </article>
+<div class="buttons">
+<button class="outline" id="aboutBtn">About Me</button>
+<button class="fill" id="projectBtn">View Projects</button>
+</div>
+
+</section>
 
 
-  </section>
+<!-- ABOUT -->
 
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <h3>Contact Me</h3>
-    <div class="contact-links">
-      <a class="social github" href="https://github.com/KavinEditors/" target="_blank">GitHub</a>
-      <a class="social instagram" href="https://www.instagram.com/speedkavin311/" target="_blank">Instagram</a>
-      <a class="social twitter" href="https://x.com/SpeedKavin311" target="_blank">X</a>
-      <a class="social discord" href="https://discord.com/users/1180531027832217661" target="_blank">Discord</a>
-    </div>
-  </section>
+<section id="about">
 
-  <!-- UniLink -->
-  <div class="unilink-container">
-    <img src="assets/help.png" class="help-icon" alt="Open UniLink menu" id="help-icon" />
-    <div class="unilink-popup" id="unilink-popup">
-      <h4>
-      <a id="unilink-btn" href="https://pagenotfound-phi.vercel.app/" target="_blank">UniLink</a>
-      </h4>
-      <a href="https://github.com/KavinEditors/MoodMate" target="_blank">Mood Mate</a>
-      <a href="https://github.com/KavinEditors/MemeStream" target="_blank">Meme Stream</a>
-      <a href="https://github.com/KavinEditors/R.O.A.S.T" target="_blank">R.O.A.S.T</a>
-    </div>
-  </div>
-  
-  <script src="script.js"></script>
+<div class="about-grid">
+
+<div class="about-title">
+<h2 class="slide-title">About Me</h2>
+</div>
+
+<div class="about-content">
+
+<p id="p1"></p>
+<p id="p2"></p>
+<p id="p3"></p>
+
+<span class="cursor">▮</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<h2 class="section-title">Featured Projects</h2>
+
+<div class="project-container">
+
+<!-- LUNA -->
+
+<div class="project-card">
+
+<div class="card-banner">
+<img src="assets/image1.png">
+</div>
+
+<div class="card-avatar">
+<img src="assets/luna.png">
+</div>
+
+<h3>Luna</h3>
+
+<p>
+Luna is an intelligent extension for browsers powered by advanced AI models that assists users directly within their browser environment. It can analyse complex webpages, summarize long PDF documents instantly, extract key insights, and answer contextual questions about the content currently being viewed. The goal of Luna is to transform passive browsing into an interactive and productive experience.
+</p>
+
+<div class="divider"></div>
+
+<a href="https://aboutluna.vercel.app" target="_blank" class="project-link">
+View Project →
+</a>
+
+</div>
+
+
+<!-- WATER -->
+
+<div class="project-card">
+
+<div class="card-banner">
+<img src="assets/image2.png">
+</div>
+
+<div class="card-avatar">
+<img src="assets/water.png">
+</div>
+
+<h3>Project WATER</h3>
+
+<p>
+Project WATER is an IoT-driven initiative focused on improving global access to clean and sustainable water resources. The system integrates smart sensors, monitoring stations, and automated recycling pipelines to track water quality, detect contamination early, and manage distribution intelligently. This project aims to provide communities with reliable water systems through real-time data and efficient infrastructure.
+</p>
+
+<div class="divider"></div>
+
+<a href="#" class="project-link">
+Open →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PLATFORMS -->
+<section id="platforms">
+
+<div class="tree">
+
+<canvas id="particles"></canvas>
+
+<!-- dome -->
+<div class="dome"></div>
+
+<!-- trunk -->
+<div class="trunk"></div>
+
+<!-- ✅ ADD SVG RIGHT HERE -->
+<svg class="connections" width="800" height="500">
+<!--  trunk  -->
+<line x1="400" y1="380" x2="400" y2="200" stroke="#00aaff" stroke-width="2"/>
+<!--  github  -->
+<line x1="400" y1="200" x2="400" y2="140" stroke="#00aaff" stroke-width="2"/>
+<!--  center junction (raised & centered)  -->
+<!--  upper branches  -->             
+<line x1="400" y1="230" x2="300" y2="189" stroke="#00aaff" stroke-width="2"/>
+<line x1="400" y1="230" x2="500" y2="180" stroke="#00aaff" stroke-width="2"/>
+<!--  middle branches (slight angle, not flat)  -->
+<line x1="400" y1="230" x2="230" y2="230" stroke="#00aaff" stroke-width="2"/>
+<line x1="400" y1="230" x2="550" y2="230" stroke="#00aaff" stroke-width="2"/>
+<!--  lower branches (clean spread, not too steep)  -->
+<line x1="400" y1="230" x2="310" y2="280" stroke="#00aaff" stroke-width="2"/>
+<line x1="400" y1="230" x2="470" y2="270" stroke="#00aaff" stroke-width="2"/>
+</svg>
+<!-- nodes -->
+
+<img src="assets/github.png" class="node github">
+
+<img src="assets/discord.png" class="node discord">
+<img src="assets/instagram.png" class="node insta">
+
+<img src="assets/reddit.png" class="node reddit">
+<img src="assets/twitter.png" class="node twitter">
+
+<img src="assets/linkedin.png" class="node linkedin">
+<img src="assets/facebook.png" class="node facebook">
+
+<div class="title">
+<div class="outline-text">I am available in</div>
+<div class="blue-text">these platforms</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2 class="section-title">Contact Me</h2>
+
+<div class="contact-buttons">
+
+<button onclick="window.open('https://github.com/KavinEditors')">GitHub</button>
+<button onclick="window.open('https://instagram.com/_.kavin.iso._')">Instagram</button>
+<button onclick="window.open('https://x.com/SpeedKavin311')">Twitter</button>
+
+</div>
+
+</section>
+
+<script src="script.js"></script>
+
 </body>
 </html>
