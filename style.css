@@ -126,27 +126,7 @@ nav {
   justify-content: center;      /* ← add this */
 }
 
-/* Gradient orbs */
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(100px);
-  pointer-events: none;
-}
-.orb-1 {
-  width: 600px; height: 600px;
-  background: rgba(68,170,255,0.08);
-  top: -200px; right: -100px;
-  animation: float1 8s ease-in-out infinite;
-}
-.orb-2 {
-  width: 400px; height: 400px;
-  background: rgba(0,255,255,0.04);
-  bottom: -100px; left: 10%;
-  animation: float2 11s ease-in-out infinite;
-}
-@keyframes float1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-30px,40px)} }
-@keyframes float2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(40px,-30px)} }
+
 
 /* Grid lines decoration */
 .hero-grid {
