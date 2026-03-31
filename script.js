@@ -9,7 +9,17 @@ document.querySelector("#projects").scrollIntoView({behavior:"smooth"})
 }
 
 
-// typing text
+const orb1 = document.getElementById('orb1');
+const orb2 = document.getElementById('orb2');
+
+document.addEventListener('mousemove', e => {
+  mx = e.clientX;
+  my = e.clientY;
+  orb1.style.left = (e.clientX - 200) + 'px';
+  orb1.style.top  = (e.clientY - 200) + 'px';
+  orb2.style.left = (e.clientX - 150) + 'px';
+  orb2.style.top  = (e.clientY - 150) + 'px';
+});
 
 const paragraphs=[
 
