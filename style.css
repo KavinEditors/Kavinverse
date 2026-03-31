@@ -477,12 +477,13 @@ nav {
 .view-all-link:hover::after { transform: translateX(4px); }
 
 .projects-grid {
-  max-width: 700px;
+  max-width: 1100px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;   /* ← was 1fr */
   gap: 24px;
 }
+
 .project-card {
   background: var(--surface2);
   border: 1px solid var(--border);
