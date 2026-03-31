@@ -33,6 +33,23 @@ body::before {
   opacity: 0.6;
 }
 
+/* ── CURSOR ORBS ── */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+.orb-1 {
+  width: 400px; height: 400px;
+  background: rgba(68,170,255,0.12);
+}
+.orb-2 {
+  width: 300px; height: 300px;
+  background: rgba(0,255,255,0.06);
+}
+
 /* ── CUSTOM CURSOR ── */
 * { cursor: none; }
 #cursor {
@@ -114,33 +131,12 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;          /* ← add this */
-  text-align: center;           /* ← add this */
+  align-items: center;
+  text-align: center;
   padding: 120px 60px 80px;
   position: relative;
   overflow: hidden;
-}
-
-.hero-eyebrow {
-  /* existing properties... */
-  justify-content: center;      /* ← add this */
-}
-
-.orb {
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(80px);
-  pointer-events: none;
-  z-index: 0;
-  transition: transform 0.1s ease;
-}
-.orb-1 {
-  width: 400px; height: 400px;
-  background: rgba(68,170,255,0.12);
-}
-.orb-2 {
-  width: 300px; height: 300px;
-  background: rgba(0,255,255,0.06);
+  contain: paint;
 }
 
 /* Grid lines decoration */
@@ -165,6 +161,7 @@ nav {
   animation: fadeUp 0.8s 0.2s forwards;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
 }
 .hero-eyebrow::before {
@@ -176,16 +173,15 @@ nav {
 
 .hero-headline {
   font-family: 'Instrument Serif', serif;
-  font-size: clamp(2.8rem, 6vw, 7rem);   /* ← reduce from 9vw so it fits one line */
+  font-size: clamp(2.8rem, 6vw, 7rem);
   line-height: 0.92;
   letter-spacing: -0.03em;
   font-weight: 400;
   max-width: 900px;
-  white-space: nowrap;           /* ← add this to prevent line breaks */
+  white-space: nowrap;
   opacity: 0;
   animation: fadeUp 0.9s 0.4s forwards;
 }
-
 .hero-headline em {
   font-style: italic;
   color: var(--accent);
@@ -210,6 +206,7 @@ nav {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+  justify-content: center;
   opacity: 0;
   animation: fadeUp 0.9s 0.8s forwards;
 }
@@ -495,7 +492,7 @@ nav {
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;   /* ← was 1fr */
+  grid-template-columns: 1fr 1fr;
   gap: 24px;
 }
 
@@ -512,53 +509,6 @@ nav {
   border-color: rgba(68,170,255,0.2);
   box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(68,170,255,0.08);
 }
-.project-visual {
-  position: relative;
-  overflow: hidden;
-  background: #0a0a0a;
-  min-height: 220px;
-}
-.project-visual-inner {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 4rem;
-}
-.luna-visual {
-  background: radial-gradient(ellipse at center, rgba(68,170,255,0.15), transparent 70%);
-}
-.luna-visual::before {
-  content:'';
-  position: absolute;
-  width: 120px; height: 120px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(68,170,255,0.3) 0%, rgba(68,170,255,0.05) 60%, transparent 100%);
-  box-shadow: 0 0 60px rgba(68,170,255,0.4), 0 0 120px rgba(68,170,255,0.1);
-  animation: lunaPulse 3s ease-in-out infinite;
-}
-@keyframes lunaPulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.1)} }
-.water-visual {
-  background: radial-gradient(ellipse at center, rgba(0,200,150,0.12), transparent 70%);
-}
-.water-visual::before {
-  content:'';
-  position: absolute;
-  width: 100px; height: 100px;
-  border-radius: 50%;
-  border: 2px solid rgba(0,200,150,0.3);
-  animation: waterRipple 2.5s ease-in-out infinite;
-}
-.water-visual::after {
-  content:'';
-  position: absolute;
-  width: 160px; height: 160px;
-  border-radius: 50%;
-  border: 1px solid rgba(0,200,150,0.15);
-  animation: waterRipple 2.5s 0.8s ease-in-out infinite;
-}
-@keyframes waterRipple { 0%{transform:scale(0.8);opacity:1} 100%{transform:scale(1.4);opacity:0} }
 
 .project-info {
   padding: 32px;
@@ -642,7 +592,6 @@ nav {
   gap: 16px;
   margin-top: 60px;
 }
-/* On desktop, pyramid-row wrappers are invisible — cards flow into the grid */
 .pyramid-row { display: contents; }
 
 .platform-card {
@@ -811,7 +760,7 @@ footer {
   .nav-links { display: none; }
   #home { padding: 100px 24px 80px; }
   .hero-stats { display: none; }
-  .hero-headline { font-size: 3.5rem; }
+  .hero-headline { font-size: 3.5rem; white-space: normal; }
   .hero-eyebrow { justify-content: center; }
   .hero-sub, .hero-actions { text-align: center; justify-content: center; }
   #about { padding: 80px 24px; }
@@ -823,7 +772,6 @@ footer {
   .projects-grid { grid-template-columns: 1fr; }
   .section-header { flex-direction: column; gap: 20px; align-items: flex-start; }
   #platforms { padding: 80px 24px; }
-  /* Pyramid layout */
   .platforms-grid {
     display: flex;
     flex-direction: column;
