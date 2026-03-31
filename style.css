@@ -114,9 +114,16 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;          /* ← add this */
+  text-align: center;           /* ← add this */
   padding: 120px 60px 80px;
   position: relative;
   overflow: hidden;
+}
+
+.hero-eyebrow {
+  /* existing properties... */
+  justify-content: center;      /* ← add this */
 }
 
 /* Gradient orbs */
@@ -174,14 +181,16 @@ nav {
 
 .hero-headline {
   font-family: 'Instrument Serif', serif;
-  font-size: clamp(4rem, 9vw, 9rem);
+  font-size: clamp(2.8rem, 6vw, 7rem);   /* ← reduce from 9vw so it fits one line */
   line-height: 0.92;
   letter-spacing: -0.03em;
   font-weight: 400;
   max-width: 900px;
+  white-space: nowrap;           /* ← add this to prevent line breaks */
   opacity: 0;
   animation: fadeUp 0.9s 0.4s forwards;
 }
+
 .hero-headline em {
   font-style: italic;
   color: var(--accent);
